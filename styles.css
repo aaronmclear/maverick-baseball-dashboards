@@ -23,6 +23,10 @@ body {
   color: var(--ink);
 }
 
+body.is-standalone {
+  overscroll-behavior: none;
+}
+
 .hero {
   padding: 40px 20px 24px;
   background:
@@ -212,6 +216,9 @@ select {
 }
 
 .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 10px 16px;
   border-radius: 999px;
   border: none;
@@ -220,6 +227,7 @@ select {
   font-weight: 600;
   cursor: pointer;
   transition: transform 0.2s ease;
+  text-decoration: none;
 }
 
 .btn:hover {
@@ -247,6 +255,13 @@ select {
 
 .hidden {
   display: none;
+}
+
+.app-actions-status {
+  margin-top: 10px;
+  min-height: 18px;
+  font-size: 13px;
+  color: #f7e5ea;
 }
 
 .lock {

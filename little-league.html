@@ -4,11 +4,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>MILL Majors Statistics</title>
+    <link rel="manifest" href="manifest-mill-majors.json" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="little-league.css" />
     <link rel="icon" href="favicon.png" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <meta name="theme-color" content="#7a0f2b" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   </head>
   <body data-page="league">
     <header class="hero hero--league">
@@ -23,7 +26,10 @@
           <div class="hero__actions">
             <a class="btn btn--ghost btn--light" href="#leagueDashboard">Leaderboard</a>
             <a class="btn btn--ghost btn--light" href="#weeklyIntake">Weekly Intake</a>
+            <button class="btn btn--ghost btn--light hidden" type="button" id="installApp">Install App</button>
+            <button class="btn btn--ghost btn--light" type="button" id="shareApp">Share Link</button>
           </div>
+          <div class="app-actions-status" id="appActionsStatus"></div>
         </div>
         <img class="hero__logo" alt="Little League logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKOSNKU6KTLZGUGSaOiIhVqC_lyAHOtKsxYg&s" />
       </div>
@@ -103,5 +109,6 @@
 
     <script src="little-league-data.js"></script>
     <script src="little-league.js"></script>
+    <script src="dashboard-pwa.js"></script>
   </body>
 </html>

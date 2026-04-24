@@ -278,3 +278,125 @@
     flex-direction: column;
   }
 }
+
+@media (max-width: 900px) {
+  .hero {
+    padding: 28px 16px 20px;
+  }
+
+  .hero__content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero__logo {
+    width: 96px;
+    height: 96px;
+    align-self: flex-start;
+  }
+
+  .container {
+    padding: 18px 14px 36px;
+  }
+
+  .panel {
+    padding: 16px;
+  }
+
+  .hero__actions,
+  .actions,
+  .stats-filter {
+    width: 100%;
+  }
+
+  .hero__actions .btn,
+  .actions .btn,
+  .actions .btn--ghost {
+    flex: 1 1 160px;
+  }
+
+  .stats-filter .form-field {
+    flex: 1 1 180px;
+  }
+
+  .stats-filter input,
+  .stats-filter select,
+  .actions input[type="file"] {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .stats-switches {
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .tab-group,
+  .scope-bar {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tab-group {
+    border-radius: 18px;
+  }
+
+  .stat-tab {
+    padding: 10px 18px;
+    white-space: nowrap;
+  }
+
+  .scope-bar .stat-tab {
+    white-space: nowrap;
+  }
+
+  .table-wrap--stats {
+    margin-inline: -16px;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+  }
+
+  .stats-table {
+    min-width: 920px;
+    font-size: 14px;
+  }
+
+  .stats-table thead th,
+  .stats-table tbody td {
+    padding: 14px 12px;
+  }
+
+  .sticky-name-col {
+    min-width: 170px;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero__actions .btn,
+  .actions .btn,
+  .actions .btn--ghost {
+    flex-basis: 100%;
+  }
+
+  .hero__sub,
+  .panel__hint,
+  .panel__note {
+    font-size: 12px;
+  }
+
+  .stats-table {
+    min-width: 860px;
+  }
+
+  .sticky-name-col {
+    min-width: 154px;
+  }
+
+  .file-pill {
+    font-size: 11px;
+  }
+}

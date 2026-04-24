@@ -1,0 +1,22 @@
+{
+  "name": "MILL Majors Statistics",
+  "short_name": "MILL Majors",
+  "id": "/mill-majors",
+  "scope": "/",
+  "start_url": "/mill-majors",
+  "display": "standalone",
+  "background_color": "#f7f0f2",
+  "theme_color": "#7a0f2b",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
