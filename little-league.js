@@ -425,8 +425,8 @@ function renderPage() {
   const rows = getRows();
   if (pageTitle) {
     pageTitle.textContent = state.page === 'select'
-      ? 'MILL Majors Statistics'
-      : 'MI 11U Statistics';
+      ? 'MI 11U Statistics'
+      : 'MILL Majors Statistics';
   }
   updatedAtEl.textContent = `Updated: ${formatDate(state.data.meta.updatedAt)}`;
   renderImportedFiles();

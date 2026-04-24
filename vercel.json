@@ -3,11 +3,11 @@
   "rewrites": [
     {
       "source": "/mi-11u",
-      "destination": "/little-league.html"
+      "destination": "/select-team"
     },
     {
       "source": "/mill-majors",
-      "destination": "/select-team.html"
+      "destination": "/little-league"
     }
   ]
 }
