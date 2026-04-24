@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MI 11U Statistics</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="little-league.css" />
+    <link rel="icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="theme-color" content="#7a0f2b" />
+  </head>
+  <body data-page="league">
+    <header class="hero hero--league">
+      <div class="hero__content">
+        <div>
+          <p class="hero__kicker">Maverick Baseball</p>
+          <h1>MI 11U Statistics</h1>
+          <p class="hero__sub">
+            Shareable leaderboard for four little league teams with sortable hitting and pitching stats.
+          </p>
+          <div class="hero__meta" id="leagueUpdatedAt">Updated: --</div>
+          <div class="hero__actions">
+            <a class="btn btn--ghost btn--light" href="#leagueDashboard">Leaderboard</a>
+            <a class="btn btn--ghost btn--light" href="#weeklyIntake">Weekly Intake</a>
+          </div>
+        </div>
+        <img class="hero__logo" alt="Little League logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKOSNKU6KTLZGUGSaOiIhVqC_lyAHOtKsxYg&s" />
+      </div>
+    </header>
+
+    <main class="container container--league">
+      <section class="panel" id="leagueDashboard">
+        <div class="stats-shell">
+          <div class="stats-shell__header">
+            <div>
+              <h2 id="statsPageTitle">MI 11U Statistics</h2>
+              <p class="panel__hint">Players on the left, stats across the top, click any column to reorder.</p>
+            </div>
+            <div class="stats-filter">
+              <label class="form-field">
+                Team
+                <select id="teamFilter"></select>
+              </label>
+              <label class="form-field">
+                Search
+                <input type="text" id="playerSearch" placeholder="Player name" />
+              </label>
+            </div>
+          </div>
+          <div class="stats-switches">
+            <div class="tab-group" id="familyTabs"></div>
+          </div>
+          <div class="table-wrap table-wrap--stats">
+            <table id="statsTable" class="stats-table">
+              <thead></thead>
+              <tbody></tbody>
+            </table>
+            <p class="panel__note hidden" id="statsEmpty">No matching players for the current filters.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="weeklyIntake">
+        <div class="panel__header">
+          <h2>Weekly Intake</h2>
+          <p class="panel__hint">Drop in up to four team exports here after the leaderboard.</p>
+        </div>
+        <div class="intake-grid">
+          <div>
+            <p class="panel__note">
+              Accepted formats: `.csv` or `.json`. CSV rows should use the template headers so totals and derived rates calculate correctly.
+            </p>
+            <p class="panel__note">
+              Imported files update this browser session immediately. To publish coach-facing changes, replace the seed JSON in the repo before deploy.
+            </p>
+            <div class="actions actions--wrap">
+              <input type="file" id="teamFiles" accept=".csv,.json" multiple />
+              <a class="btn btn--ghost" href="templates/little-league-team-template.csv" download>Download CSV Template</a>
+            </div>
+            <div class="actions actions--wrap">
+              <button class="btn" type="button" id="resetImports">Reset To Seed Data</button>
+              <button class="btn btn--ghost" type="button" id="copyLeagueLink">Copy Share Link</button>
+              <span class="status" id="importStatus"></span>
+            </div>
+          </div>
+          <div class="intake-card">
+            <h3>Expected Columns</h3>
+            <p class="panel__note">
+              `player_name`, `team`, `source`, and raw hitting/pitching columns like `ab`, `h`, `bb`, `ip_outs`, `er`, `so_pitched`, `strikes`, `pitches`.
+            </p>
+            <div class="pill-row" id="importedFiles"></div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <p>Publish this page as an open Vercel site and share the URL with coaches.</p>
+      <p class="panel__note">This page stands on its own as the little league leaderboard site.</p>
+    </footer>
+
+    <script src="little-league-data.js"></script>
+    <script src="little-league.js"></script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/mi-11u",
+      "destination": "/little-league.html"
+    },
+    {
+      "source": "/mill-majors",
+      "destination": "/select-team.html"
+    }
+  ]
+}
