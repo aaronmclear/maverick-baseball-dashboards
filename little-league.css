@@ -169,7 +169,8 @@
 }
 
 .table-wrap--stats {
-  overflow-x: auto;
+  overflow: auto;
+  max-height: min(72vh, 920px);
   border: 1px solid #d9e3ee;
   border-radius: 18px;
   background: #fff;
@@ -188,6 +189,7 @@
   white-space: nowrap;
   border-bottom: 1px solid #d9e3ee;
   padding: 18px 16px;
+  box-shadow: 0 1px 0 #d9e3ee;
 }
 
 .stats-table tbody td {
@@ -358,6 +360,7 @@
     border-left: none;
     border-right: none;
     border-radius: 0;
+    max-height: 68vh;
   }
 
   .stats-table {
@@ -394,6 +397,10 @@
 
   .sticky-name-col {
     min-width: 154px;
+  }
+
+  .table-wrap--stats {
+    max-height: 64vh;
   }
 
   .file-pill {
