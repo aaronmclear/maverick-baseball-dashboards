@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="little-league.css" />
     <link rel="icon" href="favicon.png" />
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="apple-touch-icon" href="MILL logo.jpg" />
     <meta name="theme-color" content="#7a0f2b" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -69,19 +69,41 @@
 
       <section class="panel" id="weeklyIntake">
         <div class="panel__header">
-          <h2>Weekly Intake</h2>
-          <p class="panel__hint">Drop in up to four team exports here after the leaderboard.</p>
+          <h2>Live Team Updates</h2>
+          <p class="panel__hint">Pick the team you are replacing, then choose the latest full-season file from your phone or computer.</p>
         </div>
         <div class="intake-grid">
           <div>
             <p class="panel__note">
-              Accepted formats: `.csv` or `.json`. CSV rows should use the template headers so totals and derived rates calculate correctly.
+              Each upload replaces that team&apos;s current season-to-date stats on the live site. It does not add on top of old totals.
             </p>
             <p class="panel__note">
-              Imported files update this browser session immediately. To publish coach-facing changes, replace the seed JSON in the repo before deploy.
+              Accepted formats: `.csv` or `.json`. Use the team button below even if the file name is messy or came from a text message.
             </p>
+            <div class="upload-grid">
+              <article class="upload-card">
+                <h3>Dodgers</h3>
+                <p class="panel__note">Replace Dodgers season totals.</p>
+                <button class="btn" type="button" data-upload-source="littleLeague" data-upload-team="Dodgers">Upload Dodgers File</button>
+              </article>
+              <article class="upload-card">
+                <h3>Padres</h3>
+                <p class="panel__note">Replace Padres season totals.</p>
+                <button class="btn" type="button" data-upload-source="littleLeague" data-upload-team="Padres">Upload Padres File</button>
+              </article>
+              <article class="upload-card">
+                <h3>Mariners</h3>
+                <p class="panel__note">Replace Mariners season totals.</p>
+                <button class="btn" type="button" data-upload-source="littleLeague" data-upload-team="Mariners">Upload Mariners File</button>
+              </article>
+              <article class="upload-card">
+                <h3>Blue Jays</h3>
+                <p class="panel__note">Replace Blue Jays season totals.</p>
+                <button class="btn" type="button" data-upload-source="littleLeague" data-upload-team="Blue Jays">Upload Blue Jays File</button>
+              </article>
+            </div>
             <div class="actions actions--wrap">
-              <input type="file" id="teamFiles" accept=".csv,.json" multiple />
+              <input class="hidden-file-input" type="file" id="teamFiles" accept=".csv,.json" />
               <a class="btn btn--ghost" href="templates/little-league-team-template.csv" download>Download CSV Template</a>
             </div>
             <div class="actions actions--wrap">
@@ -91,9 +113,9 @@
             </div>
           </div>
           <div class="intake-card">
-            <h3>Expected Columns</h3>
+            <h3>Admin Notes</h3>
             <p class="panel__note">
-              `player_name`, `team`, `source`, and raw hitting/pitching columns like `ab`, `h`, `bb`, `ip_outs`, `er`, `so_pitched`, `strikes`, `pitches`.
+              This is the admin upload area for the live site. After a successful upload, all coaches and families will see the new team totals when they refresh.
             </p>
             <div class="pill-row" id="importedFiles"></div>
           </div>

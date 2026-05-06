@@ -1,4 +1,4 @@
-const CACHE_NAME = 'mi-baseball-dashboards-v1';
+const CACHE_NAME = 'mi-baseball-dashboards-v2';
 const APP_SHELL = [
   '/',
   '/little-league',
@@ -44,24 +44,35 @@ self.addEventListener('fetch', event => {
 
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
+  if (url.pathname.startsWith('/api/')) {
+    event.respondWith(fetch(request));
+    return;
+  }
 
   if (request.mode === 'navigate') {
     event.respondWith(
-      fetch(request).catch(async () => {
-        return caches.match(request) || caches.match('/little-league.html') || Response.error();
-      })
+      fetch(request)
+        .then(response => {
+          const copy = response.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(request, copy));
+          return response;
+        })
+        .catch(async () => {
+          return caches.match(request) || caches.match('/little-league.html') || Response.error();
+        })
     );
     return;
   }
 
   event.respondWith(
-    caches.match(request).then(cached => {
-      if (cached) return cached;
-      return fetch(request).then(response => {
+    fetch(request)
+      .then(response => {
         const copy = response.clone();
         caches.open(CACHE_NAME).then(cache => cache.put(request, copy));
         return response;
-      });
-    })
+      })
+      .catch(async () => {
+        return caches.match(request) || Response.error();
+      })
   );
 });

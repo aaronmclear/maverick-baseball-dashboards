@@ -89,11 +89,15 @@ const numericFields = [
   'tc', 'a', 'po', 'e', 'dp'
 ];
 
+const DATA_API_URL = '/api/little-league-data';
+
 const state = {
   seedData: null,
   data: null,
   importedFiles: [],
   page: document.body.dataset.page || 'league',
+  liveUploadsEnabled: false,
+  pendingUploadTarget: null,
   family: 'batting',
   search: '',
   teamFilter: 'all',
@@ -113,6 +117,10 @@ const playerSearch = document.getElementById('playerSearch');
 const statsTable = document.getElementById('statsTable');
 const statsEmpty = document.getElementById('statsEmpty');
 const scopeBar = document.getElementById('scopeBar');
+
+function previewFallbackAllowed() {
+  return window.location.protocol === 'file:' || ['localhost', '127.0.0.1'].includes(window.location.hostname);
+}
 
 function blankHitting() {
   return { gp: 0, pa: 0, ab: 0, h: 0, singles: 0, doubles: 0, triples: 0, hr: 0, rbi: 0, runs: 0, bb: 0, hbp: 0, sf: 0, so: 0, sb: 0 };
@@ -340,7 +348,7 @@ function renderImportedFiles() {
   if (!importedFiles) return;
   importedFiles.innerHTML = state.importedFiles.length
     ? state.importedFiles.map(file => `<div class="file-pill">${file}</div>`).join('')
-    : '<div class="file-pill">Using seed sample data</div>';
+    : `<div class="file-pill">${state.liveUploadsEnabled ? 'Live uploads ready' : 'Viewing seed data'}</div>`;
 }
 
 function renderTeamFilter() {
@@ -511,6 +519,22 @@ function parseImportedText(name, text) {
   return parseCsv(text);
 }
 
+function overrideImportedRows(rows, target) {
+  if (!target || !Array.isArray(rows)) return rows;
+  return rows.map(row => {
+    if (!row || typeof row !== 'object') return row;
+    const next = { ...row };
+    if (target.source === 'select') {
+      next.sourceType = 'select';
+    } else {
+      next.sourceType = 'littleLeague';
+      next.teamName = target.teamName;
+      next.teamId = slugify(target.teamName);
+    }
+    return next;
+  });
+}
+
 function inferSourceFromFilename(name) {
   const lower = name.toLowerCase();
   if (lower.includes('11u') || lower.includes('maroon') || lower.includes('select')) {
@@ -518,8 +542,10 @@ function inferSourceFromFilename(name) {
   }
   if (lower.includes('dodgers')) return { type: 'littleLeague', label: 'Dodgers' };
   if (lower.includes('padres')) return { type: 'littleLeague', label: 'Padres' };
+  if (lower.includes('blue jays')) return { type: 'littleLeague', label: 'Blue Jays' };
   if (lower.includes('yankees')) return { type: 'littleLeague', label: 'Yankees' };
   if (lower.includes('red sox')) return { type: 'littleLeague', label: 'Red Sox' };
+  if (lower.includes('mariners')) return { type: 'littleLeague', label: 'Mariners' };
   return { type: 'littleLeague', label: 'League Team' };
 }
 
@@ -722,18 +748,57 @@ function mergeImportedRows(rows) {
   state.data = normalizeData(next);
 }
 
-async function handleFiles(fileList) {
-  const rows = [];
-  const names = [];
+async function handleFiles(fileList, target = null) {
+  const imports = [];
   for (const file of Array.from(fileList || [])) {
     const text = await file.text();
-    rows.push(...parseImportedText(file.name, text));
-    names.push(file.name);
+    imports.push({
+      name: file.name,
+      rows: overrideImportedRows(parseImportedText(file.name, text), target)
+    });
   }
-  mergeImportedRows(rows);
-  state.importedFiles = [...state.importedFiles, ...names];
-  importStatus.textContent = `${rows.length} row${rows.length === 1 ? '' : 's'} merged into the dashboard preview`;
+  try {
+    const response = await fetch(DATA_API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        action: 'replaceUploads',
+        imports
+      })
+    });
+
+    if (!response.ok) {
+      throw new Error('Live update failed');
+    }
+
+    const payload = await response.json();
+    state.seedData = normalizeData(payload.data);
+    state.data = normalizeData(payload.data);
+    state.importedFiles = [...state.importedFiles, ...imports.map(item => item.name)];
+    importStatus.textContent = payload.summaries?.join(' • ') || 'Live stats updated';
+  } catch {
+    if (!previewFallbackAllowed()) {
+      importStatus.textContent = 'Live upload failed. This deployment may be missing shared storage.';
+      return;
+    }
+    const rows = imports.flatMap(item => item.rows);
+    mergeImportedRows(rows);
+    state.importedFiles = [...state.importedFiles, ...imports.map(item => item.name)];
+    importStatus.textContent = `${rows.length} row${rows.length === 1 ? '' : 's'} merged into this local preview`;
+  }
   renderPage();
+}
+
+function setUploadAvailability() {
+  const buttons = document.querySelectorAll('[data-upload-team]');
+  buttons.forEach(button => {
+    button.disabled = !state.liveUploadsEnabled && !previewFallbackAllowed();
+  });
+  if (importStatus && !state.liveUploadsEnabled && !previewFallbackAllowed()) {
+    importStatus.textContent = 'Live uploads are not enabled on this deployment yet.';
+  } else if (importStatus && state.liveUploadsEnabled) {
+    importStatus.textContent = 'Live uploads enabled. Pick a team and choose the latest season file.';
+  }
 }
 
 async function copyShareLink() {
@@ -769,26 +834,51 @@ function wireEvents() {
       renderPage();
       return;
     }
+
+    const uploadButton = event.target.closest('[data-upload-team]');
+    if (uploadButton && teamFiles) {
+      state.pendingUploadTarget = {
+        source: uploadButton.dataset.uploadSource,
+        teamName: uploadButton.dataset.uploadTeam
+      };
+      teamFiles.value = '';
+      teamFiles.click();
+    }
   });
 
   if (teamFiles) {
     teamFiles.addEventListener('change', async event => {
       if (!event.target.files?.length) return;
       try {
-        await handleFiles(event.target.files);
+        await handleFiles(event.target.files, state.pendingUploadTarget);
       } catch (error) {
         importStatus.textContent = error.message || 'Import failed';
+      } finally {
+        state.pendingUploadTarget = null;
+        teamFiles.value = '';
       }
     });
   }
 
   if (resetImports) {
-    resetImports.addEventListener('click', () => {
-      state.data = normalizeData(state.seedData);
-      state.importedFiles = [];
-      if (teamFiles) teamFiles.value = '';
-      importStatus.textContent = 'Reset to sample seed data';
-      renderPage();
+    resetImports.addEventListener('click', async () => {
+      try {
+        const response = await fetch(DATA_API_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ action: 'restoreSeed' })
+        });
+        if (!response.ok) throw new Error('Reset failed');
+        const payload = await response.json();
+        state.seedData = normalizeData(payload.data);
+        state.data = normalizeData(payload.data);
+        state.importedFiles = [];
+        if (teamFiles) teamFiles.value = '';
+        importStatus.textContent = 'Restored seed data';
+        renderPage();
+      } catch {
+        importStatus.textContent = 'Unable to reset live data';
+      }
     });
   }
 
@@ -819,16 +909,27 @@ function wireEvents() {
 
 async function init() {
   const seeded = window.__LITTLE_LEAGUE_DATA__;
-  if (seeded) {
-    state.seedData = normalizeData(seeded);
-    state.data = normalizeData(seeded);
-  } else {
-    const response = await fetch('little-league-data.json');
+  try {
+    const response = await fetch(DATA_API_URL, { cache: 'no-store' });
+    if (!response.ok) throw new Error('API unavailable');
     const json = await response.json();
+    state.liveUploadsEnabled = true;
     state.seedData = normalizeData(json);
     state.data = normalizeData(json);
+  } catch {
+    state.liveUploadsEnabled = false;
+    if (seeded) {
+      state.seedData = normalizeData(seeded);
+      state.data = normalizeData(seeded);
+    } else {
+      const response = await fetch('little-league-data.json');
+      const json = await response.json();
+      state.seedData = normalizeData(json);
+      state.data = normalizeData(json);
+    }
   }
   wireEvents();
+  setUploadAvailability();
   renderPage();
 }
 

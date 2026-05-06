@@ -33,6 +33,39 @@
   gap: 14px;
 }
 
+.upload-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.upload-grid--single {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.upload-card {
+  border: 1px solid #ead8df;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #fff, #fbf6f8);
+  padding: 16px;
+  display: grid;
+  gap: 10px;
+}
+
+.upload-card h3 {
+  margin: 0;
+  font-family: 'PT Serif', Georgia, serif;
+}
+
+.hidden-file-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .intake-grid {
   grid-template-columns: minmax(0, 1.6fr) minmax(260px, 1fr);
   margin-top: 14px;
@@ -80,6 +113,12 @@
   color: inherit;
   cursor: pointer;
   font-weight: 700;
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
 }
 
 .table-button.is-active {
