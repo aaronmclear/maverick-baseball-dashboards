@@ -792,12 +792,12 @@ async function handleFiles(fileList, target = null) {
 function setUploadAvailability() {
   const buttons = document.querySelectorAll('[data-upload-team]');
   buttons.forEach(button => {
-    button.disabled = !state.liveUploadsEnabled && !previewFallbackAllowed();
+    button.disabled = false;
   });
-  if (importStatus && !state.liveUploadsEnabled && !previewFallbackAllowed()) {
-    importStatus.textContent = 'Live uploads are not enabled on this deployment yet.';
-  } else if (importStatus && state.liveUploadsEnabled) {
+  if (importStatus && state.liveUploadsEnabled) {
     importStatus.textContent = 'Live uploads enabled. Pick a team and choose the latest season file.';
+  } else if (importStatus) {
+    importStatus.textContent = 'Uploads will update this browser session only until shared live storage is configured.';
   }
 }
 
