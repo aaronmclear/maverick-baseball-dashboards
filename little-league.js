@@ -748,6 +748,106 @@ function mergeImportedRows(rows) {
   state.data = normalizeData(next);
 }
 
+function aggregateLittleLeagueRowsForPreview(rows) {
+  const playerMap = new Map();
+  let teamId = null;
+  let teamName = null;
+
+  for (const raw of rows) {
+    const row = {
+      playerId: raw.playerId || slugify(raw.name),
+      name: raw.name,
+      teamId: raw.teamId || slugify(raw.teamName),
+      teamName: raw.teamName,
+      hitting: sumStats(blankHitting(), raw.hitting || {}),
+      pitching: sumStats(blankPitching(), raw.pitching || {}),
+      fielding: sumStats({ tc: 0, a: 0, po: 0, e: 0, dp: 0 }, raw.fielding || {})
+    };
+
+    teamId = row.teamId;
+    teamName = row.teamName;
+    const existing = playerMap.get(row.playerId) || {
+      playerId: row.playerId,
+      name: row.name,
+      teamId: row.teamId,
+      hitting: blankHitting(),
+      pitching: blankPitching(),
+      fielding: { tc: 0, a: 0, po: 0, e: 0, dp: 0 }
+    };
+    existing.name = row.name;
+    existing.teamId = row.teamId;
+    existing.hitting = sumStats(existing.hitting, row.hitting);
+    existing.pitching = sumStats(existing.pitching, row.pitching);
+    existing.fielding = sumStats(existing.fielding, row.fielding);
+    playerMap.set(row.playerId, existing);
+  }
+
+  return { teamId, teamName, players: Array.from(playerMap.values()) };
+}
+
+function aggregateSelectRowsForPreview(rows, existingData) {
+  const littleLookup = new Map((existingData.littleLeaguePlayers || []).map(player => [player.playerId, player]));
+  const existingSelectLookup = new Map((existingData.selectTeam.players || []).map(player => [player.playerId, player]));
+  const playerMap = new Map();
+
+  for (const raw of rows) {
+    const row = {
+      playerId: raw.playerId || slugify(raw.name),
+      name: raw.name,
+      select: {
+        hitting: sumStats(blankHitting(), raw.hitting || {}),
+        pitching: sumStats(blankPitching(), raw.pitching || {}),
+        fielding: sumStats({ tc: 0, a: 0, po: 0, e: 0, dp: 0 }, raw.fielding || {})
+      }
+    };
+
+    const little = littleLookup.get(row.playerId);
+    const existing = existingSelectLookup.get(row.playerId);
+    const current = playerMap.get(row.playerId) || {
+      playerId: row.playerId,
+      name: row.name,
+      littleLeagueTeamId: existing?.littleLeagueTeamId || little?.teamId || null,
+      select: { hitting: blankHitting(), pitching: blankPitching(), fielding: { tc: 0, a: 0, po: 0, e: 0, dp: 0 } }
+    };
+    current.name = row.name;
+    current.littleLeagueTeamId = current.littleLeagueTeamId || little?.teamId || null;
+    current.select.hitting = sumStats(current.select.hitting, row.select.hitting);
+    current.select.pitching = sumStats(current.select.pitching, row.select.pitching);
+    current.select.fielding = sumStats(current.select.fielding, row.select.fielding);
+    playerMap.set(row.playerId, current);
+  }
+
+  return Array.from(playerMap.values());
+}
+
+function applyImportsLocally(imports) {
+  const next = normalizeData(deepClone(state.data || state.seedData));
+  const summaries = [];
+
+  for (const importFile of imports || []) {
+    const rows = Array.isArray(importFile.rows) ? importFile.rows : [];
+    if (!rows.length) continue;
+
+    const first = rows[0];
+    if (first.sourceType === 'select') {
+      next.selectTeam.players = aggregateSelectRowsForPreview(rows, next);
+      summaries.push(`replaced select stats with ${rows.length} row${rows.length === 1 ? '' : 's'}`);
+      continue;
+    }
+
+    const { teamId, teamName, players } = aggregateLittleLeagueRowsForPreview(rows);
+    if (!teamId || !teamName) continue;
+    ensureTeam(next, teamName);
+    next.littleLeaguePlayers = next.littleLeaguePlayers.filter(player => player.teamId !== teamId);
+    next.littleLeaguePlayers.push(...players);
+    summaries.push(`replaced ${teamName} with ${players.length} player${players.length === 1 ? '' : 's'}`);
+  }
+
+  next.meta.updatedAt = new Date().toISOString();
+  state.data = normalizeData(next);
+  return summaries;
+}
+
 async function handleFiles(fileList, target = null) {
   const imports = [];
   for (const file of Array.from(fileList || [])) {
@@ -781,10 +881,9 @@ async function handleFiles(fileList, target = null) {
       importStatus.textContent = 'Live upload failed. This deployment may be missing shared storage.';
       return;
     }
-    const rows = imports.flatMap(item => item.rows);
-    mergeImportedRows(rows);
+    const summaries = applyImportsLocally(imports);
     state.importedFiles = [...state.importedFiles, ...imports.map(item => item.name)];
-    importStatus.textContent = `${rows.length} row${rows.length === 1 ? '' : 's'} merged into this local preview`;
+    importStatus.textContent = summaries.join(' • ') || 'Preview updated in this browser only';
   }
   renderPage();
 }
