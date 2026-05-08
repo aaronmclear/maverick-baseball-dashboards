@@ -1,7 +1,7 @@
 window.__LITTLE_LEAGUE_DATA__ = {
   "meta": {
     "title": "MILL Majors Statistics",
-    "updatedAt": "2026-05-08T21:50:15.298889+00:00"
+    "updatedAt": "2026-05-08T21:57:21.286474+00:00"
   },
   "teams": [
     {
@@ -2174,85 +2174,41 @@ window.__LITTLE_LEAGUE_DATA__ = {
         "littleLeagueTeamId": "dodgers",
         "select": {
           "hitting": {
-            "gp": 14,
-            "pa": 44,
-            "ab": 32,
-            "h": 18,
-            "singles": 13,
-            "doubles": 4,
+            "gp": 20,
+            "pa": 62,
+            "ab": 46,
+            "h": 24,
+            "singles": 17,
+            "doubles": 6,
             "triples": 0,
             "hr": 1,
-            "rbi": 13,
-            "runs": 17,
-            "bb": 11,
+            "rbi": 19,
+            "runs": 19,
+            "bb": 15,
             "so": 3,
-            "sb": 10,
+            "sb": 13,
             "hbp": 1,
             "sf": 0
           },
           "pitching": {
-            "ipOuts": 14,
-            "pitches": 94,
-            "hAllowed": 7,
-            "r": 8,
+            "ipOuts": 20,
+            "pitches": 128,
+            "hAllowed": 8,
+            "r": 9,
             "er": 2,
-            "bb": 5,
-            "so": 6,
+            "bb": 7,
+            "so": 8,
             "kLooking": 3,
             "wins": 0,
             "losses": 0,
-            "abAgainst": 22
+            "abAgainst": 29
           },
           "fielding": {
-            "tc": 22,
-            "a": 0,
-            "po": 20,
-            "e": 2,
-            "dp": 0
-          }
-        }
-      },
-      {
-        "playerId": "william-tong",
-        "name": "William Tong",
-        "littleLeagueTeamId": "dodgers",
-        "select": {
-          "hitting": {
-            "gp": 14,
-            "pa": 45,
-            "ab": 41,
-            "h": 21,
-            "singles": 13,
-            "doubles": 3,
-            "triples": 4,
-            "hr": 1,
-            "rbi": 15,
-            "runs": 18,
-            "bb": 4,
-            "so": 6,
-            "sb": 11,
-            "hbp": 0,
-            "sf": 0
-          },
-          "pitching": {
-            "ipOuts": 35,
-            "pitches": 228,
-            "hAllowed": 18,
-            "r": 16,
-            "er": 12,
-            "bb": 7,
-            "so": 18,
-            "kLooking": 5,
-            "wins": 1,
-            "losses": 0,
-            "abAgainst": 54
-          },
-          "fielding": {
-            "tc": 47,
+            "tc": 48,
             "a": 1,
-            "po": 41,
+            "po": 42,
             "e": 5,
-            "dp": 4
+            "dp": 3
           }
         }
       },
@@ -2301,90 +2257,46 @@ window.__LITTLE_LEAGUE_DATA__ = {
         }
       },
       {
-        "playerId": "maverick-mclear",
-        "name": "Maverick McLear",
+        "playerId": "william-tong",
+        "name": "William Tong",
         "littleLeagueTeamId": "dodgers",
         "select": {
           "hitting": {
-            "gp": 14,
-            "pa": 44,
-            "ab": 37,
-            "h": 18,
+            "gp": 20,
+            "pa": 65,
+            "ab": 58,
+            "h": 28,
             "singles": 16,
-            "doubles": 1,
-            "triples": 1,
-            "hr": 0,
+            "doubles": 6,
+            "triples": 4,
+            "hr": 2,
             "rbi": 19,
-            "runs": 12,
-            "bb": 6,
-            "so": 9,
+            "runs": 23,
+            "bb": 7,
+            "so": 12,
             "sb": 17,
-            "hbp": 1,
+            "hbp": 0,
             "sf": 0
           },
           "pitching": {
-            "ipOuts": 31,
-            "pitches": 253,
-            "hAllowed": 15,
-            "r": 28,
-            "er": 10,
-            "bb": 16,
-            "so": 14,
-            "kLooking": 4,
-            "wins": 0,
-            "losses": 1,
-            "abAgainst": 52
-          },
-          "fielding": {
-            "tc": 31,
-            "a": 7,
-            "po": 19,
-            "e": 5,
-            "dp": 0
-          }
-        }
-      },
-      {
-        "playerId": "jack-stangel",
-        "name": "Jack Stangel",
-        "littleLeagueTeamId": "padres",
-        "select": {
-          "hitting": {
-            "gp": 14,
-            "pa": 47,
-            "ab": 33,
-            "h": 15,
-            "singles": 12,
-            "doubles": 1,
-            "triples": 2,
-            "hr": 0,
-            "rbi": 14,
-            "runs": 18,
+            "ipOuts": 58,
+            "pitches": 353,
+            "hAllowed": 29,
+            "r": 26,
+            "er": 18,
             "bb": 10,
-            "so": 6,
-            "sb": 17,
-            "hbp": 2,
-            "sf": 2
-          },
-          "pitching": {
-            "ipOuts": 33,
-            "pitches": 203,
-            "hAllowed": 11,
-            "r": 12,
-            "er": 4,
-            "bb": 8,
-            "so": 9,
-            "kLooking": 6,
+            "so": 23,
+            "kLooking": 5,
             "wins": 1,
             "losses": 0,
-            "abAgainst": 46
+            "abAgainst": 89
           },
           "fielding": {
-            "tc": 57,
-            "a": 17,
-            "po": 37,
-            "e": 3,
-            "dp": 4
+            "tc": 81,
+            "a": 4,
+            "po": 71,
+            "e": 6,
+            "dp": 5
           }
         }
       },
@@ -2394,40 +2306,128 @@ window.__LITTLE_LEAGUE_DATA__ = {
         "littleLeagueTeamId": "dodgers",
         "select": {
           "hitting": {
-            "gp": 15,
-            "pa": 51,
-            "ab": 39,
-            "h": 17,
-            "singles": 9,
-            "doubles": 5,
+            "gp": 21,
+            "pa": 72,
+            "ab": 56,
+            "h": 26,
+            "singles": 14,
+            "doubles": 8,
             "triples": 3,
-            "hr": 0,
-            "rbi": 22,
-            "runs": 20,
-            "bb": 9,
+            "hr": 1,
+            "rbi": 36,
+            "runs": 26,
+            "bb": 12,
             "so": 9,
-            "sb": 24,
+            "sb": 34,
             "hbp": 2,
-            "sf": 1
+            "sf": 2
           },
           "pitching": {
-            "ipOuts": 32,
-            "pitches": 238,
-            "hAllowed": 11,
-            "r": 17,
-            "er": 11,
-            "bb": 14,
-            "so": 13,
-            "kLooking": 4,
+            "ipOuts": 39,
+            "pitches": 290,
+            "hAllowed": 15,
+            "r": 23,
+            "er": 16,
+            "bb": 17,
+            "so": 17,
+            "kLooking": 6,
             "wins": 0,
             "losses": 0,
-            "abAgainst": 45
+            "abAgainst": 56
           },
           "fielding": {
-            "tc": 44,
-            "a": 22,
-            "po": 15,
-            "e": 7,
+            "tc": 75,
+            "a": 41,
+            "po": 26,
+            "e": 8,
+            "dp": 7
+          }
+        }
+      },
+      {
+        "playerId": "maverick-mclear",
+        "name": "Maverick McLear",
+        "littleLeagueTeamId": "dodgers",
+        "select": {
+          "hitting": {
+            "gp": 20,
+            "pa": 64,
+            "ab": 54,
+            "h": 24,
+            "singles": 19,
+            "doubles": 3,
+            "triples": 1,
+            "hr": 1,
+            "rbi": 22,
+            "runs": 17,
+            "bb": 8,
+            "so": 14,
+            "sb": 20,
+            "hbp": 2,
+            "sf": 0
+          },
+          "pitching": {
+            "ipOuts": 42,
+            "pitches": 313,
+            "hAllowed": 20,
+            "r": 30,
+            "er": 11,
+            "bb": 17,
+            "so": 16,
+            "kLooking": 5,
+            "wins": 0,
+            "losses": 1,
+            "abAgainst": 66
+          },
+          "fielding": {
+            "tc": 53,
+            "a": 21,
+            "po": 23,
+            "e": 9,
+            "dp": 2
+          }
+        }
+      },
+      {
+        "playerId": "jack-stangel",
+        "name": "Jack Stangel",
+        "littleLeagueTeamId": "padres",
+        "select": {
+          "hitting": {
+            "gp": 20,
+            "pa": 67,
+            "ab": 47,
+            "h": 20,
+            "singles": 16,
+            "doubles": 2,
+            "triples": 2,
+            "hr": 0,
+            "rbi": 14,
+            "runs": 25,
+            "bb": 16,
+            "so": 6,
+            "sb": 28,
+            "hbp": 2,
+            "sf": 2
+          },
+          "pitching": {
+            "ipOuts": 54,
+            "pitches": 302,
+            "hAllowed": 16,
+            "r": 18,
+            "er": 7,
+            "bb": 10,
+            "so": 18,
+            "kLooking": 13,
+            "wins": 2,
+            "losses": 0,
+            "abAgainst": 72
+          },
+          "fielding": {
+            "tc": 78,
+            "a": 25,
+            "po": 49,
+            "e": 4,
             "dp": 5
           }
         }
@@ -2438,19 +2438,19 @@ window.__LITTLE_LEAGUE_DATA__ = {
         "littleLeagueTeamId": "padres",
         "select": {
           "hitting": {
-            "gp": 15,
-            "pa": 45,
-            "ab": 35,
-            "h": 15,
-            "singles": 9,
-            "doubles": 4,
+            "gp": 20,
+            "pa": 61,
+            "ab": 48,
+            "h": 18,
+            "singles": 11,
+            "doubles": 5,
             "triples": 1,
             "hr": 1,
-            "rbi": 14,
-            "runs": 16,
-            "bb": 9,
-            "so": 6,
-            "sb": 16,
+            "rbi": 16,
+            "runs": 20,
+            "bb": 12,
+            "so": 9,
+            "sb": 22,
             "hbp": 0,
             "sf": 1
           },
@@ -2468,9 +2468,9 @@ window.__LITTLE_LEAGUE_DATA__ = {
             "abAgainst": 7
           },
           "fielding": {
-            "tc": 24,
+            "tc": 25,
             "a": 3,
-            "po": 17,
+            "po": 18,
             "e": 4,
             "dp": 0
           }
@@ -2482,40 +2482,40 @@ window.__LITTLE_LEAGUE_DATA__ = {
         "littleLeagueTeamId": "blue-jays",
         "select": {
           "hitting": {
-            "gp": 8,
-            "pa": 23,
-            "ab": 19,
-            "h": 8,
-            "singles": 8,
+            "gp": 14,
+            "pa": 39,
+            "ab": 29,
+            "h": 10,
+            "singles": 10,
             "doubles": 0,
             "triples": 0,
             "hr": 0,
-            "rbi": 5,
-            "runs": 9,
-            "bb": 4,
-            "so": 2,
-            "sb": 7,
-            "hbp": 0,
+            "rbi": 8,
+            "runs": 15,
+            "bb": 8,
+            "so": 3,
+            "sb": 15,
+            "hbp": 2,
             "sf": 0
           },
           "pitching": {
-            "ipOuts": 3,
-            "pitches": 11,
-            "hAllowed": 0,
-            "r": 0,
-            "er": 0,
-            "bb": 1,
-            "so": 1,
+            "ipOuts": 18,
+            "pitches": 66,
+            "hAllowed": 6,
+            "r": 3,
+            "er": 3,
+            "bb": 3,
+            "so": 2,
             "kLooking": 1,
             "wins": 0,
             "losses": 0,
-            "abAgainst": 0
+            "abAgainst": 22
           },
           "fielding": {
-            "tc": 9,
-            "a": 3,
-            "po": 3,
-            "e": 3,
+            "tc": 16,
+            "a": 8,
+            "po": 4,
+            "e": 4,
             "dp": 0
           }
         }
@@ -2526,128 +2526,40 @@ window.__LITTLE_LEAGUE_DATA__ = {
         "littleLeagueTeamId": "dodgers",
         "select": {
           "hitting": {
-            "gp": 15,
-            "pa": 51,
-            "ab": 39,
-            "h": 12,
-            "singles": 7,
-            "doubles": 3,
+            "gp": 21,
+            "pa": 71,
+            "ab": 58,
+            "h": 17,
+            "singles": 11,
+            "doubles": 4,
             "triples": 1,
             "hr": 1,
-            "rbi": 10,
-            "runs": 22,
-            "bb": 12,
-            "so": 6,
-            "sb": 14,
+            "rbi": 12,
+            "runs": 26,
+            "bb": 13,
+            "so": 8,
+            "sb": 19,
             "hbp": 0,
             "sf": 0
           },
           "pitching": {
-            "ipOuts": 50,
-            "pitches": 324,
-            "hAllowed": 17,
-            "r": 23,
-            "er": 15,
-            "bb": 19,
+            "ipOuts": 53,
+            "pitches": 363,
+            "hAllowed": 19,
+            "r": 27,
+            "er": 18,
+            "bb": 22,
             "so": 15,
             "kLooking": 6,
             "wins": 1,
             "losses": 0,
-            "abAgainst": 68
+            "abAgainst": 73
           },
           "fielding": {
-            "tc": 43,
+            "tc": 51,
             "a": 5,
-            "po": 34,
-            "e": 4,
-            "dp": 0
-          }
-        }
-      },
-      {
-        "playerId": "holden-norman",
-        "name": "Holden Norman",
-        "littleLeagueTeamId": "dodgers",
-        "select": {
-          "hitting": {
-            "gp": 9,
-            "pa": 26,
-            "ab": 23,
-            "h": 6,
-            "singles": 6,
-            "doubles": 0,
-            "triples": 0,
-            "hr": 0,
-            "rbi": 0,
-            "runs": 6,
-            "bb": 3,
-            "so": 6,
-            "sb": 7,
-            "hbp": 0,
-            "sf": 0
-          },
-          "pitching": {
-            "ipOuts": 6,
-            "pitches": 38,
-            "hAllowed": 3,
-            "r": 2,
-            "er": 2,
-            "bb": 1,
-            "so": 2,
-            "kLooking": 2,
-            "wins": 0,
-            "losses": 0,
-            "abAgainst": 8
-          },
-          "fielding": {
-            "tc": 8,
-            "a": 3,
-            "po": 5,
-            "e": 0,
-            "dp": 0
-          }
-        }
-      },
-      {
-        "playerId": "jasper-crosby",
-        "name": "Jasper Crosby",
-        "littleLeagueTeamId": "dodgers",
-        "select": {
-          "hitting": {
-            "gp": 14,
-            "pa": 39,
-            "ab": 27,
-            "h": 6,
-            "singles": 5,
-            "doubles": 1,
-            "triples": 0,
-            "hr": 0,
-            "rbi": 1,
-            "runs": 9,
-            "bb": 11,
-            "so": 15,
-            "sb": 5,
-            "hbp": 1,
-            "sf": 0
-          },
-          "pitching": {
-            "ipOuts": 0,
-            "pitches": 0,
-            "hAllowed": 0,
-            "r": 0,
-            "er": 0,
-            "bb": 0,
-            "so": 0,
-            "kLooking": 0,
-            "wins": 0,
-            "losses": 0,
-            "abAgainst": 0
-          },
-          "fielding": {
-            "tc": 31,
-            "a": 4,
-            "po": 20,
-            "e": 7,
+            "po": 41,
+            "e": 5,
             "dp": 0
           }
         }
@@ -2692,6 +2604,94 @@ window.__LITTLE_LEAGUE_DATA__ = {
             "a": 0,
             "po": 3,
             "e": 0,
+            "dp": 0
+          }
+        }
+      },
+      {
+        "playerId": "holden-norman",
+        "name": "Holden Norman",
+        "littleLeagueTeamId": "dodgers",
+        "select": {
+          "hitting": {
+            "gp": 15,
+            "pa": 42,
+            "ab": 36,
+            "h": 7,
+            "singles": 6,
+            "doubles": 1,
+            "triples": 0,
+            "hr": 0,
+            "rbi": 2,
+            "runs": 9,
+            "bb": 5,
+            "so": 7,
+            "sb": 9,
+            "hbp": 1,
+            "sf": 0
+          },
+          "pitching": {
+            "ipOuts": 22,
+            "pitches": 128,
+            "hAllowed": 13,
+            "r": 11,
+            "er": 8,
+            "bb": 5,
+            "so": 6,
+            "kLooking": 3,
+            "wins": 0,
+            "losses": 0,
+            "abAgainst": 35
+          },
+          "fielding": {
+            "tc": 17,
+            "a": 6,
+            "po": 9,
+            "e": 2,
+            "dp": 0
+          }
+        }
+      },
+      {
+        "playerId": "jasper-crosby",
+        "name": "Jasper Crosby",
+        "littleLeagueTeamId": "dodgers",
+        "select": {
+          "hitting": {
+            "gp": 20,
+            "pa": 55,
+            "ab": 38,
+            "h": 7,
+            "singles": 5,
+            "doubles": 2,
+            "triples": 0,
+            "hr": 0,
+            "rbi": 3,
+            "runs": 12,
+            "bb": 16,
+            "so": 20,
+            "sb": 6,
+            "hbp": 1,
+            "sf": 0
+          },
+          "pitching": {
+            "ipOuts": 0,
+            "pitches": 0,
+            "hAllowed": 0,
+            "r": 0,
+            "er": 0,
+            "bb": 0,
+            "so": 0,
+            "kLooking": 0,
+            "wins": 0,
+            "losses": 0,
+            "abAgainst": 0
+          },
+          "fielding": {
+            "tc": 42,
+            "a": 5,
+            "po": 30,
+            "e": 7,
             "dp": 0
           }
         }
