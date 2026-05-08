@@ -66,6 +66,18 @@
   pointer-events: none;
 }
 
+.status-banner {
+  margin-top: 14px;
+  border: 1px solid #ead8df;
+  border-radius: 14px;
+  background: #fbf6f8;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 12px 14px;
+  min-height: 44px;
+}
+
 .intake-grid {
   grid-template-columns: minmax(0, 1.6fr) minmax(260px, 1fr);
   margin-top: 14px;

@@ -940,6 +940,9 @@ function wireEvents() {
         source: uploadButton.dataset.uploadSource,
         teamName: uploadButton.dataset.uploadTeam
       };
+      if (importStatus) {
+        importStatus.textContent = `Selected ${state.pendingUploadTarget.teamName}. Choose the latest file to replace that team.`;
+      }
       teamFiles.value = '';
       teamFiles.click();
     }
