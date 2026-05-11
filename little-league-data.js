@@ -1,7 +1,7 @@
 window.__LITTLE_LEAGUE_DATA__ = {
   "meta": {
     "title": "MILL Majors Statistics",
-    "updatedAt": "2026-05-08T21:57:21.286474+00:00"
+    "updatedAt": "2026-05-11T19:12:03.744473+00:00"
   },
   "teams": [
     {
@@ -2169,46 +2169,310 @@ window.__LITTLE_LEAGUE_DATA__ = {
     "name": "MI 11U Maroon",
     "players": [
       {
+        "playerId": "kellen-marshall",
+        "name": "Kellen Marshall",
+        "littleLeagueTeamId": "dodgers",
+        "select": {
+          "hitting": {
+            "gp": 25,
+            "pa": 85,
+            "ab": 67,
+            "h": 33,
+            "singles": 19,
+            "doubles": 10,
+            "triples": 3,
+            "hr": 1,
+            "rbi": 37,
+            "runs": 33,
+            "bb": 14,
+            "so": 9,
+            "sb": 40,
+            "hbp": 2,
+            "sf": 2
+          },
+          "pitching": {
+            "ipOuts": 43,
+            "pitches": 316,
+            "hAllowed": 18,
+            "r": 26,
+            "er": 18,
+            "bb": 18,
+            "so": 18,
+            "kLooking": 6,
+            "wins": 0,
+            "losses": 0,
+            "abAgainst": 64
+          },
+          "fielding": {
+            "tc": 85,
+            "a": 45,
+            "po": 30,
+            "e": 10,
+            "dp": 7
+          }
+        }
+      },
+      {
         "playerId": "ymir-skulason",
         "name": "Ymir Skulason",
         "littleLeagueTeamId": "dodgers",
         "select": {
           "hitting": {
-            "gp": 20,
-            "pa": 62,
-            "ab": 46,
-            "h": 24,
+            "gp": 24,
+            "pa": 74,
+            "ab": 53,
+            "h": 25,
             "singles": 17,
             "doubles": 6,
-            "triples": 0,
+            "triples": 1,
             "hr": 1,
-            "rbi": 19,
-            "runs": 19,
-            "bb": 15,
+            "rbi": 23,
+            "runs": 21,
+            "bb": 18,
             "so": 3,
-            "sb": 13,
-            "hbp": 1,
-            "sf": 0
+            "sb": 14,
+            "hbp": 2,
+            "sf": 1
           },
           "pitching": {
-            "ipOuts": 20,
-            "pitches": 128,
-            "hAllowed": 8,
-            "r": 9,
-            "er": 2,
-            "bb": 7,
-            "so": 8,
+            "ipOuts": 24,
+            "pitches": 160,
+            "hAllowed": 9,
+            "r": 10,
+            "er": 3,
+            "bb": 11,
+            "so": 9,
             "kLooking": 3,
             "wins": 0,
             "losses": 0,
-            "abAgainst": 29
+            "abAgainst": 33
           },
           "fielding": {
-            "tc": 48,
+            "tc": 53,
             "a": 1,
-            "po": 42,
-            "e": 5,
+            "po": 46,
+            "e": 6,
             "dp": 3
+          }
+        }
+      },
+      {
+        "playerId": "william-tong",
+        "name": "William Tong",
+        "littleLeagueTeamId": "dodgers",
+        "select": {
+          "hitting": {
+            "gp": 24,
+            "pa": 77,
+            "ab": 69,
+            "h": 32,
+            "singles": 20,
+            "doubles": 6,
+            "triples": 4,
+            "hr": 2,
+            "rbi": 20,
+            "runs": 25,
+            "bb": 8,
+            "so": 14,
+            "sb": 20,
+            "hbp": 0,
+            "sf": 0
+          },
+          "pitching": {
+            "ipOuts": 68,
+            "pitches": 434,
+            "hAllowed": 35,
+            "r": 33,
+            "er": 22,
+            "bb": 15,
+            "so": 26,
+            "kLooking": 6,
+            "wins": 1,
+            "losses": 0,
+            "abAgainst": 107
+          },
+          "fielding": {
+            "tc": 104,
+            "a": 7,
+            "po": 89,
+            "e": 8,
+            "dp": 5
+          }
+        }
+      },
+      {
+        "playerId": "maverick-mclear",
+        "name": "Maverick McLear",
+        "littleLeagueTeamId": "dodgers",
+        "select": {
+          "hitting": {
+            "gp": 24,
+            "pa": 76,
+            "ab": 63,
+            "h": 28,
+            "singles": 21,
+            "doubles": 5,
+            "triples": 1,
+            "hr": 1,
+            "rbi": 23,
+            "runs": 19,
+            "bb": 10,
+            "so": 16,
+            "sb": 28,
+            "hbp": 3,
+            "sf": 0
+          },
+          "pitching": {
+            "ipOuts": 52,
+            "pitches": 373,
+            "hAllowed": 25,
+            "r": 34,
+            "er": 13,
+            "bb": 19,
+            "so": 21,
+            "kLooking": 6,
+            "wins": 0,
+            "losses": 1,
+            "abAgainst": 80
+          },
+          "fielding": {
+            "tc": 61,
+            "a": 24,
+            "po": 26,
+            "e": 11,
+            "dp": 3
+          }
+        }
+      },
+      {
+        "playerId": "jack-stangel",
+        "name": "Jack Stangel",
+        "littleLeagueTeamId": "padres",
+        "select": {
+          "hitting": {
+            "gp": 24,
+            "pa": 80,
+            "ab": 60,
+            "h": 26,
+            "singles": 21,
+            "doubles": 2,
+            "triples": 3,
+            "hr": 0,
+            "rbi": 19,
+            "runs": 26,
+            "bb": 16,
+            "so": 8,
+            "sb": 32,
+            "hbp": 2,
+            "sf": 2
+          },
+          "pitching": {
+            "ipOuts": 65,
+            "pitches": 369,
+            "hAllowed": 27,
+            "r": 26,
+            "er": 7,
+            "bb": 11,
+            "so": 22,
+            "kLooking": 16,
+            "wins": 2,
+            "losses": 0,
+            "abAgainst": 92
+          },
+          "fielding": {
+            "tc": 82,
+            "a": 26,
+            "po": 51,
+            "e": 5,
+            "dp": 5
+          }
+        }
+      },
+      {
+        "playerId": "isaiah-kirtman",
+        "name": "Isaiah Kirtman",
+        "littleLeagueTeamId": "padres",
+        "select": {
+          "hitting": {
+            "gp": 24,
+            "pa": 73,
+            "ab": 58,
+            "h": 21,
+            "singles": 14,
+            "doubles": 5,
+            "triples": 1,
+            "hr": 1,
+            "rbi": 19,
+            "runs": 24,
+            "bb": 13,
+            "so": 10,
+            "sb": 27,
+            "hbp": 1,
+            "sf": 1
+          },
+          "pitching": {
+            "ipOuts": 4,
+            "pitches": 50,
+            "hAllowed": 3,
+            "r": 3,
+            "er": 3,
+            "bb": 4,
+            "so": 1,
+            "kLooking": 0,
+            "wins": 0,
+            "losses": 0,
+            "abAgainst": 7
+          },
+          "fielding": {
+            "tc": 28,
+            "a": 4,
+            "po": 20,
+            "e": 4,
+            "dp": 1
+          }
+        }
+      },
+      {
+        "playerId": "tyler-wu",
+        "name": "Tyler Wu",
+        "littleLeagueTeamId": "blue-jays",
+        "select": {
+          "hitting": {
+            "gp": 18,
+            "pa": 49,
+            "ab": 36,
+            "h": 13,
+            "singles": 13,
+            "doubles": 0,
+            "triples": 0,
+            "hr": 0,
+            "rbi": 9,
+            "runs": 19,
+            "bb": 10,
+            "so": 3,
+            "sb": 21,
+            "hbp": 3,
+            "sf": 0
+          },
+          "pitching": {
+            "ipOuts": 22,
+            "pitches": 89,
+            "hAllowed": 11,
+            "r": 7,
+            "er": 6,
+            "bb": 3,
+            "so": 2,
+            "kLooking": 1,
+            "wins": 0,
+            "losses": 0,
+            "abAgainst": 31
+          },
+          "fielding": {
+            "tc": 23,
+            "a": 9,
+            "po": 9,
+            "e": 5,
+            "dp": 0
           }
         }
       },
@@ -2221,8 +2485,8 @@ window.__LITTLE_LEAGUE_DATA__ = {
             "gp": 4,
             "pa": 7,
             "ab": 6,
-            "h": 3,
-            "singles": 3,
+            "h": 2,
+            "singles": 2,
             "doubles": 0,
             "triples": 0,
             "hr": 0,
@@ -2257,288 +2521,24 @@ window.__LITTLE_LEAGUE_DATA__ = {
         }
       },
       {
-        "playerId": "william-tong",
-        "name": "William Tong",
-        "littleLeagueTeamId": "dodgers",
-        "select": {
-          "hitting": {
-            "gp": 20,
-            "pa": 65,
-            "ab": 58,
-            "h": 28,
-            "singles": 16,
-            "doubles": 6,
-            "triples": 4,
-            "hr": 2,
-            "rbi": 19,
-            "runs": 23,
-            "bb": 7,
-            "so": 12,
-            "sb": 17,
-            "hbp": 0,
-            "sf": 0
-          },
-          "pitching": {
-            "ipOuts": 58,
-            "pitches": 353,
-            "hAllowed": 29,
-            "r": 26,
-            "er": 18,
-            "bb": 10,
-            "so": 23,
-            "kLooking": 5,
-            "wins": 1,
-            "losses": 0,
-            "abAgainst": 89
-          },
-          "fielding": {
-            "tc": 81,
-            "a": 4,
-            "po": 71,
-            "e": 6,
-            "dp": 5
-          }
-        }
-      },
-      {
-        "playerId": "kellen-marshall",
-        "name": "Kellen Marshall",
-        "littleLeagueTeamId": "dodgers",
-        "select": {
-          "hitting": {
-            "gp": 21,
-            "pa": 72,
-            "ab": 56,
-            "h": 26,
-            "singles": 14,
-            "doubles": 8,
-            "triples": 3,
-            "hr": 1,
-            "rbi": 36,
-            "runs": 26,
-            "bb": 12,
-            "so": 9,
-            "sb": 34,
-            "hbp": 2,
-            "sf": 2
-          },
-          "pitching": {
-            "ipOuts": 39,
-            "pitches": 290,
-            "hAllowed": 15,
-            "r": 23,
-            "er": 16,
-            "bb": 17,
-            "so": 17,
-            "kLooking": 6,
-            "wins": 0,
-            "losses": 0,
-            "abAgainst": 56
-          },
-          "fielding": {
-            "tc": 75,
-            "a": 41,
-            "po": 26,
-            "e": 8,
-            "dp": 7
-          }
-        }
-      },
-      {
-        "playerId": "maverick-mclear",
-        "name": "Maverick McLear",
-        "littleLeagueTeamId": "dodgers",
-        "select": {
-          "hitting": {
-            "gp": 20,
-            "pa": 64,
-            "ab": 54,
-            "h": 24,
-            "singles": 19,
-            "doubles": 3,
-            "triples": 1,
-            "hr": 1,
-            "rbi": 22,
-            "runs": 17,
-            "bb": 8,
-            "so": 14,
-            "sb": 20,
-            "hbp": 2,
-            "sf": 0
-          },
-          "pitching": {
-            "ipOuts": 42,
-            "pitches": 313,
-            "hAllowed": 20,
-            "r": 30,
-            "er": 11,
-            "bb": 17,
-            "so": 16,
-            "kLooking": 5,
-            "wins": 0,
-            "losses": 1,
-            "abAgainst": 66
-          },
-          "fielding": {
-            "tc": 53,
-            "a": 21,
-            "po": 23,
-            "e": 9,
-            "dp": 2
-          }
-        }
-      },
-      {
-        "playerId": "jack-stangel",
-        "name": "Jack Stangel",
-        "littleLeagueTeamId": "padres",
-        "select": {
-          "hitting": {
-            "gp": 20,
-            "pa": 67,
-            "ab": 47,
-            "h": 20,
-            "singles": 16,
-            "doubles": 2,
-            "triples": 2,
-            "hr": 0,
-            "rbi": 14,
-            "runs": 25,
-            "bb": 16,
-            "so": 6,
-            "sb": 28,
-            "hbp": 2,
-            "sf": 2
-          },
-          "pitching": {
-            "ipOuts": 54,
-            "pitches": 302,
-            "hAllowed": 16,
-            "r": 18,
-            "er": 7,
-            "bb": 10,
-            "so": 18,
-            "kLooking": 13,
-            "wins": 2,
-            "losses": 0,
-            "abAgainst": 72
-          },
-          "fielding": {
-            "tc": 78,
-            "a": 25,
-            "po": 49,
-            "e": 4,
-            "dp": 5
-          }
-        }
-      },
-      {
-        "playerId": "isaiah-kirtman",
-        "name": "Isaiah Kirtman",
-        "littleLeagueTeamId": "padres",
-        "select": {
-          "hitting": {
-            "gp": 20,
-            "pa": 61,
-            "ab": 48,
-            "h": 18,
-            "singles": 11,
-            "doubles": 5,
-            "triples": 1,
-            "hr": 1,
-            "rbi": 16,
-            "runs": 20,
-            "bb": 12,
-            "so": 9,
-            "sb": 22,
-            "hbp": 0,
-            "sf": 1
-          },
-          "pitching": {
-            "ipOuts": 4,
-            "pitches": 50,
-            "hAllowed": 3,
-            "r": 3,
-            "er": 3,
-            "bb": 4,
-            "so": 1,
-            "kLooking": 0,
-            "wins": 0,
-            "losses": 0,
-            "abAgainst": 7
-          },
-          "fielding": {
-            "tc": 25,
-            "a": 3,
-            "po": 18,
-            "e": 4,
-            "dp": 0
-          }
-        }
-      },
-      {
-        "playerId": "tyler-wu",
-        "name": "Tyler Wu",
-        "littleLeagueTeamId": "blue-jays",
-        "select": {
-          "hitting": {
-            "gp": 14,
-            "pa": 39,
-            "ab": 29,
-            "h": 10,
-            "singles": 10,
-            "doubles": 0,
-            "triples": 0,
-            "hr": 0,
-            "rbi": 8,
-            "runs": 15,
-            "bb": 8,
-            "so": 3,
-            "sb": 15,
-            "hbp": 2,
-            "sf": 0
-          },
-          "pitching": {
-            "ipOuts": 18,
-            "pitches": 66,
-            "hAllowed": 6,
-            "r": 3,
-            "er": 3,
-            "bb": 3,
-            "so": 2,
-            "kLooking": 1,
-            "wins": 0,
-            "losses": 0,
-            "abAgainst": 22
-          },
-          "fielding": {
-            "tc": 16,
-            "a": 8,
-            "po": 4,
-            "e": 4,
-            "dp": 0
-          }
-        }
-      },
-      {
         "playerId": "charlie-gregory",
         "name": "Charlie Gregory",
         "littleLeagueTeamId": "dodgers",
         "select": {
           "hitting": {
-            "gp": 21,
-            "pa": 71,
-            "ab": 58,
-            "h": 17,
-            "singles": 11,
-            "doubles": 4,
-            "triples": 1,
+            "gp": 25,
+            "pa": 84,
+            "ab": 67,
+            "h": 21,
+            "singles": 13,
+            "doubles": 5,
+            "triples": 2,
             "hr": 1,
-            "rbi": 12,
-            "runs": 26,
-            "bb": 13,
-            "so": 8,
-            "sb": 19,
+            "rbi": 16,
+            "runs": 31,
+            "bb": 17,
+            "so": 9,
+            "sb": 24,
             "hbp": 0,
             "sf": 0
           },
@@ -2556,10 +2556,10 @@ window.__LITTLE_LEAGUE_DATA__ = {
             "abAgainst": 73
           },
           "fielding": {
-            "tc": 51,
-            "a": 5,
-            "po": 41,
-            "e": 5,
+            "tc": 72,
+            "a": 6,
+            "po": 60,
+            "e": 6,
             "dp": 0
           }
         }
@@ -2609,68 +2609,24 @@ window.__LITTLE_LEAGUE_DATA__ = {
         }
       },
       {
-        "playerId": "holden-norman",
-        "name": "Holden Norman",
-        "littleLeagueTeamId": "dodgers",
-        "select": {
-          "hitting": {
-            "gp": 15,
-            "pa": 42,
-            "ab": 36,
-            "h": 7,
-            "singles": 6,
-            "doubles": 1,
-            "triples": 0,
-            "hr": 0,
-            "rbi": 2,
-            "runs": 9,
-            "bb": 5,
-            "so": 7,
-            "sb": 9,
-            "hbp": 1,
-            "sf": 0
-          },
-          "pitching": {
-            "ipOuts": 22,
-            "pitches": 128,
-            "hAllowed": 13,
-            "r": 11,
-            "er": 8,
-            "bb": 5,
-            "so": 6,
-            "kLooking": 3,
-            "wins": 0,
-            "losses": 0,
-            "abAgainst": 35
-          },
-          "fielding": {
-            "tc": 17,
-            "a": 6,
-            "po": 9,
-            "e": 2,
-            "dp": 0
-          }
-        }
-      },
-      {
         "playerId": "jasper-crosby",
         "name": "Jasper Crosby",
         "littleLeagueTeamId": "dodgers",
         "select": {
           "hitting": {
-            "gp": 20,
-            "pa": 55,
-            "ab": 38,
-            "h": 7,
-            "singles": 5,
+            "gp": 24,
+            "pa": 67,
+            "ab": 48,
+            "h": 9,
+            "singles": 6,
             "doubles": 2,
             "triples": 0,
-            "hr": 0,
-            "rbi": 3,
-            "runs": 12,
-            "bb": 16,
-            "so": 20,
-            "sb": 6,
+            "hr": 1,
+            "rbi": 7,
+            "runs": 15,
+            "bb": 18,
+            "so": 25,
+            "sb": 8,
             "hbp": 1,
             "sf": 0
           },
@@ -2688,10 +2644,54 @@ window.__LITTLE_LEAGUE_DATA__ = {
             "abAgainst": 0
           },
           "fielding": {
-            "tc": 42,
+            "tc": 46,
             "a": 5,
-            "po": 30,
-            "e": 7,
+            "po": 32,
+            "e": 9,
+            "dp": 0
+          }
+        }
+      },
+      {
+        "playerId": "holden-norman",
+        "name": "Holden Norman",
+        "littleLeagueTeamId": "dodgers",
+        "select": {
+          "hitting": {
+            "gp": 19,
+            "pa": 51,
+            "ab": 44,
+            "h": 8,
+            "singles": 7,
+            "doubles": 1,
+            "triples": 0,
+            "hr": 0,
+            "rbi": 4,
+            "runs": 9,
+            "bb": 5,
+            "so": 9,
+            "sb": 10,
+            "hbp": 2,
+            "sf": 0
+          },
+          "pitching": {
+            "ipOuts": 42,
+            "pitches": 230,
+            "hAllowed": 19,
+            "r": 17,
+            "er": 9,
+            "bb": 8,
+            "so": 11,
+            "kLooking": 4,
+            "wins": 0,
+            "losses": 0,
+            "abAgainst": 62
+          },
+          "fielding": {
+            "tc": 24,
+            "a": 8,
+            "po": 13,
+            "e": 3,
             "dp": 0
           }
         }
