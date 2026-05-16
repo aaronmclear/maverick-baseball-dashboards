@@ -1,7 +1,7 @@
 window.__LITTLE_LEAGUE_DATA__ = {
   "meta": {
     "title": "MILL Majors Statistics",
-    "updatedAt": "2026-05-16T02:21:32.597574+00:00"
+    "updatedAt": "2026-05-16T16:17:58.912723+00:00"
   },
   "teams": [
     {
@@ -2651,53 +2651,6 @@ window.__LITTLE_LEAGUE_DATA__ = {
         }
       },
       {
-        "playerId": "jack-maclean",
-        "name": "Jack MacLean",
-        "littleLeagueTeamId": "blue-jays",
-        "select": {
-          "hitting": {
-            "gp": 4,
-            "pa": 7,
-            "ab": 6,
-            "h": 2,
-            "singles": 2,
-            "doubles": 0,
-            "triples": 0,
-            "hr": 0,
-            "rbi": 1,
-            "runs": 1,
-            "bb": 1,
-            "so": 2,
-            "sb": 0,
-            "hbp": 0,
-            "sf": 0
-          },
-          "pitching": {
-            "ipOuts": 0,
-            "bf": 0,
-            "strikePct": 0,
-            "pitches": 0,
-            "firstPitchStrikePct": 0,
-            "hAllowed": 0,
-            "r": 0,
-            "er": 0,
-            "bb": 0,
-            "so": 0,
-            "kLooking": 0,
-            "wins": 0,
-            "losses": 0,
-            "abAgainst": 0
-          },
-          "fielding": {
-            "tc": 0,
-            "a": 0,
-            "po": 0,
-            "e": 0,
-            "dp": 0
-          }
-        }
-      },
-      {
         "playerId": "charlie-gregory",
         "name": "Charlie Gregory",
         "littleLeagueTeamId": "dodgers",
@@ -2740,53 +2693,6 @@ window.__LITTLE_LEAGUE_DATA__ = {
             "a": 6,
             "po": 60,
             "e": 6,
-            "dp": 0
-          }
-        }
-      },
-      {
-        "playerId": "elliott-nice",
-        "name": "Elliott Nice",
-        "littleLeagueTeamId": "mariners",
-        "select": {
-          "hitting": {
-            "gp": 5,
-            "pa": 6,
-            "ab": 5,
-            "h": 1,
-            "singles": 1,
-            "doubles": 0,
-            "triples": 0,
-            "hr": 0,
-            "rbi": 1,
-            "runs": 2,
-            "bb": 1,
-            "so": 3,
-            "sb": 2,
-            "hbp": 0,
-            "sf": 0
-          },
-          "pitching": {
-            "ipOuts": 5,
-            "bf": 6,
-            "strikePct": 61.11,
-            "pitches": 18,
-            "firstPitchStrikePct": 50.0,
-            "hAllowed": 0,
-            "r": 0,
-            "er": 0,
-            "bb": 1,
-            "so": 1,
-            "kLooking": 0,
-            "wins": 0,
-            "losses": 0,
-            "abAgainst": 0
-          },
-          "fielding": {
-            "tc": 3,
-            "a": 0,
-            "po": 3,
-            "e": 0,
             "dp": 0
           }
         }
