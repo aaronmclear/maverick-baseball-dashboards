@@ -15,12 +15,14 @@ const statSets = {
   pitching: [
     { key: 'innings', label: 'IP', type: 'innings', higherIsBetter: true },
     { key: 'pitches', label: '#P', type: 'count', higherIsBetter: true },
+    { key: 'firstPitchStrikePct', label: 'FPS%', type: 'percent', higherIsBetter: true },
     { key: 'hAllowed', label: 'H', type: 'count', higherIsBetter: false },
     { key: 'runsAllowed', label: 'R', type: 'count', higherIsBetter: false },
     { key: 'earnedRuns', label: 'ER', type: 'count', higherIsBetter: false },
     { key: 'walksAllowed', label: 'BB', type: 'count', higherIsBetter: false },
     { key: 'strikeouts', label: 'K', type: 'count', higherIsBetter: true },
     { key: 'kLooking', label: 'K-L', type: 'count', higherIsBetter: true },
+    { key: 'kPercent', label: 'K%', type: 'percent', higherIsBetter: true },
     { key: 'era', label: 'ERA', type: 'rate', higherIsBetter: false },
     { key: 'whip', label: 'WHIP', type: 'rate', higherIsBetter: false },
     { key: 'baa', label: 'BAA', type: 'rate', higherIsBetter: false }
@@ -71,6 +73,9 @@ const headerAliases = {
   ipouts: 'ipOuts',
   bf: 'bf',
   batters_faced: 'bf',
+  fps: 'firstPitchStrikePct',
+  fps_percent: 'firstPitchStrikePct',
+  first_pitch_strike_pct: 'firstPitchStrikePct',
   h_allowed: 'hAllowed',
   hits_allowed: 'hAllowed',
   er: 'er',
@@ -85,7 +90,7 @@ const headerAliases = {
 
 const numericFields = [
   'gp', 'pa', 'ab', 'h', 'singles', 'doubles', 'triples', 'hr', 'rbi', 'runs', 'bb', 'hbp', 'sf', 'so', 'sb',
-  'ipOuts', 'pitches', 'hAllowed', 'r', 'er', 'bb', 'kLooking', 'wins', 'losses', 'abAgainst',
+  'ipOuts', 'pitches', 'bf', 'firstPitchStrikePct', 'hAllowed', 'r', 'er', 'bb', 'kLooking', 'wins', 'losses', 'abAgainst',
   'tc', 'a', 'po', 'e', 'dp'
 ];
 
@@ -127,7 +132,7 @@ function blankHitting() {
 }
 
 function blankPitching() {
-  return { ipOuts: 0, pitches: 0, hAllowed: 0, r: 0, er: 0, bb: 0, so: 0, kLooking: 0, wins: 0, losses: 0, abAgainst: 0 };
+  return { ipOuts: 0, pitches: 0, bf: 0, firstPitchStrikePct: 0, hAllowed: 0, r: 0, er: 0, bb: 0, so: 0, kLooking: 0, wins: 0, losses: 0, abAgainst: 0 };
 }
 
 function deepClone(value) {
@@ -241,15 +246,18 @@ function derivePitching(stats) {
   const era = stats.ipOuts ? ((stats.er || 0) * 27) / stats.ipOuts : NaN;
   const whip = stats.ipOuts ? (((stats.hAllowed || 0) + (stats.bb || 0)) * 3) / stats.ipOuts : NaN;
   const baa = stats.abAgainst ? (stats.hAllowed || 0) / stats.abAgainst : NaN;
+  const kPercent = stats.bf ? (stats.so || 0) / stats.bf : NaN;
   return {
     innings,
     pitches: stats.pitches || 0,
+    firstPitchStrikePct: Number.isFinite(stats.firstPitchStrikePct) ? (stats.firstPitchStrikePct / 100) : NaN,
     hAllowed: stats.hAllowed || 0,
     runsAllowed: stats.r || 0,
     earnedRuns: stats.er || 0,
     walksAllowed: stats.bb || 0,
     strikeouts: stats.so || 0,
     kLooking: stats.kLooking || 0,
+    kPercent,
     era,
     whip,
     baa
@@ -606,7 +614,9 @@ function parseGameChangerCsv(text, name) {
         },
         pitching: {
           ipOuts: ipToOuts(entry['Pitching:IP']),
+          bf: toNumber(entry['Pitching:BF']),
           pitches: toNumber(entry['Pitching:#P']),
+          firstPitchStrikePct: toNumber(entry['Pitching:FPS%']),
           hAllowed,
           r: toNumber(entry['Pitching:R']),
           er: toNumber(entry['Pitching:ER']),
@@ -705,7 +715,7 @@ function mergeImportedRows(rows) {
       rbi: row.rbi, runs: row.runs, bb: row.bb, hbp: row.hbp, sf: row.sf, so: row.so, sb: row.sb
     };
     const pitching = {
-      ipOuts: row.ipOuts, pitches: row.pitches, hAllowed: row.hAllowed, r: row.r || 0, er: row.er, bb: row.bbAllowed || row.bb || 0,
+      ipOuts: row.ipOuts, pitches: row.pitches, bf: row.bf || 0, firstPitchStrikePct: row.firstPitchStrikePct || 0, hAllowed: row.hAllowed, r: row.r || 0, er: row.er, bb: row.bbAllowed || row.bb || 0,
       so: row.soPitched || row.so || 0, kLooking: row.kLooking || 0, wins: row.wins || 0, losses: row.losses || 0, abAgainst: row.abAgainst || 0
     };
     const fielding = { tc: row.tc || 0, a: row.a || 0, po: row.po || 0, e: row.e || 0, dp: row.dp || 0 };
