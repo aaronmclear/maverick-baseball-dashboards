@@ -210,6 +210,50 @@ function sumStats(base, incoming) {
   return next;
 }
 
+function estimateBallsInPlay(stats) {
+  const ab = Number(stats?.ab) || 0;
+  const so = Number(stats?.so) || 0;
+  const hr = Number(stats?.hr) || 0;
+  const sf = Number(stats?.sf) || 0;
+  return Math.max(ab - so - hr + sf, 0);
+}
+
+function mergeHittingStats(base, incoming) {
+  const next = sumStats(base, incoming);
+  const basePa = Number(base?.pa) || 0;
+  const incomingPa = Number(incoming?.pa) || 0;
+  const totalPa = basePa + incomingPa;
+  const baseQabPct = Number(base?.qabPct);
+  const incomingQabPct = Number(incoming?.qabPct);
+  const baseBip = estimateBallsInPlay(base);
+  const incomingBip = estimateBallsInPlay(incoming);
+  const totalBip = baseBip + incomingBip;
+
+  if (totalPa > 0) {
+    next.qabPct = (
+      ((Number.isFinite(baseQabPct) ? baseQabPct : 0) * basePa) +
+      ((Number.isFinite(incomingQabPct) ? incomingQabPct : 0) * incomingPa)
+    ) / totalPa;
+  } else {
+    next.qabPct = Number.isFinite(incomingQabPct) ? incomingQabPct : (Number.isFinite(baseQabPct) ? baseQabPct : 0);
+  }
+
+  for (const key of ['ldPct', 'fbPct', 'gbPct']) {
+    const baseValue = Number(base?.[key]);
+    const incomingValue = Number(incoming?.[key]);
+    if (totalBip > 0) {
+      next[key] = (
+        ((Number.isFinite(baseValue) ? baseValue : 0) * baseBip) +
+        ((Number.isFinite(incomingValue) ? incomingValue : 0) * incomingBip)
+      ) / totalBip;
+    } else {
+      next[key] = Number.isFinite(incomingValue) ? incomingValue : (Number.isFinite(baseValue) ? baseValue : 0);
+    }
+  }
+
+  return next;
+}
+
 function mergePitchingStats(base, incoming) {
   const next = sumStats(base, incoming);
   const baseBf = Number(base?.bf) || 0;
@@ -259,7 +303,7 @@ function normalizeData(raw) {
 
   for (const player of data.littleLeaguePlayers) {
     player.playerId = player.playerId || slugify(player.name);
-    player.hitting = sumStats(blankHitting(), player.hitting || {});
+    player.hitting = mergeHittingStats(blankHitting(), player.hitting || {});
     player.pitching = mergePitchingStats(blankPitching(), player.pitching || {});
     player.fielding = sumStats({ tc: 0, a: 0, po: 0, e: 0, dp: 0 }, player.fielding || {});
   }
@@ -267,7 +311,7 @@ function normalizeData(raw) {
   for (const player of data.selectTeam.players) {
     player.playerId = player.playerId || slugify(player.name);
     player.select = player.select || {};
-    player.select.hitting = sumStats(blankHitting(), player.select.hitting || {});
+    player.select.hitting = mergeHittingStats(blankHitting(), player.select.hitting || {});
     player.select.pitching = mergePitchingStats(blankPitching(), player.select.pitching || {});
     player.select.fielding = sumStats({ tc: 0, a: 0, po: 0, e: 0, dp: 0 }, player.select.fielding || {});
   }
@@ -287,6 +331,15 @@ function deriveHitting(stats) {
   const obp = obpDenominator ? ((stats.h || 0) + (stats.bb || 0) + (stats.hbp || 0)) / obpDenominator : NaN;
   const slg = stats.ab ? totalBases / stats.ab : NaN;
   const ops = Number.isFinite(obp) && Number.isFinite(slg) ? obp + slg : NaN;
+  const qabPct = stats.pa ? (stats.qab || 0) / stats.pa : normalizePercentValue(stats.qabPct);
+  const ballsInPlay = estimateBallsInPlay(stats);
+  const ldPct = ballsInPlay ? normalizePercentValue((stats.ldPct || 0)) : normalizePercentValue(stats.ldPct);
+  const fbPct = ballsInPlay ? normalizePercentValue((stats.fbPct || 0)) : normalizePercentValue(stats.fbPct);
+  const gbPct = ballsInPlay ? normalizePercentValue((stats.gbPct || 0)) : normalizePercentValue(stats.gbPct);
+  const babipDenominator = (stats.ab || 0) - (stats.so || 0) - (stats.hr || 0) + (stats.sf || 0);
+  const babip = babipDenominator > 0
+    ? ((stats.h || 0) - (stats.hr || 0)) / babipDenominator
+    : (Number.isFinite(stats.babip) ? stats.babip : NaN);
   return {
     ab: stats.ab || 0,
     avg,
@@ -300,11 +353,11 @@ function deriveHitting(stats) {
     so: stats.so || 0,
     sb: stats.sb || 0,
     qab: stats.qab || 0,
-    qabPct: normalizePercentValue(stats.qabPct),
-    ldPct: normalizePercentValue(stats.ldPct),
-    fbPct: normalizePercentValue(stats.fbPct),
-    gbPct: normalizePercentValue(stats.gbPct),
-    babip: Number.isFinite(stats.babip) ? stats.babip : NaN
+    qabPct,
+    ldPct,
+    fbPct,
+    gbPct,
+    babip
   };
 }
 
@@ -377,7 +430,7 @@ function selectRows(data, scope) {
     const selectHitting = player.select?.hitting || blankHitting();
     const selectPitching = player.select?.pitching || blankPitching();
     const selectFielding = player.select?.fielding || { tc: 0, a: 0, po: 0, e: 0, dp: 0 };
-    const hitting = scope === 'combined' ? sumStats(littleHitting, selectHitting) : scope === 'littleLeague' ? littleHitting : selectHitting;
+    const hitting = scope === 'combined' ? mergeHittingStats(littleHitting, selectHitting) : scope === 'littleLeague' ? littleHitting : selectHitting;
     const pitching = scope === 'combined' ? mergePitchingStats(littlePitching, selectPitching) : scope === 'littleLeague' ? littlePitching : selectPitching;
     const fielding = scope === 'combined' ? sumStats(littleFielding, selectFielding) : scope === 'littleLeague' ? littleFielding : selectFielding;
 
@@ -763,7 +816,7 @@ function mergeImportedRows(rows) {
           select: { hitting: blankHitting(), pitching: blankPitching(), fielding: { tc: 0, a: 0, po: 0, e: 0, dp: 0 } }
         };
         existing.name = rawRow.name;
-        existing.select.hitting = sumStats(existing.select.hitting, rawRow.hitting);
+        existing.select.hitting = mergeHittingStats(existing.select.hitting, rawRow.hitting);
         existing.select.pitching = mergePitchingStats(existing.select.pitching, rawRow.pitching);
         existing.select.fielding = sumStats(existing.select.fielding, rawRow.fielding);
         selectMap.set(rawRow.playerId, existing);
@@ -779,7 +832,7 @@ function mergeImportedRows(rows) {
         };
         existing.name = rawRow.name;
         existing.teamId = rawRow.teamId;
-        existing.hitting = sumStats(existing.hitting, rawRow.hitting);
+        existing.hitting = mergeHittingStats(existing.hitting, rawRow.hitting);
         existing.pitching = mergePitchingStats(existing.pitching, rawRow.pitching);
         existing.fielding = sumStats(existing.fielding || { tc: 0, a: 0, po: 0, e: 0, dp: 0 }, rawRow.fielding);
         littleMap.set(rawRow.playerId, existing);
@@ -810,7 +863,7 @@ function mergeImportedRows(rows) {
       };
       existing.name = row.player_name;
       existing.littleLeagueTeamId = existing.littleLeagueTeamId || teamId;
-      existing.select.hitting = sumStats(existing.select.hitting, hitting);
+      existing.select.hitting = mergeHittingStats(existing.select.hitting, hitting);
       existing.select.pitching = mergePitchingStats(existing.select.pitching, pitching);
       existing.select.fielding = sumStats(existing.select.fielding, fielding);
       selectMap.set(row.player_id, existing);
@@ -827,7 +880,7 @@ function mergeImportedRows(rows) {
     };
     existing.name = row.player_name;
     existing.teamId = teamId;
-    existing.hitting = sumStats(existing.hitting, hitting);
+    existing.hitting = mergeHittingStats(existing.hitting, hitting);
     existing.pitching = mergePitchingStats(existing.pitching, pitching);
     existing.fielding = sumStats(existing.fielding, fielding);
     littleMap.set(row.player_id, existing);
@@ -850,7 +903,7 @@ function aggregateLittleLeagueRowsForPreview(rows) {
       name: raw.name,
       teamId: raw.teamId || slugify(raw.teamName),
       teamName: raw.teamName,
-      hitting: sumStats(blankHitting(), raw.hitting || {}),
+      hitting: mergeHittingStats(blankHitting(), raw.hitting || {}),
       pitching: mergePitchingStats(blankPitching(), raw.pitching || {}),
       fielding: sumStats({ tc: 0, a: 0, po: 0, e: 0, dp: 0 }, raw.fielding || {})
     };
@@ -867,7 +920,7 @@ function aggregateLittleLeagueRowsForPreview(rows) {
     };
     existing.name = row.name;
     existing.teamId = row.teamId;
-    existing.hitting = sumStats(existing.hitting, row.hitting);
+    existing.hitting = mergeHittingStats(existing.hitting, row.hitting);
     existing.pitching = mergePitchingStats(existing.pitching, row.pitching);
     existing.fielding = sumStats(existing.fielding, row.fielding);
     playerMap.set(row.playerId, existing);
@@ -886,7 +939,7 @@ function aggregateSelectRowsForPreview(rows, existingData) {
       playerId: raw.playerId || slugify(raw.name),
       name: raw.name,
       select: {
-        hitting: sumStats(blankHitting(), raw.hitting || {}),
+        hitting: mergeHittingStats(blankHitting(), raw.hitting || {}),
         pitching: mergePitchingStats(blankPitching(), raw.pitching || {}),
         fielding: sumStats({ tc: 0, a: 0, po: 0, e: 0, dp: 0 }, raw.fielding || {})
       }
@@ -902,7 +955,7 @@ function aggregateSelectRowsForPreview(rows, existingData) {
     };
     current.name = row.name;
     current.littleLeagueTeamId = current.littleLeagueTeamId || little?.teamId || null;
-    current.select.hitting = sumStats(current.select.hitting, row.select.hitting);
+    current.select.hitting = mergeHittingStats(current.select.hitting, row.select.hitting);
     current.select.pitching = mergePitchingStats(current.select.pitching, row.select.pitching);
     current.select.fielding = sumStats(current.select.fielding, row.select.fielding);
     playerMap.set(row.playerId, current);
