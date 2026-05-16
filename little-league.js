@@ -10,7 +10,13 @@ const statSets = {
     { key: 'so', label: 'SO', type: 'count', higherIsBetter: false },
     { key: 'runs', label: 'R', type: 'count', higherIsBetter: true },
     { key: 'rbi', label: 'RBI', type: 'count', higherIsBetter: true },
-    { key: 'sb', label: 'SB', type: 'count', higherIsBetter: true }
+    { key: 'sb', label: 'SB', type: 'count', higherIsBetter: true },
+    { key: 'qab', label: 'QAB', type: 'count', higherIsBetter: true },
+    { key: 'qabPct', label: 'QAB%', type: 'percent', higherIsBetter: true },
+    { key: 'ldPct', label: 'LD%', type: 'percent', higherIsBetter: true },
+    { key: 'fbPct', label: 'FB%', type: 'percent', higherIsBetter: true },
+    { key: 'gbPct', label: 'GB%', type: 'percent', higherIsBetter: true },
+    { key: 'babip', label: 'BABIP', type: 'rate', higherIsBetter: true }
   ],
   pitching: [
     { key: 'innings', label: 'IP', type: 'innings', higherIsBetter: true },
@@ -69,6 +75,12 @@ const headerAliases = {
   strikeouts: 'so',
   sb: 'sb',
   stolen_bases: 'sb',
+  qab: 'qab',
+  qab_percent: 'qabPct',
+  ld_percent: 'ldPct',
+  fb_percent: 'fbPct',
+  gb_percent: 'gbPct',
+  babip: 'babip',
   ip_outs: 'ipOuts',
   ipouts: 'ipOuts',
   bf: 'bf',
@@ -93,7 +105,7 @@ const headerAliases = {
 };
 
 const numericFields = [
-  'gp', 'pa', 'ab', 'h', 'singles', 'doubles', 'triples', 'hr', 'rbi', 'runs', 'bb', 'hbp', 'sf', 'so', 'sb',
+  'gp', 'pa', 'ab', 'h', 'singles', 'doubles', 'triples', 'hr', 'rbi', 'runs', 'bb', 'hbp', 'sf', 'so', 'sb', 'qab', 'qabPct', 'ldPct', 'fbPct', 'gbPct', 'babip',
   'ipOuts', 'pitches', 'bf', 'strikePct', 'firstPitchStrikePct', 'hAllowed', 'r', 'er', 'bb', 'kLooking', 'wins', 'losses', 'abAgainst',
   'tc', 'a', 'po', 'e', 'dp'
 ];
@@ -133,7 +145,7 @@ function previewFallbackAllowed() {
 }
 
 function blankHitting() {
-  return { gp: 0, pa: 0, ab: 0, h: 0, singles: 0, doubles: 0, triples: 0, hr: 0, rbi: 0, runs: 0, bb: 0, hbp: 0, sf: 0, so: 0, sb: 0 };
+  return { gp: 0, pa: 0, ab: 0, h: 0, singles: 0, doubles: 0, triples: 0, hr: 0, rbi: 0, runs: 0, bb: 0, hbp: 0, sf: 0, so: 0, sb: 0, qab: 0, qabPct: 0, ldPct: 0, fbPct: 0, gbPct: 0, babip: 0 };
 }
 
 function blankPitching() {
@@ -286,7 +298,13 @@ function deriveHitting(stats) {
     runs: stats.runs || 0,
     bb: stats.bb || 0,
     so: stats.so || 0,
-    sb: stats.sb || 0
+    sb: stats.sb || 0,
+    qab: stats.qab || 0,
+    qabPct: normalizePercentValue(stats.qabPct),
+    ldPct: normalizePercentValue(stats.ldPct),
+    fbPct: normalizePercentValue(stats.fbPct),
+    gbPct: normalizePercentValue(stats.gbPct),
+    babip: Number.isFinite(stats.babip) ? stats.babip : NaN
   };
 }
 
@@ -664,6 +682,12 @@ function parseGameChangerCsv(text, name) {
           bb: toNumber(entry['Batting:BB']),
           so: toNumber(entry['Batting:SO']),
           sb: toNumber(entry['Batting:SB']),
+          qab: toNumber(entry['Batting:QAB']),
+          qabPct: toNumber(entry['Batting:QAB%']),
+          ldPct: toNumber(entry['Batting:LD%']),
+          fbPct: toNumber(entry['Batting:FB%']),
+          gbPct: toNumber(entry['Batting:GB%']),
+          babip: toNumber(entry['Batting:BABIP']),
           hbp: toNumber(entry['Batting:HBP']),
           sf: toNumber(entry['Batting:SF'])
         },
@@ -768,7 +792,8 @@ function mergeImportedRows(rows) {
     const teamId = ensureTeam(next, row.team);
     const hitting = {
       gp: row.g || row.gp, pa: row.pa, ab: row.ab, h: row.h, singles: row.singles || 0, doubles: row.doubles, triples: row.triples, hr: row.hr,
-      rbi: row.rbi, runs: row.runs, bb: row.bb, hbp: row.hbp, sf: row.sf, so: row.so, sb: row.sb
+      rbi: row.rbi, runs: row.runs, bb: row.bb, hbp: row.hbp, sf: row.sf, so: row.so, sb: row.sb,
+      qab: row.qab || 0, qabPct: row.qabPct || 0, ldPct: row.ldPct || 0, fbPct: row.fbPct || 0, gbPct: row.gbPct || 0, babip: row.babip || 0
     };
     const pitching = {
       ipOuts: row.ipOuts, pitches: row.pitches, bf: row.bf || 0, strikePct: row.strikePct || 0, firstPitchStrikePct: row.firstPitchStrikePct || 0, hAllowed: row.hAllowed, r: row.r || 0, er: row.er, bb: row.bbAllowed || row.bb || 0,
