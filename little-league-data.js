@@ -1,7 +1,7 @@
 window.__LITTLE_LEAGUE_DATA__ = {
   "meta": {
     "title": "MILL Majors Statistics",
-    "updatedAt": "2026-05-16T02:10:37.731766+00:00"
+    "updatedAt": "2026-05-16T02:21:32.597574+00:00"
   },
   "teams": [
     {
@@ -46,6 +46,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 22,
         "bf": 37,
+        "strikePct": 63.64,
         "pitches": 132,
         "firstPitchStrikePct": 62.16,
         "hAllowed": 11,
@@ -90,6 +91,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 23,
         "bf": 36,
+        "strikePct": 60.28,
         "pitches": 141,
         "firstPitchStrikePct": 58.33,
         "hAllowed": 7,
@@ -134,6 +136,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 40,
         "bf": 62,
+        "strikePct": 62.39,
         "pitches": 226,
         "firstPitchStrikePct": 72.58,
         "hAllowed": 12,
@@ -178,6 +181,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 14,
         "bf": 25,
+        "strikePct": 52.5,
         "pitches": 120,
         "firstPitchStrikePct": 56.0,
         "hAllowed": 7,
@@ -222,6 +226,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 28,
         "bf": 41,
+        "strikePct": 55.06,
         "pitches": 158,
         "firstPitchStrikePct": 56.1,
         "hAllowed": 8,
@@ -266,6 +271,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 28,
         "bf": 38,
+        "strikePct": 58.06,
         "pitches": 124,
         "firstPitchStrikePct": 55.26,
         "hAllowed": 7,
@@ -310,6 +316,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 3,
         "bf": 7,
+        "strikePct": 33.33,
         "pitches": 18,
         "firstPitchStrikePct": 57.14,
         "hAllowed": 2,
@@ -354,6 +361,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 5,
         "bf": 12,
+        "strikePct": 55.0,
         "pitches": 40,
         "firstPitchStrikePct": 66.67,
         "hAllowed": 6,
@@ -398,6 +406,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 3,
         "bf": 5,
+        "strikePct": 25.0,
         "pitches": 24,
         "firstPitchStrikePct": 40.0,
         "hAllowed": 1,
@@ -442,6 +451,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 15,
         "bf": 31,
+        "strikePct": 42.06,
         "pitches": 126,
         "firstPitchStrikePct": 41.94,
         "hAllowed": 5,
@@ -486,6 +496,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 2,
         "bf": 9,
+        "strikePct": 34.04,
         "pitches": 47,
         "firstPitchStrikePct": 11.11,
         "hAllowed": 0,
@@ -530,6 +541,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 2,
         "bf": 10,
+        "strikePct": 31.11,
         "pitches": 45,
         "firstPitchStrikePct": 30.0,
         "hAllowed": 2,
@@ -574,6 +586,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 24,
         "bf": 39,
+        "strikePct": 55.77,
         "pitches": 156,
         "firstPitchStrikePct": 56.41,
         "hAllowed": 7,
@@ -618,6 +631,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 20,
         "bf": 30,
+        "strikePct": 54.87,
         "pitches": 113,
         "firstPitchStrikePct": 66.67,
         "hAllowed": 6,
@@ -662,6 +676,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 33,
         "bf": 56,
+        "strikePct": 63.11,
         "pitches": 206,
         "firstPitchStrikePct": 73.21,
         "hAllowed": 12,
@@ -706,6 +721,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 6,
         "bf": 19,
+        "strikePct": 48.57,
         "pitches": 70,
         "firstPitchStrikePct": 47.37,
         "hAllowed": 9,
@@ -750,6 +766,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 36,
         "bf": 62,
+        "strikePct": 57.21,
         "pitches": 201,
         "firstPitchStrikePct": 58.06,
         "hAllowed": 17,
@@ -794,6 +811,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 0,
         "bf": 0,
+        "strikePct": 0,
         "pitches": 0,
         "firstPitchStrikePct": 0,
         "hAllowed": 0,
@@ -838,6 +856,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 25,
         "bf": 42,
+        "strikePct": 55.8,
         "pitches": 138,
         "firstPitchStrikePct": 57.14,
         "hAllowed": 12,
@@ -882,6 +901,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 6,
         "bf": 11,
+        "strikePct": 70.97,
         "pitches": 31,
         "firstPitchStrikePct": 72.73,
         "hAllowed": 5,
@@ -926,6 +946,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 35,
         "bf": 66,
+        "strikePct": 49.47,
         "pitches": 281,
         "firstPitchStrikePct": 51.52,
         "hAllowed": 16,
@@ -970,6 +991,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 6,
         "bf": 11,
+        "strikePct": 44.0,
         "pitches": 50,
         "firstPitchStrikePct": 18.18,
         "hAllowed": 3,
@@ -1014,6 +1036,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 12,
         "bf": 19,
+        "strikePct": 56.72,
         "pitches": 67,
         "firstPitchStrikePct": 42.11,
         "hAllowed": 5,
@@ -1058,6 +1081,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 0,
         "bf": 0,
+        "strikePct": 0,
         "pitches": 0,
         "firstPitchStrikePct": 0,
         "hAllowed": 0,
@@ -1102,6 +1126,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 6,
         "bf": 9,
+        "strikePct": 50.0,
         "pitches": 24,
         "firstPitchStrikePct": 55.56,
         "hAllowed": 2,
@@ -1146,6 +1171,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 0,
         "bf": 0,
+        "strikePct": 0,
         "pitches": 0,
         "firstPitchStrikePct": 0,
         "hAllowed": 0,
@@ -1190,6 +1216,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 31,
         "bf": 56,
+        "strikePct": 57.29,
         "pitches": 199,
         "firstPitchStrikePct": 57.14,
         "hAllowed": 14,
@@ -1234,6 +1261,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 12,
         "bf": 22,
+        "strikePct": 57.69,
         "pitches": 78,
         "firstPitchStrikePct": 63.64,
         "hAllowed": 7,
@@ -1278,6 +1306,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 35,
         "bf": 46,
+        "strikePct": 64.32,
         "pitches": 185,
         "firstPitchStrikePct": 56.52,
         "hAllowed": 8,
@@ -1322,6 +1351,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 25,
         "bf": 47,
+        "strikePct": 60.62,
         "pitches": 160,
         "firstPitchStrikePct": 57.45,
         "hAllowed": 15,
@@ -1366,6 +1396,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 7,
         "bf": 15,
+        "strikePct": 42.19,
         "pitches": 64,
         "firstPitchStrikePct": 66.67,
         "hAllowed": 3,
@@ -1410,6 +1441,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 11,
         "bf": 32,
+        "strikePct": 44.85,
         "pitches": 136,
         "firstPitchStrikePct": 43.75,
         "hAllowed": 6,
@@ -1454,6 +1486,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 39,
         "bf": 58,
+        "strikePct": 57.51,
         "pitches": 233,
         "firstPitchStrikePct": 56.9,
         "hAllowed": 10,
@@ -1498,6 +1531,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 3,
         "bf": 4,
+        "strikePct": 41.67,
         "pitches": 12,
         "firstPitchStrikePct": 50.0,
         "hAllowed": 0,
@@ -1542,6 +1576,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 5,
         "bf": 8,
+        "strikePct": 24.24,
         "pitches": 33,
         "firstPitchStrikePct": 0.0,
         "hAllowed": 0,
@@ -1586,6 +1621,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 0,
         "bf": 3,
+        "strikePct": 10.0,
         "pitches": 10,
         "firstPitchStrikePct": 0.0,
         "hAllowed": 1,
@@ -1630,6 +1666,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 3,
         "bf": 9,
+        "strikePct": 48.57,
         "pitches": 35,
         "firstPitchStrikePct": 44.44,
         "hAllowed": 3,
@@ -1674,6 +1711,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 0,
         "bf": 0,
+        "strikePct": 0,
         "pitches": 0,
         "firstPitchStrikePct": 0,
         "hAllowed": 0,
@@ -1718,6 +1756,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 11,
         "bf": 23,
+        "strikePct": 62.96,
         "pitches": 81,
         "firstPitchStrikePct": 60.87,
         "hAllowed": 10,
@@ -1762,6 +1801,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 43,
         "bf": 67,
+        "strikePct": 65.52,
         "pitches": 232,
         "firstPitchStrikePct": 62.69,
         "hAllowed": 13,
@@ -1806,6 +1846,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 0,
         "bf": 0,
+        "strikePct": 0,
         "pitches": 0,
         "firstPitchStrikePct": 0,
         "hAllowed": 0,
@@ -1850,6 +1891,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 21,
         "bf": 43,
+        "strikePct": 58.16,
         "pitches": 141,
         "firstPitchStrikePct": 51.16,
         "hAllowed": 16,
@@ -1894,6 +1936,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 0,
         "bf": 3,
+        "strikePct": 14.29,
         "pitches": 14,
         "firstPitchStrikePct": 0.0,
         "hAllowed": 0,
@@ -1938,6 +1981,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 5,
         "bf": 10,
+        "strikePct": 38.3,
         "pitches": 47,
         "firstPitchStrikePct": 20.0,
         "hAllowed": 1,
@@ -1982,6 +2026,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 11,
         "bf": 30,
+        "strikePct": 44.54,
         "pitches": 119,
         "firstPitchStrikePct": 53.33,
         "hAllowed": 7,
@@ -2026,6 +2071,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 14,
         "bf": 25,
+        "strikePct": 65.98,
         "pitches": 97,
         "firstPitchStrikePct": 68.0,
         "hAllowed": 7,
@@ -2070,6 +2116,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 41,
         "bf": 71,
+        "strikePct": 53.28,
         "pitches": 259,
         "firstPitchStrikePct": 47.89,
         "hAllowed": 10,
@@ -2114,6 +2161,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 18,
         "bf": 30,
+        "strikePct": 59.62,
         "pitches": 104,
         "firstPitchStrikePct": 53.33,
         "hAllowed": 11,
@@ -2158,6 +2206,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 7,
         "bf": 19,
+        "strikePct": 54.93,
         "pitches": 71,
         "firstPitchStrikePct": 57.89,
         "hAllowed": 6,
@@ -2202,6 +2251,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 0,
         "bf": 0,
+        "strikePct": 0,
         "pitches": 0,
         "firstPitchStrikePct": 0,
         "hAllowed": 0,
@@ -2246,6 +2296,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
       "pitching": {
         "ipOuts": 0,
         "bf": 0,
+        "strikePct": 0,
         "pitches": 0,
         "firstPitchStrikePct": 0,
         "hAllowed": 0,
@@ -2295,6 +2346,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
           "pitching": {
             "ipOuts": 43,
             "bf": 87,
+            "strikePct": 50.32,
             "pitches": 316,
             "firstPitchStrikePct": 51.72,
             "hAllowed": 18,
@@ -2341,6 +2393,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
           "pitching": {
             "ipOuts": 24,
             "bf": 46,
+            "strikePct": 54.37,
             "pitches": 160,
             "firstPitchStrikePct": 60.87,
             "hAllowed": 9,
@@ -2387,6 +2440,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
           "pitching": {
             "ipOuts": 68,
             "bf": 124,
+            "strikePct": 61.06,
             "pitches": 434,
             "firstPitchStrikePct": 60.48,
             "hAllowed": 35,
@@ -2433,6 +2487,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
           "pitching": {
             "ipOuts": 52,
             "bf": 100,
+            "strikePct": 53.08,
             "pitches": 373,
             "firstPitchStrikePct": 56.0,
             "hAllowed": 25,
@@ -2479,6 +2534,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
           "pitching": {
             "ipOuts": 65,
             "bf": 105,
+            "strikePct": 58.81,
             "pitches": 369,
             "firstPitchStrikePct": 56.19,
             "hAllowed": 27,
@@ -2525,6 +2581,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
           "pitching": {
             "ipOuts": 4,
             "bf": 13,
+            "strikePct": 46.0,
             "pitches": 50,
             "firstPitchStrikePct": 30.77,
             "hAllowed": 3,
@@ -2571,6 +2628,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
           "pitching": {
             "ipOuts": 22,
             "bf": 34,
+            "strikePct": 62.92,
             "pitches": 89,
             "firstPitchStrikePct": 55.88,
             "hAllowed": 11,
@@ -2617,6 +2675,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
           "pitching": {
             "ipOuts": 0,
             "bf": 0,
+            "strikePct": 0,
             "pitches": 0,
             "firstPitchStrikePct": 0,
             "hAllowed": 0,
@@ -2663,6 +2722,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
           "pitching": {
             "ipOuts": 53,
             "bf": 96,
+            "strikePct": 51.79,
             "pitches": 363,
             "firstPitchStrikePct": 54.17,
             "hAllowed": 19,
@@ -2709,6 +2769,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
           "pitching": {
             "ipOuts": 5,
             "bf": 6,
+            "strikePct": 61.11,
             "pitches": 18,
             "firstPitchStrikePct": 50.0,
             "hAllowed": 0,
@@ -2755,6 +2816,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
           "pitching": {
             "ipOuts": 0,
             "bf": 0,
+            "strikePct": 0,
             "pitches": 0,
             "firstPitchStrikePct": 0,
             "hAllowed": 0,
@@ -2801,6 +2863,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
           "pitching": {
             "ipOuts": 42,
             "bf": 70,
+            "strikePct": 59.57,
             "pitches": 230,
             "firstPitchStrikePct": 54.29,
             "hAllowed": 19,
@@ -2847,6 +2910,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
           "pitching": {
             "ipOuts": 0,
             "bf": 0,
+            "strikePct": 0,
             "pitches": 0,
             "firstPitchStrikePct": 0,
             "hAllowed": 0,
@@ -2893,6 +2957,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
           "pitching": {
             "ipOuts": 3,
             "bf": 9,
+            "strikePct": 48.0,
             "pitches": 25,
             "firstPitchStrikePct": 55.56,
             "hAllowed": 1,
@@ -2939,6 +3004,7 @@ window.__LITTLE_LEAGUE_DATA__ = {
           "pitching": {
             "ipOuts": 0,
             "bf": 0,
+            "strikePct": 0,
             "pitches": 0,
             "firstPitchStrikePct": 0,
             "hAllowed": 0,

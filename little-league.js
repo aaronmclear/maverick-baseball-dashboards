@@ -22,7 +22,7 @@ const statSets = {
     { key: 'walksAllowed', label: 'BB', type: 'count', higherIsBetter: false },
     { key: 'strikeouts', label: 'K', type: 'count', higherIsBetter: true },
     { key: 'kLooking', label: 'K-L', type: 'count', higherIsBetter: true },
-    { key: 'kPercent', label: 'K%', type: 'percent', higherIsBetter: true },
+    { key: 'strikePct', label: 'Strike %', type: 'percent', higherIsBetter: true },
     { key: 'era', label: 'ERA', type: 'rate', higherIsBetter: false },
     { key: 'whip', label: 'WHIP', type: 'rate', higherIsBetter: false },
     { key: 'baa', label: 'BAA', type: 'rate', higherIsBetter: false }
@@ -73,6 +73,10 @@ const headerAliases = {
   ipouts: 'ipOuts',
   bf: 'bf',
   batters_faced: 'bf',
+  strike_pct: 'strikePct',
+  strike_percent: 'strikePct',
+  s_percent: 'strikePct',
+  s_pct: 'strikePct',
   fps: 'firstPitchStrikePct',
   fps_percent: 'firstPitchStrikePct',
   first_pitch_strike_pct: 'firstPitchStrikePct',
@@ -90,7 +94,7 @@ const headerAliases = {
 
 const numericFields = [
   'gp', 'pa', 'ab', 'h', 'singles', 'doubles', 'triples', 'hr', 'rbi', 'runs', 'bb', 'hbp', 'sf', 'so', 'sb',
-  'ipOuts', 'pitches', 'bf', 'firstPitchStrikePct', 'hAllowed', 'r', 'er', 'bb', 'kLooking', 'wins', 'losses', 'abAgainst',
+  'ipOuts', 'pitches', 'bf', 'strikePct', 'firstPitchStrikePct', 'hAllowed', 'r', 'er', 'bb', 'kLooking', 'wins', 'losses', 'abAgainst',
   'tc', 'a', 'po', 'e', 'dp'
 ];
 
@@ -132,7 +136,7 @@ function blankHitting() {
 }
 
 function blankPitching() {
-  return { ipOuts: 0, pitches: 0, bf: 0, firstPitchStrikePct: 0, hAllowed: 0, r: 0, er: 0, bb: 0, so: 0, kLooking: 0, wins: 0, losses: 0, abAgainst: 0 };
+  return { ipOuts: 0, pitches: 0, bf: 0, strikePct: 0, firstPitchStrikePct: 0, hAllowed: 0, r: 0, er: 0, bb: 0, so: 0, kLooking: 0, wins: 0, losses: 0, abAgainst: 0 };
 }
 
 function deepClone(value) {
@@ -200,6 +204,8 @@ function mergePitchingStats(base, incoming) {
   const totalBf = baseBf + incomingBf;
   const baseFps = Number(base?.firstPitchStrikePct);
   const incomingFps = Number(incoming?.firstPitchStrikePct);
+  const baseStrikePct = Number(base?.strikePct);
+  const incomingStrikePct = Number(incoming?.strikePct);
 
   if (totalBf > 0) {
     next.firstPitchStrikePct = (
@@ -212,6 +218,19 @@ function mergePitchingStats(base, incoming) {
     next.firstPitchStrikePct = baseFps;
   } else {
     next.firstPitchStrikePct = 0;
+  }
+
+  if (totalBf > 0) {
+    next.strikePct = (
+      ((Number.isFinite(baseStrikePct) ? baseStrikePct : 0) * baseBf) +
+      ((Number.isFinite(incomingStrikePct) ? incomingStrikePct : 0) * incomingBf)
+    ) / totalBf;
+  } else if (Number.isFinite(incomingStrikePct)) {
+    next.strikePct = incomingStrikePct;
+  } else if (Number.isFinite(baseStrikePct)) {
+    next.strikePct = baseStrikePct;
+  } else {
+    next.strikePct = 0;
   }
 
   return next;
@@ -275,7 +294,9 @@ function derivePitching(stats) {
   const era = stats.ipOuts ? ((stats.er || 0) * 27) / stats.ipOuts : NaN;
   const whip = stats.ipOuts ? (((stats.hAllowed || 0) + (stats.bb || 0)) * 3) / stats.ipOuts : NaN;
   const baa = stats.abAgainst ? (stats.hAllowed || 0) / stats.abAgainst : NaN;
-  const kPercent = stats.bf ? normalizePercentValue((stats.so || 0) / stats.bf) : NaN;
+  const strikePct = Number.isFinite(stats.strikePct)
+    ? normalizePercentValue(stats.strikePct)
+    : NaN;
   return {
     innings,
     pitches: stats.pitches || 0,
@@ -286,7 +307,7 @@ function derivePitching(stats) {
     walksAllowed: stats.bb || 0,
     strikeouts: stats.so || 0,
     kLooking: stats.kLooking || 0,
-    kPercent,
+    strikePct,
     era,
     whip,
     baa
@@ -644,6 +665,7 @@ function parseGameChangerCsv(text, name) {
         pitching: {
           ipOuts: ipToOuts(entry['Pitching:IP']),
           bf: toNumber(entry['Pitching:BF']),
+          strikePct: toNumber(entry['Pitching:S%']),
           pitches: toNumber(entry['Pitching:#P']),
           firstPitchStrikePct: toNumber(entry['Pitching:FPS%']),
           hAllowed,
@@ -744,7 +766,7 @@ function mergeImportedRows(rows) {
       rbi: row.rbi, runs: row.runs, bb: row.bb, hbp: row.hbp, sf: row.sf, so: row.so, sb: row.sb
     };
     const pitching = {
-      ipOuts: row.ipOuts, pitches: row.pitches, bf: row.bf || 0, firstPitchStrikePct: row.firstPitchStrikePct || 0, hAllowed: row.hAllowed, r: row.r || 0, er: row.er, bb: row.bbAllowed || row.bb || 0,
+      ipOuts: row.ipOuts, pitches: row.pitches, bf: row.bf || 0, strikePct: row.strikePct || 0, firstPitchStrikePct: row.firstPitchStrikePct || 0, hAllowed: row.hAllowed, r: row.r || 0, er: row.er, bb: row.bbAllowed || row.bb || 0,
       so: row.soPitched || row.so || 0, kLooking: row.kLooking || 0, wins: row.wins || 0, losses: row.losses || 0, abAgainst: row.abAgainst || 0
     };
     const fielding = { tc: row.tc || 0, a: row.a || 0, po: row.po || 0, e: row.e || 0, dp: row.dp || 0 };
