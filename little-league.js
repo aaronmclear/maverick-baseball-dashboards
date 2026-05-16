@@ -15,6 +15,7 @@ const statSets = {
   pitching: [
     { key: 'innings', label: 'IP', type: 'innings', higherIsBetter: true },
     { key: 'pitches', label: '#P', type: 'count', higherIsBetter: true },
+    { key: 'strikePct', label: 'Strike %', type: 'percent', higherIsBetter: true },
     { key: 'firstPitchStrikePct', label: 'FPS%', type: 'percent', higherIsBetter: true },
     { key: 'hAllowed', label: 'H', type: 'count', higherIsBetter: false },
     { key: 'runsAllowed', label: 'R', type: 'count', higherIsBetter: false },
@@ -22,7 +23,6 @@ const statSets = {
     { key: 'walksAllowed', label: 'BB', type: 'count', higherIsBetter: false },
     { key: 'strikeouts', label: 'K', type: 'count', higherIsBetter: true },
     { key: 'kLooking', label: 'K-L', type: 'count', higherIsBetter: true },
-    { key: 'strikePct', label: 'Strike %', type: 'percent', higherIsBetter: true },
     { key: 'era', label: 'ERA', type: 'rate', higherIsBetter: false },
     { key: 'whip', label: 'WHIP', type: 'rate', higherIsBetter: false },
     { key: 'baa', label: 'BAA', type: 'rate', higherIsBetter: false }
