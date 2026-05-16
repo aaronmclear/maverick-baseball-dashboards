@@ -111,7 +111,8 @@ const state = {
   search: '',
   teamFilter: 'all',
   selectScope: 'combined',
-  sortKey: 'ab'
+  sortKey: 'ab',
+  sortDirection: 'desc'
 };
 
 const pageTitle = document.getElementById('statsPageTitle');
@@ -322,6 +323,10 @@ function getSortDefinition() {
   return getStatDefinitions().find(stat => stat.key === state.sortKey) || getStatDefinitions()[0];
 }
 
+function getDefaultSortDirection(definition) {
+  return definition.higherIsBetter ? 'desc' : 'asc';
+}
+
 function getComparableValue(definition, derived) {
   const value = derived[definition.key];
   if (value === Infinity) return Number.MAX_SAFE_INTEGER;
@@ -393,7 +398,7 @@ function getDerived(row, family = state.family) {
 
 function sortRows(rows) {
   const definition = getSortDefinition();
-  const direction = definition.higherIsBetter ? -1 : 1;
+  const direction = state.sortDirection === 'desc' ? -1 : 1;
 
   return [...rows].sort((a, b) => {
     const delta = getComparableValue(definition, getDerived(a)) - getComparableValue(definition, getDerived(b));
@@ -462,7 +467,7 @@ function renderTable(rows) {
       ${definitions.map(stat => `
         <th>
           <button class="table-button ${stat.key === state.sortKey ? 'is-active' : ''}" type="button" data-sort-key="${stat.key}">
-            ${stat.label}${stat.key === state.sortKey ? '<span class="sort-arrow">↓</span>' : ''}
+            ${stat.label}${stat.key === state.sortKey ? `<span class="sort-arrow">${state.sortDirection === 'desc' ? '↓' : '↑'}</span>` : ''}
           </button>
         </th>
       `).join('')}
@@ -976,14 +981,23 @@ function wireEvents() {
     const familyButton = event.target.closest('[data-family]');
     if (familyButton) {
       state.family = familyButton.dataset.family;
-      state.sortKey = getStatDefinitions()[0].key;
+      const defaultStat = getStatDefinitions()[0];
+      state.sortKey = defaultStat.key;
+      state.sortDirection = getDefaultSortDirection(defaultStat);
       renderPage();
       return;
     }
 
     const sortButton = event.target.closest('[data-sort-key]');
     if (sortButton) {
-      state.sortKey = sortButton.dataset.sortKey;
+      const nextKey = sortButton.dataset.sortKey;
+      if (state.sortKey === nextKey) {
+        state.sortDirection = state.sortDirection === 'desc' ? 'asc' : 'desc';
+      } else {
+        state.sortKey = nextKey;
+        const definition = getSortDefinition();
+        state.sortDirection = getDefaultSortDirection(definition);
+      }
       renderPage();
       return;
     }
