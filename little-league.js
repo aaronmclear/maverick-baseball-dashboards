@@ -164,6 +164,11 @@ function formatPercent(value) {
   return `${(value * 100).toFixed(1)}%`;
 }
 
+function normalizePercentValue(value) {
+  if (!Number.isFinite(value)) return NaN;
+  return value > 1 ? value / 100 : value;
+}
+
 function formatInningsFromOuts(outs) {
   if (!Number.isFinite(outs) || outs <= 0) return '0.0';
   const whole = Math.floor(outs / 3);
@@ -246,11 +251,11 @@ function derivePitching(stats) {
   const era = stats.ipOuts ? ((stats.er || 0) * 27) / stats.ipOuts : NaN;
   const whip = stats.ipOuts ? (((stats.hAllowed || 0) + (stats.bb || 0)) * 3) / stats.ipOuts : NaN;
   const baa = stats.abAgainst ? (stats.hAllowed || 0) / stats.abAgainst : NaN;
-  const kPercent = stats.bf ? (stats.so || 0) / stats.bf : NaN;
+  const kPercent = stats.bf ? normalizePercentValue((stats.so || 0) / stats.bf) : NaN;
   return {
     innings,
     pitches: stats.pitches || 0,
-    firstPitchStrikePct: Number.isFinite(stats.firstPitchStrikePct) ? (stats.firstPitchStrikePct / 100) : NaN,
+    firstPitchStrikePct: normalizePercentValue(stats.firstPitchStrikePct),
     hAllowed: stats.hAllowed || 0,
     runsAllowed: stats.r || 0,
     earnedRuns: stats.er || 0,

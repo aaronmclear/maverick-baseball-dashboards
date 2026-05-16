@@ -1,7 +1,7 @@
 window.__LITTLE_LEAGUE_DATA__ = {
   "meta": {
     "title": "MILL Majors Statistics",
-    "updatedAt": "2026-05-16T02:03:38.054058+00:00"
+    "updatedAt": "2026-05-16T02:10:37.731766+00:00"
   },
   "teams": [
     {
