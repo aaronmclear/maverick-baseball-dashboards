@@ -285,6 +285,16 @@
   color: var(--muted);
 }
 
+.stats-table tbody tr.is-guest-player td,
+.stats-table tbody tr.is-guest-player .sticky-col {
+  background: #fbf7f1;
+}
+
+.stats-table tbody tr.is-guest-player .player-link small {
+  color: #8b5b21;
+  font-weight: 800;
+}
+
 .stats-table tbody tr:hover td,
 .stats-table tbody tr:hover .sticky-col {
   background: #f5faff;

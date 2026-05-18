@@ -110,6 +110,12 @@ const numericFields = [
   'tc', 'a', 'po', 'e', 'dp'
 ];
 
+const selectGuestPlayerIds = new Set([
+  'eli-stangel',
+  'tanner-bloom',
+  'jordan-banchero'
+]);
+
 const DATA_API_URL = '/api/little-league-data';
 
 const state = {
@@ -437,6 +443,7 @@ function selectRows(data, scope) {
     return {
       playerId: player.playerId,
       name: player.name,
+      isGuest: selectGuestPlayerIds.has(player.playerId),
       teamId: player.littleLeagueTeamId || little?.teamId || 'unassigned',
       teamName: teams.get(player.littleLeagueTeamId || little?.teamId) || 'Independent',
       hitting,
@@ -472,6 +479,9 @@ function sortRows(rows) {
   const direction = state.sortDirection === 'desc' ? -1 : 1;
 
   return [...rows].sort((a, b) => {
+    if (state.page === 'select' && a.isGuest !== b.isGuest) {
+      return a.isGuest ? 1 : -1;
+    }
     const delta = getComparableValue(definition, getDerived(a)) - getComparableValue(definition, getDerived(b));
     if (delta !== 0) return delta * direction;
     return a.name.localeCompare(b.name);
@@ -547,12 +557,13 @@ function renderTable(rows) {
 
   tbody.innerHTML = sortedRows.map(row => {
     const derived = getDerived(row);
+    const playerNote = row.isGuest ? 'Guest player' : row.teamName;
     return `
-      <tr>
+      <tr class="${row.isGuest ? 'is-guest-player' : ''}">
         <td class="sticky-col sticky-name-col">
           <div class="player-link">
             <span>${row.name}</span>
-            <small>${row.teamName}</small>
+            <small>${playerNote}</small>
           </div>
         </td>
         ${definitions.map(stat => `<td>${formatValue(stat.type, derived[stat.key])}</td>`).join('')}
