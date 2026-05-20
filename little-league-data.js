@@ -19,7 +19,7 @@ function blankHitting() {
 }
 
 function blankPitching() {
-  return { ipOuts: 0, pitches: 0, bf: 0, strikePct: 0, firstPitchStrikePct: 0, hAllowed: 0, r: 0, er: 0, bb: 0, so: 0, kLooking: 0, wins: 0, losses: 0, abAgainst: 0 };
+  return { gp: 0, ipOuts: 0, pitches: 0, bf: 0, strikePct: 0, firstPitchStrikePct: 0, hAllowed: 0, r: 0, er: 0, bb: 0, so: 0, kLooking: 0, wins: 0, losses: 0, abAgainst: 0 };
 }
 
 function blankFielding() {
