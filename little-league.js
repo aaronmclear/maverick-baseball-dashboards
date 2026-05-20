@@ -488,6 +488,26 @@ function sortRows(rows) {
   });
 }
 
+function buildSelectTotalRow(rows) {
+  if (state.page !== 'select' || !['batting', 'pitching'].includes(state.family) || !rows.length) {
+    return null;
+  }
+
+  return rows.reduce((total, row) => ({
+    ...total,
+    hitting: mergeHittingStats(total.hitting, row.hitting || blankHitting()),
+    pitching: mergePitchingStats(total.pitching, row.pitching || blankPitching())
+  }), {
+    playerId: 'team-totals',
+    name: 'Team Totals',
+    teamName: rows.some(row => row.isGuest) ? 'Includes guest players' : 'Full-time roster',
+    isTotal: true,
+    hitting: blankHitting(),
+    pitching: blankPitching(),
+    fielding: { tc: 0, a: 0, po: 0, e: 0, dp: 0 }
+  });
+}
+
 function renderImportedFiles() {
   if (!importedFiles) return;
   importedFiles.innerHTML = state.importedFiles.length
@@ -539,6 +559,12 @@ function renderTabBars() {
 function renderTable(rows) {
   const definitions = getStatDefinitions();
   const sortedRows = sortRows(rows);
+  const totalRow = buildSelectTotalRow(sortedRows);
+  const fullTimeRows = sortedRows.filter(row => !row.isGuest);
+  const guestRows = sortedRows.filter(row => row.isGuest);
+  const displayRows = totalRow
+    ? [...fullTimeRows, totalRow, ...guestRows]
+    : sortedRows;
   const thead = statsTable.querySelector('thead');
   const tbody = statsTable.querySelector('tbody');
 
@@ -555,11 +581,11 @@ function renderTable(rows) {
     </tr>
   `;
 
-  tbody.innerHTML = sortedRows.map(row => {
+  tbody.innerHTML = displayRows.map(row => {
     const derived = getDerived(row);
-    const playerNote = row.isGuest ? 'Guest player' : row.teamName;
+    const playerNote = row.isTotal ? row.teamName : (row.isGuest ? 'Guest player' : row.teamName);
     return `
-      <tr class="${row.isGuest ? 'is-guest-player' : ''}">
+      <tr class="${row.isGuest ? 'is-guest-player' : ''} ${row.isTotal ? 'is-total-row' : ''}">
         <td class="sticky-col sticky-name-col">
           <div class="player-link">
             <span>${row.name}</span>

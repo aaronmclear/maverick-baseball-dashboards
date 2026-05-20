@@ -295,6 +295,23 @@
   font-weight: 800;
 }
 
+.stats-table tbody tr.is-total-row td,
+.stats-table tbody tr.is-total-row .sticky-col {
+  background: #eef6ff;
+  border-top: 2px solid #9fc4e8;
+  border-bottom: 2px solid #9fc4e8;
+  font-weight: 900;
+}
+
+.stats-table tbody tr.is-total-row .player-link {
+  color: #17324d;
+}
+
+.stats-table tbody tr.is-total-row .player-link small {
+  color: #516b83;
+  font-weight: 800;
+}
+
 .stats-table tbody tr:hover td,
 .stats-table tbody tr:hover .sticky-col {
   background: #f5faff;
