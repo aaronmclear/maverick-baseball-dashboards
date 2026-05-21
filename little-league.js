@@ -22,6 +22,7 @@ const statSets = {
     { key: 'innings', label: 'IP', type: 'innings', higherIsBetter: true },
     { key: 'pitches', label: '#P', type: 'count', higherIsBetter: true },
     { key: 'ppo', label: 'PPO', type: 'decimal', higherIsBetter: true },
+    { key: 'ppi', label: 'PPI', type: 'decimal', higherIsBetter: false },
     { key: 'strikePct', label: 'Strike %', type: 'percent', higherIsBetter: true },
     { key: 'firstPitchStrikePct', label: 'FPS%', type: 'percent', higherIsBetter: true },
     { key: 'hAllowed', label: 'H', type: 'count', higherIsBetter: false },
@@ -380,6 +381,7 @@ function derivePitching(stats) {
   const ppo = Number.isFinite(stats.ppoOverride)
     ? stats.ppoOverride
     : (stats.gp ? (stats.pitches || 0) / stats.gp : NaN);
+  const ppi = innings ? (stats.pitches || 0) / innings : NaN;
   const strikePct = Number.isFinite(stats.strikePct)
     ? normalizePercentValue(stats.strikePct)
     : NaN;
@@ -387,6 +389,7 @@ function derivePitching(stats) {
     innings,
     pitches: stats.pitches || 0,
     ppo,
+    ppi,
     firstPitchStrikePct: normalizePercentValue(stats.firstPitchStrikePct),
     hAllowed: stats.hAllowed || 0,
     runsAllowed: stats.r || 0,
