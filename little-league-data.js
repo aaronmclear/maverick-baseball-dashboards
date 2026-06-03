@@ -1,3385 +1,444 @@
-window.__LITTLE_LEAGUE_DATA__ = {
-  "meta": {
-    "title": "MILL Majors Statistics",
-    "updatedAt": "2026-05-26T20:47:17.019589+00:00"
-  },
-  "teams": [
-    {
-      "id": "dodgers",
-      "name": "Dodgers"
-    },
-    {
-      "id": "padres",
-      "name": "Padres"
-    },
-    {
-      "id": "mariners",
-      "name": "Mariners"
-    },
-    {
-      "id": "blue-jays",
-      "name": "Blue Jays"
-    }
-  ],
-  "littleLeaguePlayers": [
-    {
-      "playerId": "kellen-marshall",
-      "name": "Kellen Marshall",
-      "teamId": "dodgers",
-      "hitting": {
-        "gp": 13,
-        "pa": 42,
-        "ab": 35,
-        "h": 24,
-        "singles": 17,
-        "doubles": 7,
-        "triples": 0,
-        "hr": 0,
-        "rbi": 15,
-        "runs": 19,
-        "bb": 6,
-        "so": 3,
-        "sb": 7,
-        "qab": 25,
-        "qabPct": 59.52,
-        "ldPct": 30.3,
-        "fbPct": 24.24,
-        "gbPct": 45.45,
-        "babip": 0.727,
-        "hbp": 0,
-        "sf": 1
-      },
-      "pitching": {
-        "gp": 8,
-        "ipOuts": 30,
-        "bf": 46,
-        "strikePct": 62.8,
-        "pitches": 164,
-        "firstPitchStrikePct": 58.7,
-        "hAllowed": 12,
-        "r": 7,
-        "er": 7,
-        "bb": 1,
-        "so": 14,
-        "kLooking": 8,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 43
-      },
-      "fielding": {
-        "tc": 40,
-        "a": 22,
-        "po": 17,
-        "e": 1,
-        "dp": 2
-      }
-    },
-    {
-      "playerId": "william-tong",
-      "name": "William Tong",
-      "teamId": "dodgers",
-      "hitting": {
-        "gp": 13,
-        "pa": 41,
-        "ab": 38,
-        "h": 18,
-        "singles": 9,
-        "doubles": 5,
-        "triples": 3,
-        "hr": 1,
-        "rbi": 16,
-        "runs": 11,
-        "bb": 3,
-        "so": 7,
-        "sb": 5,
-        "qab": 25,
-        "qabPct": 60.98,
-        "ldPct": 22.58,
-        "fbPct": 19.35,
-        "gbPct": 58.06,
-        "babip": 0.567,
-        "hbp": 0,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 7,
-        "ipOuts": 33,
-        "bf": 52,
-        "strikePct": 62.18,
-        "pitches": 193,
-        "firstPitchStrikePct": 55.77,
-        "hAllowed": 13,
-        "r": 7,
-        "er": 5,
-        "bb": 5,
-        "so": 15,
-        "kLooking": 6,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 45
-      },
-      "fielding": {
-        "tc": 46,
-        "a": 4,
-        "po": 41,
-        "e": 1,
-        "dp": 0
-      }
-    },
-    {
-      "playerId": "ymir-skulason",
-      "name": "Ymir Skulason",
-      "teamId": "dodgers",
-      "hitting": {
-        "gp": 13,
-        "pa": 39,
-        "ab": 29,
-        "h": 13,
-        "singles": 8,
-        "doubles": 4,
-        "triples": 1,
-        "hr": 0,
-        "rbi": 8,
-        "runs": 10,
-        "bb": 9,
-        "so": 5,
-        "sb": 3,
-        "qab": 24,
-        "qabPct": 61.54,
-        "ldPct": 32.0,
-        "fbPct": 36.0,
-        "gbPct": 32.0,
-        "babip": 0.52,
-        "hbp": 0,
-        "sf": 1
-      },
-      "pitching": {
-        "gp": 7,
-        "ipOuts": 28,
-        "bf": 41,
-        "strikePct": 55.06,
-        "pitches": 158,
-        "firstPitchStrikePct": 56.1,
-        "hAllowed": 8,
-        "r": 7,
-        "er": 7,
-        "bb": 7,
-        "so": 13,
-        "kLooking": 4,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 34
-      },
-      "fielding": {
-        "tc": 26,
-        "a": 4,
-        "po": 22,
-        "e": 0,
-        "dp": 0
-      }
-    },
-    {
-      "playerId": "maverick-mclear",
-      "name": "Maverick McLear",
-      "teamId": "dodgers",
-      "hitting": {
-        "gp": 12,
-        "pa": 36,
-        "ab": 33,
-        "h": 14,
-        "singles": 11,
-        "doubles": 3,
-        "triples": 0,
-        "hr": 0,
-        "rbi": 9,
-        "runs": 8,
-        "bb": 2,
-        "so": 10,
-        "sb": 8,
-        "qab": 10,
-        "qabPct": 27.78,
-        "ldPct": 17.39,
-        "fbPct": 21.74,
-        "gbPct": 60.87,
-        "babip": 0.609,
-        "hbp": 1,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 9,
-        "ipOuts": 50,
-        "bf": 78,
-        "strikePct": 59.79,
-        "pitches": 291,
-        "firstPitchStrikePct": 71.79,
-        "hAllowed": 14,
-        "r": 8,
-        "er": 5,
-        "bb": 13,
-        "so": 25,
-        "kLooking": 14,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 63
-      },
-      "fielding": {
-        "tc": 41,
-        "a": 16,
-        "po": 25,
-        "e": 0,
-        "dp": 0
-      }
-    },
-    {
-      "playerId": "charlie-gregory",
-      "name": "Charlie Gregory",
-      "teamId": "dodgers",
-      "hitting": {
-        "gp": 13,
-        "pa": 42,
-        "ab": 31,
-        "h": 12,
-        "singles": 8,
-        "doubles": 4,
-        "triples": 0,
-        "hr": 0,
-        "rbi": 3,
-        "runs": 19,
-        "bb": 9,
-        "so": 7,
-        "sb": 6,
-        "qab": 25,
-        "qabPct": 59.52,
-        "ldPct": 41.67,
-        "fbPct": 29.17,
-        "gbPct": 29.17,
-        "babip": 0.5,
-        "hbp": 2,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 5,
-        "ipOuts": 14,
-        "bf": 25,
-        "strikePct": 52.5,
-        "pitches": 120,
-        "firstPitchStrikePct": 56.0,
-        "hAllowed": 7,
-        "r": 0,
-        "er": 0,
-        "bb": 5,
-        "so": 9,
-        "kLooking": 5,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 20
-      },
-      "fielding": {
-        "tc": 48,
-        "a": 5,
-        "po": 43,
-        "e": 0,
-        "dp": 0
-      }
-    },
-    {
-      "playerId": "holden-norman",
-      "name": "Holden Norman",
-      "teamId": "dodgers",
-      "hitting": {
-        "gp": 12,
-        "pa": 36,
-        "ab": 30,
-        "h": 11,
-        "singles": 10,
-        "doubles": 1,
-        "triples": 0,
-        "hr": 0,
-        "rbi": 11,
-        "runs": 8,
-        "bb": 6,
-        "so": 5,
-        "sb": 8,
-        "qab": 14,
-        "qabPct": 38.89,
-        "ldPct": 12.0,
-        "fbPct": 48.0,
-        "gbPct": 40.0,
-        "babip": 0.44,
-        "hbp": 0,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 5,
-        "ipOuts": 42,
-        "bf": 58,
-        "strikePct": 61.39,
-        "pitches": 202,
-        "firstPitchStrikePct": 63.79,
-        "hAllowed": 13,
-        "r": 7,
-        "er": 4,
-        "bb": 5,
-        "so": 17,
-        "kLooking": 7,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 53
-      },
-      "fielding": {
-        "tc": 40,
-        "a": 7,
-        "po": 30,
-        "e": 3,
-        "dp": 1
-      }
-    },
-    {
-      "playerId": "divit-kumar",
-      "name": "Divit Kumar",
-      "teamId": "dodgers",
-      "hitting": {
-        "gp": 13,
-        "pa": 35,
-        "ab": 22,
-        "h": 7,
-        "singles": 7,
-        "doubles": 0,
-        "triples": 0,
-        "hr": 0,
-        "rbi": 3,
-        "runs": 3,
-        "bb": 13,
-        "so": 13,
-        "sb": 3,
-        "qab": 21,
-        "qabPct": 60.0,
-        "ldPct": 22.22,
-        "fbPct": 22.22,
-        "gbPct": 55.56,
-        "babip": 0.778,
-        "hbp": 0,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 3,
-        "ipOuts": 5,
-        "bf": 12,
-        "strikePct": 55.0,
-        "pitches": 40,
-        "firstPitchStrikePct": 66.67,
-        "hAllowed": 6,
-        "r": 7,
-        "er": 6,
-        "bb": 4,
-        "so": 1,
-        "kLooking": 1,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 8
-      },
-      "fielding": {
-        "tc": 13,
-        "a": 2,
-        "po": 5,
-        "e": 6,
-        "dp": 0
-      }
-    },
-    {
-      "playerId": "duke-truedinger",
-      "name": "Duke Truedinger",
-      "teamId": "dodgers",
-      "hitting": {
-        "gp": 10,
-        "pa": 23,
-        "ab": 19,
-        "h": 6,
-        "singles": 4,
-        "doubles": 2,
-        "triples": 0,
-        "hr": 0,
-        "rbi": 2,
-        "runs": 4,
-        "bb": 4,
-        "so": 9,
-        "sb": 0,
-        "qab": 9,
-        "qabPct": 39.13,
-        "ldPct": 20.0,
-        "fbPct": 10.0,
-        "gbPct": 70.0,
-        "babip": 0.6,
-        "hbp": 0,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 1,
-        "ipOuts": 3,
-        "bf": 7,
-        "strikePct": 33.33,
-        "pitches": 18,
-        "firstPitchStrikePct": 57.14,
-        "hAllowed": 2,
-        "r": 2,
-        "er": 2,
-        "bb": 2,
-        "so": 0,
-        "kLooking": 0,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 5
-      },
-      "fielding": {
-        "tc": 11,
-        "a": 3,
-        "po": 7,
-        "e": 1,
-        "dp": 0
-      }
-    },
-    {
-      "playerId": "jerome-mandel",
-      "name": "Jerome Mandel",
-      "teamId": "dodgers",
-      "hitting": {
-        "gp": 13,
-        "pa": 35,
-        "ab": 29,
-        "h": 8,
-        "singles": 8,
-        "doubles": 0,
-        "triples": 0,
-        "hr": 0,
-        "rbi": 7,
-        "runs": 3,
-        "bb": 6,
-        "so": 12,
-        "sb": 4,
-        "qab": 13,
-        "qabPct": 37.14,
-        "ldPct": 17.65,
-        "fbPct": 29.41,
-        "gbPct": 52.94,
-        "babip": 0.471,
-        "hbp": 0,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 2,
-        "ipOuts": 3,
-        "bf": 5,
-        "strikePct": 25.0,
-        "pitches": 24,
-        "firstPitchStrikePct": 40.0,
-        "hAllowed": 1,
-        "r": 1,
-        "er": 1,
-        "bb": 4,
-        "so": 0,
-        "kLooking": 0,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 1
-      },
-      "fielding": {
-        "tc": 9,
-        "a": 4,
-        "po": 4,
-        "e": 1,
-        "dp": 0
-      }
-    },
-    {
-      "playerId": "jasper-crosby",
-      "name": "Jasper Crosby",
-      "teamId": "dodgers",
-      "hitting": {
-        "gp": 13,
-        "pa": 38,
-        "ab": 27,
-        "h": 6,
-        "singles": 5,
-        "doubles": 1,
-        "triples": 0,
-        "hr": 0,
-        "rbi": 3,
-        "runs": 6,
-        "bb": 9,
-        "so": 18,
-        "sb": 10,
-        "qab": 20,
-        "qabPct": 52.63,
-        "ldPct": 22.22,
-        "fbPct": 0.0,
-        "gbPct": 77.78,
-        "babip": 0.667,
-        "hbp": 2,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 5,
-        "ipOuts": 15,
-        "bf": 31,
-        "strikePct": 42.06,
-        "pitches": 126,
-        "firstPitchStrikePct": 41.94,
-        "hAllowed": 5,
-        "r": 9,
-        "er": 8,
-        "bb": 11,
-        "so": 6,
-        "kLooking": 3,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 18
-      },
-      "fielding": {
-        "tc": 49,
-        "a": 13,
-        "po": 35,
-        "e": 1,
-        "dp": 1
-      }
-    },
-    {
-      "playerId": "chance-tobin",
-      "name": "Chance Tobin",
-      "teamId": "dodgers",
-      "hitting": {
-        "gp": 7,
-        "pa": 14,
-        "ab": 12,
-        "h": 1,
-        "singles": 0,
-        "doubles": 1,
-        "triples": 0,
-        "hr": 0,
-        "rbi": 0,
-        "runs": 4,
-        "bb": 1,
-        "so": 4,
-        "sb": 0,
-        "qab": 5,
-        "qabPct": 35.71,
-        "ldPct": 0.0,
-        "fbPct": 37.5,
-        "gbPct": 62.5,
-        "babip": 0.125,
-        "hbp": 1,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 1,
-        "ipOuts": 2,
-        "bf": 9,
-        "strikePct": 34.04,
-        "pitches": 47,
-        "firstPitchStrikePct": 11.11,
-        "hAllowed": 0,
-        "r": 4,
-        "er": 4,
-        "bb": 7,
-        "so": 0,
-        "kLooking": 0,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 0
-      },
-      "fielding": {
-        "tc": 3,
-        "a": 1,
-        "po": 1,
-        "e": 1,
-        "dp": 0
-      }
-    },
-    {
-      "playerId": "luka-koch",
-      "name": "Luka Koch",
-      "teamId": "dodgers",
-      "hitting": {
-        "gp": 11,
-        "pa": 27,
-        "ab": 19,
-        "h": 0,
-        "singles": 0,
-        "doubles": 0,
-        "triples": 0,
-        "hr": 0,
-        "rbi": 0,
-        "runs": 4,
-        "bb": 8,
-        "so": 19,
-        "sb": 1,
-        "qab": 10,
-        "qabPct": 37.04,
-        "ldPct": 0,
-        "fbPct": 0,
-        "gbPct": 0,
-        "babip": 0,
-        "hbp": 0,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 2,
-        "ipOuts": 2,
-        "bf": 10,
-        "strikePct": 31.11,
-        "pitches": 45,
-        "firstPitchStrikePct": 30.0,
-        "hAllowed": 2,
-        "r": 6,
-        "er": 6,
-        "bb": 7,
-        "so": 1,
-        "kLooking": 0,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 3
-      },
-      "fielding": {
-        "tc": 3,
-        "a": 0,
-        "po": 0,
-        "e": 3,
-        "dp": 0
-      }
-    },
-    {
-      "playerId": "jack-stangel",
-      "name": "Jack Stangel",
-      "teamId": "padres",
-      "hitting": {
-        "gp": 14,
-        "pa": 45,
-        "ab": 38,
-        "h": 23,
-        "singles": 10,
-        "doubles": 10,
-        "triples": 3,
-        "hr": 0,
-        "rbi": 17,
-        "runs": 18,
-        "bb": 5,
-        "so": 4,
-        "sb": 8,
-        "qab": 25,
-        "qabPct": 55.56,
-        "ldPct": 44.12,
-        "fbPct": 20.59,
-        "gbPct": 35.29,
-        "babip": 0.676,
-        "hbp": 2,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 8,
-        "ipOuts": 27,
-        "bf": 46,
-        "strikePct": 55.56,
-        "pitches": 180,
-        "firstPitchStrikePct": 54.35,
-        "hAllowed": 8,
-        "r": 9,
-        "er": 5,
-        "bb": 9,
-        "so": 13,
-        "kLooking": 6,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 37
-      },
-      "fielding": {
-        "tc": 45,
-        "a": 18,
-        "po": 25,
-        "e": 2,
-        "dp": 3
-      }
-    },
-    {
-      "playerId": "jordan-banchero",
-      "name": "Jordan Banchero",
-      "teamId": "padres",
-      "hitting": {
-        "gp": 13,
-        "pa": 38,
-        "ab": 31,
-        "h": 16,
-        "singles": 9,
-        "doubles": 4,
-        "triples": 3,
-        "hr": 0,
-        "rbi": 10,
-        "runs": 16,
-        "bb": 5,
-        "so": 5,
-        "sb": 5,
-        "qab": 23,
-        "qabPct": 60.53,
-        "ldPct": 19.23,
-        "fbPct": 30.77,
-        "gbPct": 50.0,
-        "babip": 0.615,
-        "hbp": 2,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 8,
-        "ipOuts": 29,
-        "bf": 41,
-        "strikePct": 57.43,
-        "pitches": 148,
-        "firstPitchStrikePct": 65.85,
-        "hAllowed": 8,
-        "r": 2,
-        "er": 2,
-        "bb": 6,
-        "so": 10,
-        "kLooking": 4,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 33
-      },
-      "fielding": {
-        "tc": 76,
-        "a": 9,
-        "po": 65,
-        "e": 2,
-        "dp": 2
-      }
-    },
-    {
-      "playerId": "tyler-bussing",
-      "name": "Tyler Bussing",
-      "teamId": "padres",
-      "hitting": {
-        "gp": 15,
-        "pa": 45,
-        "ab": 35,
-        "h": 16,
-        "singles": 10,
-        "doubles": 4,
-        "triples": 2,
-        "hr": 0,
-        "rbi": 13,
-        "runs": 16,
-        "bb": 8,
-        "so": 11,
-        "sb": 7,
-        "qab": 25,
-        "qabPct": 55.56,
-        "ldPct": 36.0,
-        "fbPct": 24.0,
-        "gbPct": 40.0,
-        "babip": 0.64,
-        "hbp": 1,
-        "sf": 1
-      },
-      "pitching": {
-        "gp": 9,
-        "ipOuts": 53,
-        "bf": 82,
-        "strikePct": 65.38,
-        "pitches": 312,
-        "firstPitchStrikePct": 64.63,
-        "hAllowed": 16,
-        "r": 8,
-        "er": 7,
-        "bb": 11,
-        "so": 39,
-        "kLooking": 15,
-        "wins": 1,
-        "losses": 0,
-        "abAgainst": 68
-      },
-      "fielding": {
-        "tc": 60,
-        "a": 11,
-        "po": 45,
-        "e": 4,
-        "dp": 1
-      }
-    },
-    {
-      "playerId": "gabe-bachleda",
-      "name": "Gabe Bachleda",
-      "teamId": "padres",
-      "hitting": {
-        "gp": 13,
-        "pa": 41,
-        "ab": 36,
-        "h": 16,
-        "singles": 12,
-        "doubles": 3,
-        "triples": 1,
-        "hr": 0,
-        "rbi": 7,
-        "runs": 15,
-        "bb": 5,
-        "so": 1,
-        "sb": 9,
-        "qab": 18,
-        "qabPct": 43.9,
-        "ldPct": 22.86,
-        "fbPct": 8.57,
-        "gbPct": 68.57,
-        "babip": 0.457,
-        "hbp": 0,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 8,
-        "ipOuts": 40,
-        "bf": 71,
-        "strikePct": 56.9,
-        "pitches": 239,
-        "firstPitchStrikePct": 54.93,
-        "hAllowed": 20,
-        "r": 9,
-        "er": 6,
-        "bb": 11,
-        "so": 16,
-        "kLooking": 5,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 57
-      },
-      "fielding": {
-        "tc": 30,
-        "a": 4,
-        "po": 24,
-        "e": 2,
-        "dp": 0
-      }
-    },
-    {
-      "playerId": "bruce-chen",
-      "name": "Bruce Chen",
-      "teamId": "padres",
-      "hitting": {
-        "gp": 10,
-        "pa": 23,
-        "ab": 15,
-        "h": 6,
-        "singles": 4,
-        "doubles": 1,
-        "triples": 1,
-        "hr": 0,
-        "rbi": 6,
-        "runs": 6,
-        "bb": 8,
-        "so": 5,
-        "sb": 3,
-        "qab": 17,
-        "qabPct": 73.91,
-        "ldPct": 40.0,
-        "fbPct": 20.0,
-        "gbPct": 40.0,
-        "babip": 0.6,
-        "hbp": 0,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 2,
-        "ipOuts": 6,
-        "bf": 19,
-        "strikePct": 48.57,
-        "pitches": 70,
-        "firstPitchStrikePct": 47.37,
-        "hAllowed": 9,
-        "r": 10,
-        "er": 10,
-        "bb": 4,
-        "so": 2,
-        "kLooking": 0,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 15
-      },
-      "fielding": {
-        "tc": 5,
-        "a": 1,
-        "po": 4,
-        "e": 0,
-        "dp": 0
-      }
-    },
-    {
-      "playerId": "tanner-bloom",
-      "name": "Tanner Bloom",
-      "teamId": "padres",
-      "hitting": {
-        "gp": 2,
-        "pa": 5,
-        "ab": 5,
-        "h": 2,
-        "singles": 1,
-        "doubles": 0,
-        "triples": 1,
-        "hr": 0,
-        "rbi": 1,
-        "runs": 1,
-        "bb": 0,
-        "so": 1,
-        "sb": 2,
-        "qab": 1,
-        "qabPct": 20.0,
-        "ldPct": 25.0,
-        "fbPct": 50.0,
-        "gbPct": 25.0,
-        "babip": 0.5,
-        "hbp": 0,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 0,
-        "ipOuts": 0,
-        "bf": 0,
-        "strikePct": 0,
-        "pitches": 0,
-        "firstPitchStrikePct": 0,
-        "hAllowed": 0,
-        "r": 0,
-        "er": 0,
-        "bb": 0,
-        "so": 0,
-        "kLooking": 0,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 0
-      },
-      "fielding": {
-        "tc": 4,
-        "a": 0,
-        "po": 4,
-        "e": 0,
-        "dp": 0
-      }
-    },
-    {
-      "playerId": "skye-martin",
-      "name": "Skye Martin",
-      "teamId": "padres",
-      "hitting": {
-        "gp": 13,
-        "pa": 39,
-        "ab": 29,
-        "h": 11,
-        "singles": 11,
-        "doubles": 0,
-        "triples": 0,
-        "hr": 0,
-        "rbi": 3,
-        "runs": 10,
-        "bb": 10,
-        "so": 8,
-        "sb": 8,
-        "qab": 22,
-        "qabPct": 56.41,
-        "ldPct": 19.05,
-        "fbPct": 19.05,
-        "gbPct": 61.9,
-        "babip": 0.524,
-        "hbp": 0,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 6,
-        "ipOuts": 25,
-        "bf": 42,
-        "strikePct": 55.8,
-        "pitches": 138,
-        "firstPitchStrikePct": 57.14,
-        "hAllowed": 12,
-        "r": 7,
-        "er": 7,
-        "bb": 6,
-        "so": 8,
-        "kLooking": 4,
-        "wins": 1,
-        "losses": 0,
-        "abAgainst": 35
-      },
-      "fielding": {
-        "tc": 45,
-        "a": 3,
-        "po": 40,
-        "e": 2,
-        "dp": 0
-      }
-    },
-    {
-      "playerId": "isaiah-kirtman",
-      "name": "Isaiah Kirtman",
-      "teamId": "padres",
-      "hitting": {
-        "gp": 15,
-        "pa": 46,
-        "ab": 32,
-        "h": 10,
-        "singles": 10,
-        "doubles": 0,
-        "triples": 0,
-        "hr": 0,
-        "rbi": 4,
-        "runs": 12,
-        "bb": 10,
-        "so": 14,
-        "sb": 13,
-        "qab": 21,
-        "qabPct": 45.65,
-        "ldPct": 11.11,
-        "fbPct": 11.11,
-        "gbPct": 77.78,
-        "babip": 0.556,
-        "hbp": 4,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 8,
-        "ipOuts": 53,
-        "bf": 91,
-        "strikePct": 51.37,
-        "pitches": 364,
-        "firstPitchStrikePct": 50.55,
-        "hAllowed": 20,
-        "r": 16,
-        "er": 16,
-        "bb": 21,
-        "so": 20,
-        "kLooking": 8,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 70
-      },
-      "fielding": {
-        "tc": 25,
-        "a": 7,
-        "po": 16,
-        "e": 2,
-        "dp": 0
-      }
-    },
-    {
-      "playerId": "evan-marshall",
-      "name": "Evan Marshall",
-      "teamId": "padres",
-      "hitting": {
-        "gp": 15,
-        "pa": 40,
-        "ab": 30,
-        "h": 8,
-        "singles": 6,
-        "doubles": 1,
-        "triples": 1,
-        "hr": 0,
-        "rbi": 12,
-        "runs": 5,
-        "bb": 10,
-        "so": 10,
-        "sb": 6,
-        "qab": 24,
-        "qabPct": 60.0,
-        "ldPct": 25.0,
-        "fbPct": 5.0,
-        "gbPct": 70.0,
-        "babip": 0.4,
-        "hbp": 0,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 2,
-        "ipOuts": 6,
-        "bf": 11,
-        "strikePct": 70.97,
-        "pitches": 31,
-        "firstPitchStrikePct": 72.73,
-        "hAllowed": 5,
-        "r": 3,
-        "er": 2,
-        "bb": 0,
-        "so": 1,
-        "kLooking": 1,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 11
-      },
-      "fielding": {
-        "tc": 10,
-        "a": 1,
-        "po": 8,
-        "e": 1,
-        "dp": 0
-      }
-    },
-    {
-      "playerId": "dez-ortega",
-      "name": "Dez Ortega",
-      "teamId": "padres",
-      "hitting": {
-        "gp": 13,
-        "pa": 33,
-        "ab": 24,
-        "h": 6,
-        "singles": 5,
-        "doubles": 0,
-        "triples": 1,
-        "hr": 0,
-        "rbi": 4,
-        "runs": 10,
-        "bb": 9,
-        "so": 8,
-        "sb": 11,
-        "qab": 18,
-        "qabPct": 54.55,
-        "ldPct": 12.5,
-        "fbPct": 12.5,
-        "gbPct": 75.0,
-        "babip": 0.375,
-        "hbp": 0,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 4,
-        "ipOuts": 12,
-        "bf": 19,
-        "strikePct": 56.72,
-        "pitches": 67,
-        "firstPitchStrikePct": 42.11,
-        "hAllowed": 5,
-        "r": 4,
-        "er": 4,
-        "bb": 3,
-        "so": 6,
-        "kLooking": 2,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 16
-      },
-      "fielding": {
-        "tc": 35,
-        "a": 17,
-        "po": 17,
-        "e": 1,
-        "dp": 0
-      }
-    },
-    {
-      "playerId": "andrew-hu",
-      "name": "Andrew Hu",
-      "teamId": "padres",
-      "hitting": {
-        "gp": 13,
-        "pa": 31,
-        "ab": 23,
-        "h": 5,
-        "singles": 4,
-        "doubles": 0,
-        "triples": 1,
-        "hr": 0,
-        "rbi": 8,
-        "runs": 2,
-        "bb": 7,
-        "so": 17,
-        "sb": 3,
-        "qab": 14,
-        "qabPct": 45.16,
-        "ldPct": 50.0,
-        "fbPct": 0.0,
-        "gbPct": 50.0,
-        "babip": 0.833,
-        "hbp": 1,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 3,
-        "ipOuts": 6,
-        "bf": 11,
-        "strikePct": 44.0,
-        "pitches": 50,
-        "firstPitchStrikePct": 18.18,
-        "hAllowed": 3,
-        "r": 3,
-        "er": 3,
-        "bb": 3,
-        "so": 2,
-        "kLooking": 1,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 8
-      },
-      "fielding": {
-        "tc": 3,
-        "a": 0,
-        "po": 3,
-        "e": 0,
-        "dp": 0
-      }
-    },
-    {
-      "playerId": "ascher-leichty",
-      "name": "Ascher Leichty",
-      "teamId": "padres",
-      "hitting": {
-        "gp": 13,
-        "pa": 34,
-        "ab": 29,
-        "h": 4,
-        "singles": 3,
-        "doubles": 1,
-        "triples": 0,
-        "hr": 0,
-        "rbi": 4,
-        "runs": 3,
-        "bb": 5,
-        "so": 17,
-        "sb": 4,
-        "qab": 18,
-        "qabPct": 52.94,
-        "ldPct": 8.33,
-        "fbPct": 25.0,
-        "gbPct": 66.67,
-        "babip": 0.333,
-        "hbp": 0,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 2,
-        "ipOuts": 6,
-        "bf": 9,
-        "strikePct": 50.0,
-        "pitches": 24,
-        "firstPitchStrikePct": 55.56,
-        "hAllowed": 2,
-        "r": 1,
-        "er": 1,
-        "bb": 2,
-        "so": 1,
-        "kLooking": 0,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 7
-      },
-      "fielding": {
-        "tc": 8,
-        "a": 2,
-        "po": 6,
-        "e": 0,
-        "dp": 1
-      }
-    },
-    {
-      "playerId": "malcolm-early",
-      "name": "Malcolm Early",
-      "teamId": "padres",
-      "hitting": {
-        "gp": 13,
-        "pa": 31,
-        "ab": 26,
-        "h": 3,
-        "singles": 3,
-        "doubles": 0,
-        "triples": 0,
-        "hr": 0,
-        "rbi": 1,
-        "runs": 5,
-        "bb": 5,
-        "so": 19,
-        "sb": 0,
-        "qab": 10,
-        "qabPct": 32.26,
-        "ldPct": 14.29,
-        "fbPct": 28.57,
-        "gbPct": 57.14,
-        "babip": 0.429,
-        "hbp": 0,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 0,
-        "ipOuts": 0,
-        "bf": 0,
-        "strikePct": 0,
-        "pitches": 0,
-        "firstPitchStrikePct": 0,
-        "hAllowed": 0,
-        "r": 0,
-        "er": 0,
-        "bb": 0,
-        "so": 0,
-        "kLooking": 0,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 0
-      },
-      "fielding": {
-        "tc": 1,
-        "a": 0,
-        "po": 1,
-        "e": 0,
-        "dp": 0
-      }
-    },
-    {
-      "playerId": "carter-hurl",
-      "name": "Carter Hurl",
-      "teamId": "padres",
-      "hitting": {
-        "gp": 1,
-        "pa": 2,
-        "ab": 1,
-        "h": 0,
-        "singles": 0,
-        "doubles": 0,
-        "triples": 0,
-        "hr": 0,
-        "rbi": 0,
-        "runs": 0,
-        "bb": 1,
-        "so": 1,
-        "sb": 0,
-        "qab": 2,
-        "qabPct": 100.0,
-        "ldPct": 0,
-        "fbPct": 0,
-        "gbPct": 0,
-        "babip": 0,
-        "hbp": 0,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 0,
-        "ipOuts": 0,
-        "bf": 0,
-        "strikePct": 0,
-        "pitches": 0,
-        "firstPitchStrikePct": 0,
-        "hAllowed": 0,
-        "r": 0,
-        "er": 0,
-        "bb": 0,
-        "so": 0,
-        "kLooking": 0,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 0
-      },
-      "fielding": {
-        "tc": 0,
-        "a": 0,
-        "po": 0,
-        "e": 0,
-        "dp": 0
-      }
-    },
-    {
-      "playerId": "carter-hurl",
-      "name": "Carter Hurl",
-      "teamId": "mariners",
-      "hitting": {
-        "gp": 14,
-        "pa": 42,
-        "ab": 38,
-        "h": 15,
-        "singles": 10,
-        "doubles": 4,
-        "triples": 1,
-        "hr": 0,
-        "rbi": 13,
-        "runs": 8,
-        "bb": 3,
-        "so": 6,
-        "sb": 3,
-        "qab": 26,
-        "qabPct": 61.9,
-        "ldPct": 37.5,
-        "fbPct": 25.0,
-        "gbPct": 37.5,
-        "babip": 0.469,
-        "hbp": 1,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 9,
-        "ipOuts": 57,
-        "bf": 77,
-        "strikePct": 66.9,
-        "pitches": 287,
-        "firstPitchStrikePct": 61.04,
-        "hAllowed": 16,
-        "r": 4,
-        "er": 3,
-        "bb": 5,
-        "so": 32,
-        "kLooking": 15,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 70
-      },
-      "fielding": {
-        "tc": 23,
-        "a": 5,
-        "po": 16,
-        "e": 2,
-        "dp": 0
-      }
-    },
-    {
-      "playerId": "ethan-grimse",
-      "name": "Ethan Grimse",
-      "teamId": "mariners",
-      "hitting": {
-        "gp": 14,
-        "pa": 45,
-        "ab": 41,
-        "h": 18,
-        "singles": 15,
-        "doubles": 1,
-        "triples": 2,
-        "hr": 0,
-        "rbi": 8,
-        "runs": 14,
-        "bb": 3,
-        "so": 3,
-        "sb": 7,
-        "qab": 25,
-        "qabPct": 55.56,
-        "ldPct": 26.32,
-        "fbPct": 18.42,
-        "gbPct": 55.26,
-        "babip": 0.474,
-        "hbp": 1,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 4,
-        "ipOuts": 24,
-        "bf": 46,
-        "strikePct": 58.96,
-        "pitches": 173,
-        "firstPitchStrikePct": 60.87,
-        "hAllowed": 14,
-        "r": 16,
-        "er": 12,
-        "bb": 5,
-        "so": 16,
-        "kLooking": 6,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 40
-      },
-      "fielding": {
-        "tc": 57,
-        "a": 13,
-        "po": 43,
-        "e": 1,
-        "dp": 3
-      }
-    },
-    {
-      "playerId": "oliver-siler",
-      "name": "Oliver Siler",
-      "teamId": "mariners",
-      "hitting": {
-        "gp": 14,
-        "pa": 40,
-        "ab": 32,
-        "h": 9,
-        "singles": 5,
-        "doubles": 2,
-        "triples": 1,
-        "hr": 1,
-        "rbi": 3,
-        "runs": 5,
-        "bb": 7,
-        "so": 13,
-        "sb": 2,
-        "qab": 22,
-        "qabPct": 55.0,
-        "ldPct": 15.79,
-        "fbPct": 31.58,
-        "gbPct": 52.63,
-        "babip": 0.444,
-        "hbp": 1,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 9,
-        "ipOuts": 53,
-        "bf": 83,
-        "strikePct": 57.45,
-        "pitches": 322,
-        "firstPitchStrikePct": 57.83,
-        "hAllowed": 15,
-        "r": 17,
-        "er": 11,
-        "bb": 12,
-        "so": 27,
-        "kLooking": 15,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 69
-      },
-      "fielding": {
-        "tc": 32,
-        "a": 10,
-        "po": 15,
-        "e": 7,
-        "dp": 0
-      }
-    },
-    {
-      "playerId": "elliott-van-winkle",
-      "name": "Elliott Van Winkle",
-      "teamId": "mariners",
-      "hitting": {
-        "gp": 11,
-        "pa": 33,
-        "ab": 25,
-        "h": 11,
-        "singles": 5,
-        "doubles": 5,
-        "triples": 1,
-        "hr": 0,
-        "rbi": 7,
-        "runs": 9,
-        "bb": 4,
-        "so": 5,
-        "sb": 7,
-        "qab": 18,
-        "qabPct": 54.55,
-        "ldPct": 28.57,
-        "fbPct": 33.33,
-        "gbPct": 38.1,
-        "babip": 0.524,
-        "hbp": 3,
-        "sf": 1
-      },
-      "pitching": {
-        "gp": 5,
-        "ipOuts": 42,
-        "bf": 78,
-        "strikePct": 58.18,
-        "pitches": 275,
-        "firstPitchStrikePct": 58.97,
-        "hAllowed": 21,
-        "r": 21,
-        "er": 19,
-        "bb": 11,
-        "so": 12,
-        "kLooking": 3,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 63
-      },
-      "fielding": {
-        "tc": 42,
-        "a": 8,
-        "po": 34,
-        "e": 0,
-        "dp": 1
-      }
-    },
-    {
-      "playerId": "tristan-hoefer",
-      "name": "Tristan Hoefer",
-      "teamId": "mariners",
-      "hitting": {
-        "gp": 13,
-        "pa": 37,
-        "ab": 32,
-        "h": 11,
-        "singles": 5,
-        "doubles": 5,
-        "triples": 1,
-        "hr": 0,
-        "rbi": 4,
-        "runs": 4,
-        "bb": 5,
-        "so": 14,
-        "sb": 0,
-        "qab": 19,
-        "qabPct": 51.35,
-        "ldPct": 27.78,
-        "fbPct": 33.33,
-        "gbPct": 27.78,
-        "babip": 0.611,
-        "hbp": 0,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 2,
-        "ipOuts": 7,
-        "bf": 15,
-        "strikePct": 42.19,
-        "pitches": 64,
-        "firstPitchStrikePct": 66.67,
-        "hAllowed": 3,
-        "r": 2,
-        "er": 2,
-        "bb": 6,
-        "so": 2,
-        "kLooking": 1,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 9
-      },
-      "fielding": {
-        "tc": 33,
-        "a": 2,
-        "po": 29,
-        "e": 2,
-        "dp": 2
-      }
-    },
-    {
-      "playerId": "brent-mcfarland",
-      "name": "Brent McFarland",
-      "teamId": "mariners",
-      "hitting": {
-        "gp": 14,
-        "pa": 36,
-        "ab": 27,
-        "h": 4,
-        "singles": 3,
-        "doubles": 1,
-        "triples": 0,
-        "hr": 0,
-        "rbi": 0,
-        "runs": 6,
-        "bb": 9,
-        "so": 19,
-        "sb": 1,
-        "qab": 18,
-        "qabPct": 50.0,
-        "ldPct": 0.0,
-        "fbPct": 62.5,
-        "gbPct": 37.5,
-        "babip": 0.5,
-        "hbp": 0,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 2,
-        "ipOuts": 9,
-        "bf": 16,
-        "strikePct": 34.55,
-        "pitches": 55,
-        "firstPitchStrikePct": 31.25,
-        "hAllowed": 3,
-        "r": 5,
-        "er": 5,
-        "bb": 6,
-        "so": 3,
-        "kLooking": 2,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 10
-      },
-      "fielding": {
-        "tc": 23,
-        "a": 7,
-        "po": 9,
-        "e": 7,
-        "dp": 0
-      }
-    },
-    {
-      "playerId": "roshan-babu",
-      "name": "Roshan Babu",
-      "teamId": "mariners",
-      "hitting": {
-        "gp": 12,
-        "pa": 31,
-        "ab": 20,
-        "h": 0,
-        "singles": 0,
-        "doubles": 0,
-        "triples": 0,
-        "hr": 0,
-        "rbi": 1,
-        "runs": 4,
-        "bb": 8,
-        "so": 12,
-        "sb": 2,
-        "qab": 15,
-        "qabPct": 48.39,
-        "ldPct": 11.11,
-        "fbPct": 0.0,
-        "gbPct": 77.78,
-        "babip": 0,
-        "hbp": 2,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 1,
-        "ipOuts": 3,
-        "bf": 9,
-        "strikePct": 48.57,
-        "pitches": 35,
-        "firstPitchStrikePct": 44.44,
-        "hAllowed": 3,
-        "r": 3,
-        "er": 3,
-        "bb": 3,
-        "so": 3,
-        "kLooking": 2,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 6
-      },
-      "fielding": {
-        "tc": 37,
-        "a": 4,
-        "po": 31,
-        "e": 2,
-        "dp": 0
-      }
-    },
-    {
-      "playerId": "elliott-nice",
-      "name": "Elliott Nice",
-      "teamId": "mariners",
-      "hitting": {
-        "gp": 13,
-        "pa": 32,
-        "ab": 29,
-        "h": 9,
-        "singles": 9,
-        "doubles": 0,
-        "triples": 0,
-        "hr": 0,
-        "rbi": 0,
-        "runs": 4,
-        "bb": 3,
-        "so": 11,
-        "sb": 0,
-        "qab": 14,
-        "qabPct": 43.75,
-        "ldPct": 11.11,
-        "fbPct": 27.78,
-        "gbPct": 61.11,
-        "babip": 0.5,
-        "hbp": 0,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 6,
-        "ipOuts": 15,
-        "bf": 43,
-        "strikePct": 49.12,
-        "pitches": 171,
-        "firstPitchStrikePct": 51.16,
-        "hAllowed": 9,
-        "r": 16,
-        "er": 8,
-        "bb": 14,
-        "so": 7,
-        "kLooking": 3,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 29
-      },
-      "fielding": {
-        "tc": 11,
-        "a": 2,
-        "po": 9,
-        "e": 0,
-        "dp": 0
-      }
-    },
-    {
-      "playerId": "callum-king",
-      "name": "Callum King",
-      "teamId": "mariners",
-      "hitting": {
-        "gp": 14,
-        "pa": 41,
-        "ab": 31,
-        "h": 4,
-        "singles": 4,
-        "doubles": 0,
-        "triples": 0,
-        "hr": 0,
-        "rbi": 0,
-        "runs": 3,
-        "bb": 8,
-        "so": 14,
-        "sb": 5,
-        "qab": 17,
-        "qabPct": 41.46,
-        "ldPct": 16.67,
-        "fbPct": 38.89,
-        "gbPct": 38.89,
-        "babip": 0.235,
-        "hbp": 2,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 1,
-        "ipOuts": 0,
-        "bf": 3,
-        "strikePct": 10.0,
-        "pitches": 10,
-        "firstPitchStrikePct": 0.0,
-        "hAllowed": 1,
-        "r": 1,
-        "er": 1,
-        "bb": 2,
-        "so": 0,
-        "kLooking": 0,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 1
-      },
-      "fielding": {
-        "tc": 8,
-        "a": 2,
-        "po": 3,
-        "e": 3,
-        "dp": 1
-      }
-    },
-    {
-      "playerId": "charlie-ardillo",
-      "name": "Charlie Ardillo",
-      "teamId": "mariners",
-      "hitting": {
-        "gp": 11,
-        "pa": 34,
-        "ab": 31,
-        "h": 10,
-        "singles": 10,
-        "doubles": 0,
-        "triples": 0,
-        "hr": 0,
-        "rbi": 11,
-        "runs": 6,
-        "bb": 1,
-        "so": 5,
-        "sb": 1,
-        "qab": 14,
-        "qabPct": 41.18,
-        "ldPct": 15.38,
-        "fbPct": 23.08,
-        "gbPct": 61.54,
-        "babip": 0.385,
-        "hbp": 2,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 6,
-        "ipOuts": 25,
-        "bf": 47,
-        "strikePct": 60.62,
-        "pitches": 160,
-        "firstPitchStrikePct": 57.45,
-        "hAllowed": 15,
-        "r": 15,
-        "er": 12,
-        "bb": 6,
-        "so": 12,
-        "kLooking": 8,
-        "wins": 1,
-        "losses": 0,
-        "abAgainst": 39
-      },
-      "fielding": {
-        "tc": 46,
-        "a": 9,
-        "po": 35,
-        "e": 2,
-        "dp": 0
-      }
-    },
-    {
-      "playerId": "clay-bachmann",
-      "name": "Clay Bachmann",
-      "teamId": "mariners",
-      "hitting": {
-        "gp": 11,
-        "pa": 29,
-        "ab": 21,
-        "h": 3,
-        "singles": 3,
-        "doubles": 0,
-        "triples": 0,
-        "hr": 0,
-        "rbi": 2,
-        "runs": 3,
-        "bb": 6,
-        "so": 12,
-        "sb": 2,
-        "qab": 11,
-        "qabPct": 37.93,
-        "ldPct": 10.0,
-        "fbPct": 20.0,
-        "gbPct": 60.0,
-        "babip": 0.333,
-        "hbp": 1,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 2,
-        "ipOuts": 8,
-        "bf": 13,
-        "strikePct": 48.65,
-        "pitches": 37,
-        "firstPitchStrikePct": 53.85,
-        "hAllowed": 4,
-        "r": 3,
-        "er": 1,
-        "bb": 2,
-        "so": 0,
-        "kLooking": 0,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 11
-      },
-      "fielding": {
-        "tc": 5,
-        "a": 2,
-        "po": 0,
-        "e": 3,
-        "dp": 0
-      }
-    },
-    {
-      "playerId": "winston-weinrich",
-      "name": "Winston Weinrich",
-      "teamId": "mariners",
-      "hitting": {
-        "gp": 2,
-        "pa": 4,
-        "ab": 3,
-        "h": 0,
-        "singles": 0,
-        "doubles": 0,
-        "triples": 0,
-        "hr": 0,
-        "rbi": 0,
-        "runs": 0,
-        "bb": 1,
-        "so": 3,
-        "sb": 0,
-        "qab": 1,
-        "qabPct": 25.0,
-        "ldPct": 0,
-        "fbPct": 0,
-        "gbPct": 0,
-        "babip": 0,
-        "hbp": 0,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 0,
-        "ipOuts": 0,
-        "bf": 0,
-        "strikePct": 0,
-        "pitches": 0,
-        "firstPitchStrikePct": 0,
-        "hAllowed": 0,
-        "r": 0,
-        "er": 0,
-        "bb": 0,
-        "so": 0,
-        "kLooking": 0,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 0
-      },
-      "fielding": {
-        "tc": 1,
-        "a": 0,
-        "po": 1,
-        "e": 0,
-        "dp": 0
-      }
-    },
-    {
-      "playerId": "evan-chin",
-      "name": "Evan Chin",
-      "teamId": "blue-jays",
-      "hitting": {
-        "gp": 12,
-        "pa": 36,
-        "ab": 32,
-        "h": 17,
-        "singles": 10,
-        "doubles": 5,
-        "triples": 2,
-        "hr": 0,
-        "rbi": 9,
-        "runs": 14,
-        "bb": 4,
-        "so": 0,
-        "sb": 3,
-        "qab": 22,
-        "qabPct": 61.11,
-        "ldPct": 31.25,
-        "fbPct": 31.25,
-        "gbPct": 37.5,
-        "babip": 0.531,
-        "hbp": 0,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 7,
-        "ipOuts": 52,
-        "bf": 81,
-        "strikePct": 65.25,
-        "pitches": 282,
-        "firstPitchStrikePct": 60.49,
-        "hAllowed": 16,
-        "r": 16,
-        "er": 8,
-        "bb": 10,
-        "so": 32,
-        "kLooking": 16,
-        "wins": 1,
-        "losses": 0,
-        "abAgainst": 68
-      },
-      "fielding": {
-        "tc": 24,
-        "a": 16,
-        "po": 7,
-        "e": 1,
-        "dp": 1
-      }
-    },
-    {
-      "playerId": "tyler-wu",
-      "name": "Tyler Wu",
-      "teamId": "blue-jays",
-      "hitting": {
-        "gp": 11,
-        "pa": 34,
-        "ab": 24,
-        "h": 10,
-        "singles": 9,
-        "doubles": 1,
-        "triples": 0,
-        "hr": 0,
-        "rbi": 4,
-        "runs": 9,
-        "bb": 7,
-        "so": 2,
-        "sb": 1,
-        "qab": 17,
-        "qabPct": 50.0,
-        "ldPct": 22.73,
-        "fbPct": 0.0,
-        "gbPct": 77.27,
-        "babip": 0.455,
-        "hbp": 3,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 5,
-        "ipOuts": 16,
-        "bf": 30,
-        "strikePct": 61.74,
-        "pitches": 115,
-        "firstPitchStrikePct": 63.33,
-        "hAllowed": 12,
-        "r": 8,
-        "er": 7,
-        "bb": 3,
-        "so": 5,
-        "kLooking": 0,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 26
-      },
-      "fielding": {
-        "tc": 16,
-        "a": 7,
-        "po": 7,
-        "e": 2,
-        "dp": 1
-      }
-    },
-    {
-      "playerId": "jamal-mehter",
-      "name": "Jamal Mehter",
-      "teamId": "blue-jays",
-      "hitting": {
-        "gp": 1,
-        "pa": 3,
-        "ab": 3,
-        "h": 1,
-        "singles": 1,
-        "doubles": 0,
-        "triples": 0,
-        "hr": 0,
-        "rbi": 0,
-        "runs": 1,
-        "bb": 0,
-        "so": 1,
-        "sb": 0,
-        "qab": 2,
-        "qabPct": 66.67,
-        "ldPct": 0.0,
-        "fbPct": 50.0,
-        "gbPct": 50.0,
-        "babip": 0.5,
-        "hbp": 0,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 0,
-        "ipOuts": 0,
-        "bf": 0,
-        "strikePct": 0,
-        "pitches": 0,
-        "firstPitchStrikePct": 0,
-        "hAllowed": 0,
-        "r": 0,
-        "er": 0,
-        "bb": 0,
-        "so": 0,
-        "kLooking": 0,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 0
-      },
-      "fielding": {
-        "tc": 3,
-        "a": 1,
-        "po": 2,
-        "e": 0,
-        "dp": 0
-      }
-    },
-    {
-      "playerId": "john-tran",
-      "name": "John Tran",
-      "teamId": "blue-jays",
-      "hitting": {
-        "gp": 12,
-        "pa": 35,
-        "ab": 33,
-        "h": 10,
-        "singles": 7,
-        "doubles": 2,
-        "triples": 1,
-        "hr": 0,
-        "rbi": 5,
-        "runs": 3,
-        "bb": 2,
-        "so": 9,
-        "sb": 1,
-        "qab": 14,
-        "qabPct": 40.0,
-        "ldPct": 8.33,
-        "fbPct": 16.67,
-        "gbPct": 75.0,
-        "babip": 0.417,
-        "hbp": 0,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 5,
-        "ipOuts": 27,
-        "bf": 50,
-        "strikePct": 60.12,
-        "pitches": 163,
-        "firstPitchStrikePct": 56.0,
-        "hAllowed": 17,
-        "r": 14,
-        "er": 12,
-        "bb": 4,
-        "so": 10,
-        "kLooking": 3,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 45
-      },
-      "fielding": {
-        "tc": 15,
-        "a": 6,
-        "po": 8,
-        "e": 1,
-        "dp": 0
-      }
-    },
-    {
-      "playerId": "parker-huynh",
-      "name": "Parker Huynh",
-      "teamId": "blue-jays",
-      "hitting": {
-        "gp": 10,
-        "pa": 29,
-        "ab": 24,
-        "h": 7,
-        "singles": 5,
-        "doubles": 1,
-        "triples": 1,
-        "hr": 0,
-        "rbi": 12,
-        "runs": 6,
-        "bb": 4,
-        "so": 4,
-        "sb": 2,
-        "qab": 12,
-        "qabPct": 41.38,
-        "ldPct": 28.57,
-        "fbPct": 42.86,
-        "gbPct": 23.81,
-        "babip": 0.35,
-        "hbp": 1,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 5,
-        "ipOuts": 18,
-        "bf": 35,
-        "strikePct": 59.26,
-        "pitches": 135,
-        "firstPitchStrikePct": 68.57,
-        "hAllowed": 9,
-        "r": 11,
-        "er": 10,
-        "bb": 8,
-        "so": 9,
-        "kLooking": 1,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 27
-      },
-      "fielding": {
-        "tc": 62,
-        "a": 11,
-        "po": 49,
-        "e": 2,
-        "dp": 0
-      }
-    },
-    {
-      "playerId": "matteo-morrone",
-      "name": "Matteo Morrone",
-      "teamId": "blue-jays",
-      "hitting": {
-        "gp": 12,
-        "pa": 32,
-        "ab": 17,
-        "h": 4,
-        "singles": 4,
-        "doubles": 0,
-        "triples": 0,
-        "hr": 0,
-        "rbi": 4,
-        "runs": 5,
-        "bb": 12,
-        "so": 10,
-        "sb": 5,
-        "qab": 22,
-        "qabPct": 68.75,
-        "ldPct": 42.86,
-        "fbPct": 28.57,
-        "gbPct": 28.57,
-        "babip": 0.571,
-        "hbp": 2,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 4,
-        "ipOuts": 11,
-        "bf": 30,
-        "strikePct": 44.54,
-        "pitches": 119,
-        "firstPitchStrikePct": 53.33,
-        "hAllowed": 7,
-        "r": 9,
-        "er": 6,
-        "bb": 9,
-        "so": 3,
-        "kLooking": 0,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 20
-      },
-      "fielding": {
-        "tc": 46,
-        "a": 5,
-        "po": 38,
-        "e": 3,
-        "dp": 0
-      }
-    },
-    {
-      "playerId": "jack-maclean",
-      "name": "Jack MacLean",
-      "teamId": "blue-jays",
-      "hitting": {
-        "gp": 11,
-        "pa": 26,
-        "ab": 22,
-        "h": 5,
-        "singles": 5,
-        "doubles": 0,
-        "triples": 0,
-        "hr": 0,
-        "rbi": 1,
-        "runs": 6,
-        "bb": 3,
-        "so": 8,
-        "sb": 0,
-        "qab": 10,
-        "qabPct": 38.46,
-        "ldPct": 14.29,
-        "fbPct": 28.57,
-        "gbPct": 57.14,
-        "babip": 0.357,
-        "hbp": 1,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 2,
-        "ipOuts": 0,
-        "bf": 3,
-        "strikePct": 14.29,
-        "pitches": 14,
-        "firstPitchStrikePct": 0.0,
-        "hAllowed": 0,
-        "r": 0,
-        "er": 0,
-        "bb": 3,
-        "so": 0,
-        "kLooking": 0,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 0
-      },
-      "fielding": {
-        "tc": 7,
-        "a": 2,
-        "po": 2,
-        "e": 3,
-        "dp": 1
-      }
-    },
-    {
-      "playerId": "brady-mann",
-      "name": "Brady Mann",
-      "teamId": "blue-jays",
-      "hitting": {
-        "gp": 13,
-        "pa": 33,
-        "ab": 29,
-        "h": 6,
-        "singles": 5,
-        "doubles": 1,
-        "triples": 0,
-        "hr": 0,
-        "rbi": 3,
-        "runs": 4,
-        "bb": 4,
-        "so": 7,
-        "sb": 0,
-        "qab": 13,
-        "qabPct": 39.39,
-        "ldPct": 18.18,
-        "fbPct": 13.64,
-        "gbPct": 68.18,
-        "babip": 0.273,
-        "hbp": 0,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 9,
-        "ipOuts": 50,
-        "bf": 86,
-        "strikePct": 55.25,
-        "pitches": 324,
-        "firstPitchStrikePct": 47.67,
-        "hAllowed": 12,
-        "r": 18,
-        "er": 8,
-        "bb": 15,
-        "so": 18,
-        "kLooking": 8,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 68
-      },
-      "fielding": {
-        "tc": 39,
-        "a": 4,
-        "po": 33,
-        "e": 2,
-        "dp": 2
-      }
-    },
-    {
-      "playerId": "benson-auyong",
-      "name": "Benson Auyong",
-      "teamId": "blue-jays",
-      "hitting": {
-        "gp": 13,
-        "pa": 35,
-        "ab": 31,
-        "h": 6,
-        "singles": 5,
-        "doubles": 1,
-        "triples": 0,
-        "hr": 0,
-        "rbi": 6,
-        "runs": 5,
-        "bb": 3,
-        "so": 13,
-        "sb": 2,
-        "qab": 16,
-        "qabPct": 45.71,
-        "ldPct": 27.78,
-        "fbPct": 16.67,
-        "gbPct": 55.56,
-        "babip": 0.333,
-        "hbp": 1,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 3,
-        "ipOuts": 8,
-        "bf": 14,
-        "strikePct": 42.62,
-        "pitches": 61,
-        "firstPitchStrikePct": 28.57,
-        "hAllowed": 1,
-        "r": 4,
-        "er": 4,
-        "bb": 5,
-        "so": 4,
-        "kLooking": 2,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 9
-      },
-      "fielding": {
-        "tc": 12,
-        "a": 4,
-        "po": 4,
-        "e": 4,
-        "dp": 0
-      }
-    },
-    {
-      "playerId": "smith-colburn",
-      "name": "Smith Colburn",
-      "teamId": "blue-jays",
-      "hitting": {
-        "gp": 13,
-        "pa": 32,
-        "ab": 27,
-        "h": 5,
-        "singles": 5,
-        "doubles": 0,
-        "triples": 0,
-        "hr": 0,
-        "rbi": 5,
-        "runs": 4,
-        "bb": 5,
-        "so": 6,
-        "sb": 0,
-        "qab": 14,
-        "qabPct": 43.75,
-        "ldPct": 23.81,
-        "fbPct": 23.81,
-        "gbPct": 52.38,
-        "babip": 0.238,
-        "hbp": 0,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 4,
-        "ipOuts": 10,
-        "bf": 23,
-        "strikePct": 57.65,
-        "pitches": 85,
-        "firstPitchStrikePct": 52.17,
-        "hAllowed": 7,
-        "r": 8,
-        "er": 8,
-        "bb": 5,
-        "so": 2,
-        "kLooking": 2,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 18
-      },
-      "fielding": {
-        "tc": 53,
-        "a": 3,
-        "po": 46,
-        "e": 4,
-        "dp": 0
-      }
-    },
-    {
-      "playerId": "john-archie-patano",
-      "name": "John \"Archie\" Patano",
-      "teamId": "blue-jays",
-      "hitting": {
-        "gp": 12,
-        "pa": 28,
-        "ab": 22,
-        "h": 3,
-        "singles": 2,
-        "doubles": 1,
-        "triples": 0,
-        "hr": 0,
-        "rbi": 6,
-        "runs": 4,
-        "bb": 4,
-        "so": 4,
-        "sb": 0,
-        "qab": 10,
-        "qabPct": 35.71,
-        "ldPct": 11.11,
-        "fbPct": 27.78,
-        "gbPct": 61.11,
-        "babip": 0.167,
-        "hbp": 2,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 1,
-        "ipOuts": 3,
-        "bf": 7,
-        "strikePct": 39.13,
-        "pitches": 23,
-        "firstPitchStrikePct": 42.86,
-        "hAllowed": 1,
-        "r": 2,
-        "er": 0,
-        "bb": 1,
-        "so": 1,
-        "kLooking": 0,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 5
-      },
-      "fielding": {
-        "tc": 13,
-        "a": 3,
-        "po": 5,
-        "e": 5,
-        "dp": 0
-      }
-    },
-    {
-      "playerId": "sammy-piha",
-      "name": "Sammy Piha",
-      "teamId": "blue-jays",
-      "hitting": {
-        "gp": 13,
-        "pa": 35,
-        "ab": 26,
-        "h": 3,
-        "singles": 1,
-        "doubles": 1,
-        "triples": 1,
-        "hr": 0,
-        "rbi": 2,
-        "runs": 6,
-        "bb": 9,
-        "so": 14,
-        "sb": 1,
-        "qab": 19,
-        "qabPct": 54.29,
-        "ldPct": 15.38,
-        "fbPct": 46.15,
-        "gbPct": 30.77,
-        "babip": 0.25,
-        "hbp": 0,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 1,
-        "ipOuts": 2,
-        "bf": 6,
-        "strikePct": 42.86,
-        "pitches": 28,
-        "firstPitchStrikePct": 16.67,
-        "hAllowed": 1,
-        "r": 1,
-        "er": 1,
-        "bb": 3,
-        "so": 2,
-        "kLooking": 1,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 3
-      },
-      "fielding": {
-        "tc": 22,
-        "a": 7,
-        "po": 10,
-        "e": 5,
-        "dp": 0
-      }
-    },
-    {
-      "playerId": "jacob-shetty",
-      "name": "Jacob Shetty",
-      "teamId": "blue-jays",
-      "hitting": {
-        "gp": 14,
-        "pa": 38,
-        "ab": 27,
-        "h": 3,
-        "singles": 3,
-        "doubles": 0,
-        "triples": 0,
-        "hr": 0,
-        "rbi": 1,
-        "runs": 10,
-        "bb": 11,
-        "so": 18,
-        "sb": 3,
-        "qab": 22,
-        "qabPct": 57.89,
-        "ldPct": 33.33,
-        "fbPct": 11.11,
-        "gbPct": 55.56,
-        "babip": 0.333,
-        "hbp": 0,
-        "sf": 0
-      },
-      "pitching": {
-        "gp": 5,
-        "ipOuts": 22,
-        "bf": 35,
-        "strikePct": 62.07,
-        "pitches": 116,
-        "firstPitchStrikePct": 57.14,
-        "hAllowed": 13,
-        "r": 5,
-        "er": 4,
-        "bb": 3,
-        "so": 6,
-        "kLooking": 1,
-        "wins": 0,
-        "losses": 0,
-        "abAgainst": 32
-      },
-      "fielding": {
-        "tc": 17,
-        "a": 8,
-        "po": 7,
-        "e": 2,
-        "dp": 0
-      }
-    }
-  ],
-  "selectTeam": {
-    "name": "MI 11U Maroon",
-    "players": [
-      {
-        "playerId": "kellen-marshall",
-        "name": "Kellen Marshall",
-        "littleLeagueTeamId": "dodgers",
-        "select": {
-          "hitting": {
-            "gp": 25,
-            "pa": 85,
-            "ab": 67,
-            "h": 33,
-            "singles": 19,
-            "doubles": 10,
-            "triples": 3,
-            "hr": 1,
-            "rbi": 37,
-            "runs": 33,
-            "bb": 14,
-            "so": 9,
-            "sb": 40,
-            "qab": 55,
-            "qabPct": 64.71,
-            "ldPct": 23.73,
-            "fbPct": 37.29,
-            "gbPct": 38.98,
-            "babip": 0.542,
-            "hbp": 2,
-            "sf": 2
-          },
-          "pitching": {
-            "gp": 12,
-            "ipOuts": 43,
-            "bf": 87,
-            "strikePct": 50.32,
-            "pitches": 316,
-            "firstPitchStrikePct": 51.72,
-            "hAllowed": 18,
-            "r": 26,
-            "er": 18,
-            "bb": 18,
-            "so": 18,
-            "kLooking": 6,
-            "wins": 0,
-            "losses": 0,
-            "abAgainst": 64
-          },
-          "fielding": {
-            "tc": 85,
-            "a": 45,
-            "po": 30,
-            "e": 10,
-            "dp": 7
-          }
-        }
-      },
-      {
-        "playerId": "ymir-skulason",
-        "name": "Ymir Skulason",
-        "littleLeagueTeamId": "dodgers",
-        "select": {
-          "hitting": {
-            "gp": 24,
-            "pa": 74,
-            "ab": 53,
-            "h": 25,
-            "singles": 17,
-            "doubles": 6,
-            "triples": 1,
-            "hr": 1,
-            "rbi": 23,
-            "runs": 21,
-            "bb": 18,
-            "so": 3,
-            "sb": 14,
-            "qab": 46,
-            "qabPct": 62.16,
-            "ldPct": 31.37,
-            "fbPct": 31.37,
-            "gbPct": 37.25,
-            "babip": 0.48,
-            "hbp": 2,
-            "sf": 1
-          },
-          "pitching": {
-            "gp": 8,
-            "ipOuts": 24,
-            "bf": 46,
-            "strikePct": 54.37,
-            "pitches": 160,
-            "firstPitchStrikePct": 60.87,
-            "hAllowed": 9,
-            "r": 10,
-            "er": 3,
-            "bb": 11,
-            "so": 9,
-            "kLooking": 3,
-            "wins": 0,
-            "losses": 0,
-            "abAgainst": 33
-          },
-          "fielding": {
-            "tc": 53,
-            "a": 1,
-            "po": 46,
-            "e": 6,
-            "dp": 3
-          }
-        }
-      },
-      {
-        "playerId": "william-tong",
-        "name": "William Tong",
-        "littleLeagueTeamId": "dodgers",
-        "select": {
-          "hitting": {
-            "gp": 24,
-            "pa": 77,
-            "ab": 69,
-            "h": 32,
-            "singles": 20,
-            "doubles": 6,
-            "triples": 4,
-            "hr": 2,
-            "rbi": 20,
-            "runs": 25,
-            "bb": 8,
-            "so": 14,
-            "sb": 20,
-            "qab": 45,
-            "qabPct": 58.44,
-            "ldPct": 25.45,
-            "fbPct": 25.45,
-            "gbPct": 49.09,
-            "babip": 0.566,
-            "hbp": 0,
-            "sf": 0
-          },
-          "pitching": {
-            "gp": 12,
-            "ipOuts": 68,
-            "bf": 124,
-            "strikePct": 61.06,
-            "pitches": 434,
-            "firstPitchStrikePct": 60.48,
-            "hAllowed": 35,
-            "r": 33,
-            "er": 22,
-            "bb": 15,
-            "so": 26,
-            "kLooking": 6,
-            "wins": 1,
-            "losses": 0,
-            "abAgainst": 107
-          },
-          "fielding": {
-            "tc": 104,
-            "a": 7,
-            "po": 89,
-            "e": 8,
-            "dp": 5
-          }
-        }
-      },
-      {
-        "playerId": "maverick-mclear",
-        "name": "Maverick McLear",
-        "littleLeagueTeamId": "dodgers",
-        "select": {
-          "hitting": {
-            "gp": 24,
-            "pa": 76,
-            "ab": 63,
-            "h": 28,
-            "singles": 21,
-            "doubles": 5,
-            "triples": 1,
-            "hr": 1,
-            "rbi": 23,
-            "runs": 19,
-            "bb": 10,
-            "so": 16,
-            "sb": 28,
-            "qab": 44,
-            "qabPct": 57.89,
-            "ldPct": 34.04,
-            "fbPct": 12.77,
-            "gbPct": 53.19,
-            "babip": 0.587,
-            "hbp": 3,
-            "sf": 0
-          },
-          "pitching": {
-            "gp": 13,
-            "ipOuts": 52,
-            "bf": 100,
-            "strikePct": 53.08,
-            "pitches": 373,
-            "firstPitchStrikePct": 56.0,
-            "hAllowed": 25,
-            "r": 34,
-            "er": 13,
-            "bb": 19,
-            "so": 21,
-            "kLooking": 6,
-            "wins": 0,
-            "losses": 1,
-            "abAgainst": 80
-          },
-          "fielding": {
-            "tc": 61,
-            "a": 24,
-            "po": 26,
-            "e": 11,
-            "dp": 3
-          }
-        }
-      },
-      {
-        "playerId": "jack-stangel",
-        "name": "Jack Stangel",
-        "littleLeagueTeamId": "padres",
-        "select": {
-          "hitting": {
-            "gp": 24,
-            "pa": 80,
-            "ab": 60,
-            "h": 26,
-            "singles": 21,
-            "doubles": 2,
-            "triples": 3,
-            "hr": 0,
-            "rbi": 19,
-            "runs": 26,
-            "bb": 16,
-            "so": 8,
-            "sb": 32,
-            "qab": 41,
-            "qabPct": 51.25,
-            "ldPct": 22.64,
-            "fbPct": 41.51,
-            "gbPct": 35.85,
-            "babip": 0.481,
-            "hbp": 2,
-            "sf": 2
-          },
-          "pitching": {
-            "gp": 10,
-            "ipOuts": 65,
-            "bf": 105,
-            "strikePct": 58.81,
-            "pitches": 369,
-            "firstPitchStrikePct": 56.19,
-            "hAllowed": 27,
-            "r": 26,
-            "er": 7,
-            "bb": 11,
-            "so": 22,
-            "kLooking": 16,
-            "wins": 2,
-            "losses": 0,
-            "abAgainst": 92
-          },
-          "fielding": {
-            "tc": 82,
-            "a": 26,
-            "po": 51,
-            "e": 5,
-            "dp": 5
-          }
-        }
-      },
-      {
-        "playerId": "isaiah-kirtman",
-        "name": "Isaiah Kirtman",
-        "littleLeagueTeamId": "padres",
-        "select": {
-          "hitting": {
-            "gp": 24,
-            "pa": 73,
-            "ab": 58,
-            "h": 21,
-            "singles": 14,
-            "doubles": 5,
-            "triples": 1,
-            "hr": 1,
-            "rbi": 19,
-            "runs": 24,
-            "bb": 13,
-            "so": 10,
-            "sb": 27,
-            "qab": 37,
-            "qabPct": 50.68,
-            "ldPct": 25.0,
-            "fbPct": 29.17,
-            "gbPct": 45.83,
-            "babip": 0.417,
-            "hbp": 1,
-            "sf": 1
-          },
-          "pitching": {
-            "gp": 3,
-            "ipOuts": 4,
-            "bf": 13,
-            "strikePct": 46.0,
-            "pitches": 50,
-            "firstPitchStrikePct": 30.77,
-            "hAllowed": 3,
-            "r": 3,
-            "er": 3,
-            "bb": 4,
-            "so": 1,
-            "kLooking": 0,
-            "wins": 0,
-            "losses": 0,
-            "abAgainst": 7
-          },
-          "fielding": {
-            "tc": 28,
-            "a": 4,
-            "po": 20,
-            "e": 4,
-            "dp": 1
-          }
-        }
-      },
-      {
-        "playerId": "tyler-wu",
-        "name": "Tyler Wu",
-        "littleLeagueTeamId": "blue-jays",
-        "select": {
-          "hitting": {
-            "gp": 18,
-            "pa": 49,
-            "ab": 36,
-            "h": 13,
-            "singles": 13,
-            "doubles": 0,
-            "triples": 0,
-            "hr": 0,
-            "rbi": 9,
-            "runs": 19,
-            "bb": 10,
-            "so": 3,
-            "sb": 21,
-            "qab": 25,
-            "qabPct": 51.02,
-            "ldPct": 28.12,
-            "fbPct": 21.88,
-            "gbPct": 50.0,
-            "babip": 0.394,
-            "hbp": 3,
-            "sf": 0
-          },
-          "pitching": {
-            "gp": 5,
-            "ipOuts": 22,
-            "bf": 34,
-            "strikePct": 62.92,
-            "pitches": 89,
-            "firstPitchStrikePct": 55.88,
-            "hAllowed": 11,
-            "r": 7,
-            "er": 6,
-            "bb": 3,
-            "so": 2,
-            "kLooking": 1,
-            "wins": 0,
-            "losses": 0,
-            "abAgainst": 31
-          },
-          "fielding": {
-            "tc": 23,
-            "a": 9,
-            "po": 9,
-            "e": 5,
-            "dp": 0
-          }
-        }
-      },
-      {
-        "playerId": "charlie-gregory",
-        "name": "Charlie Gregory",
-        "littleLeagueTeamId": "dodgers",
-        "select": {
-          "hitting": {
-            "gp": 25,
-            "pa": 84,
-            "ab": 67,
-            "h": 21,
-            "singles": 13,
-            "doubles": 5,
-            "triples": 2,
-            "hr": 1,
-            "rbi": 16,
-            "runs": 31,
-            "bb": 17,
-            "so": 9,
-            "sb": 24,
-            "qab": 50,
-            "qabPct": 59.52,
-            "ldPct": 20.34,
-            "fbPct": 18.64,
-            "gbPct": 59.32,
-            "babip": 0.351,
-            "hbp": 0,
-            "sf": 0
-          },
-          "pitching": {
-            "gp": 11,
-            "ipOuts": 53,
-            "bf": 96,
-            "strikePct": 51.79,
-            "pitches": 363,
-            "firstPitchStrikePct": 54.17,
-            "hAllowed": 19,
-            "r": 27,
-            "er": 18,
-            "bb": 22,
-            "so": 15,
-            "kLooking": 6,
-            "wins": 1,
-            "losses": 0,
-            "abAgainst": 73
-          },
-          "fielding": {
-            "tc": 72,
-            "a": 6,
-            "po": 60,
-            "e": 6,
-            "dp": 0
-          }
-        }
-      },
-      {
-        "playerId": "jasper-crosby",
-        "name": "Jasper Crosby",
-        "littleLeagueTeamId": "dodgers",
-        "select": {
-          "hitting": {
-            "gp": 24,
-            "pa": 67,
-            "ab": 48,
-            "h": 9,
-            "singles": 6,
-            "doubles": 2,
-            "triples": 0,
-            "hr": 1,
-            "rbi": 7,
-            "runs": 15,
-            "bb": 18,
-            "so": 25,
-            "sb": 8,
-            "qab": 40,
-            "qabPct": 59.7,
-            "ldPct": 30.43,
-            "fbPct": 21.74,
-            "gbPct": 47.83,
-            "babip": 0.364,
-            "hbp": 1,
-            "sf": 0
-          },
-          "pitching": {
-            "gp": 0,
-            "ipOuts": 0,
-            "bf": 0,
-            "strikePct": 0,
-            "pitches": 0,
-            "firstPitchStrikePct": 0,
-            "hAllowed": 0,
-            "r": 0,
-            "er": 0,
-            "bb": 0,
-            "so": 0,
-            "kLooking": 0,
-            "wins": 0,
-            "losses": 0,
-            "abAgainst": 0
-          },
-          "fielding": {
-            "tc": 46,
-            "a": 5,
-            "po": 32,
-            "e": 9,
-            "dp": 0
-          }
-        }
-      },
-      {
-        "playerId": "holden-norman",
-        "name": "Holden Norman",
-        "littleLeagueTeamId": "dodgers",
-        "select": {
-          "hitting": {
-            "gp": 19,
-            "pa": 51,
-            "ab": 44,
-            "h": 8,
-            "singles": 7,
-            "doubles": 1,
-            "triples": 0,
-            "hr": 0,
-            "rbi": 4,
-            "runs": 9,
-            "bb": 5,
-            "so": 9,
-            "sb": 10,
-            "qab": 20,
-            "qabPct": 39.22,
-            "ldPct": 11.43,
-            "fbPct": 62.86,
-            "gbPct": 25.71,
-            "babip": 0.229,
-            "hbp": 2,
-            "sf": 0
-          },
-          "pitching": {
-            "gp": 7,
-            "ipOuts": 42,
-            "bf": 70,
-            "strikePct": 59.57,
-            "pitches": 230,
-            "firstPitchStrikePct": 54.29,
-            "hAllowed": 19,
-            "r": 17,
-            "er": 9,
-            "bb": 8,
-            "so": 11,
-            "kLooking": 4,
-            "wins": 0,
-            "losses": 0,
-            "abAgainst": 62
-          },
-          "fielding": {
-            "tc": 24,
-            "a": 8,
-            "po": 13,
-            "e": 3,
-            "dp": 0
-          }
-        }
-      },
-      {
-        "playerId": "eli-stangel",
-        "name": "Eli Stangel",
-        "littleLeagueTeamId": null,
-        "select": {
-          "hitting": {
-            "gp": 1,
-            "pa": 2,
-            "ab": 2,
-            "h": 0,
-            "singles": 0,
-            "doubles": 0,
-            "triples": 0,
-            "hr": 0,
-            "rbi": 1,
-            "runs": 1,
-            "bb": 0,
-            "so": 1,
-            "sb": 0,
-            "qab": 1,
-            "qabPct": 50.0,
-            "ldPct": 0.0,
-            "fbPct": 0.0,
-            "gbPct": 100.0,
-            "babip": 0,
-            "hbp": 0,
-            "sf": 0
-          },
-          "pitching": {
-            "gp": 0,
-            "ipOuts": 0,
-            "bf": 0,
-            "strikePct": 0,
-            "pitches": 0,
-            "firstPitchStrikePct": 0,
-            "hAllowed": 0,
-            "r": 0,
-            "er": 0,
-            "bb": 0,
-            "so": 0,
-            "kLooking": 0,
-            "wins": 0,
-            "losses": 0,
-            "abAgainst": 0
-          },
-          "fielding": {
-            "tc": 0,
-            "a": 0,
-            "po": 0,
-            "e": 0,
-            "dp": 0
-          }
-        }
-      },
-      {
-        "playerId": "tanner-bloom",
-        "name": "Tanner Bloom",
-        "littleLeagueTeamId": "padres",
-        "select": {
-          "hitting": {
-            "gp": 2,
-            "pa": 5,
-            "ab": 3,
-            "h": 0,
-            "singles": 0,
-            "doubles": 0,
-            "triples": 0,
-            "hr": 0,
-            "rbi": 0,
-            "runs": 1,
-            "bb": 2,
-            "so": 3,
-            "sb": 1,
-            "qab": 2,
-            "qabPct": 40.0,
-            "ldPct": 0,
-            "fbPct": 0,
-            "gbPct": 0,
-            "babip": 0,
-            "hbp": 0,
-            "sf": 0
-          },
-          "pitching": {
-            "gp": 2,
-            "ipOuts": 3,
-            "bf": 9,
-            "strikePct": 48.0,
-            "pitches": 25,
-            "firstPitchStrikePct": 55.56,
-            "hAllowed": 1,
-            "r": 4,
-            "er": 3,
-            "bb": 3,
-            "so": 2,
-            "kLooking": 1,
-            "wins": 0,
-            "losses": 0,
-            "abAgainst": 6
-          },
-          "fielding": {
-            "tc": 1,
-            "a": 1,
-            "po": 0,
-            "e": 0,
-            "dp": 0
-          }
-        }
-      },
-      {
-        "playerId": "jordan-banchero",
-        "name": "Jordan Banchero",
-        "littleLeagueTeamId": "padres",
-        "select": {
-          "hitting": {
-            "gp": 1,
-            "pa": 3,
-            "ab": 3,
-            "h": 0,
-            "singles": 0,
-            "doubles": 0,
-            "triples": 0,
-            "hr": 0,
-            "rbi": 1,
-            "runs": 1,
-            "bb": 0,
-            "so": 0,
-            "sb": 1,
-            "qab": 2,
-            "qabPct": 66.67,
-            "ldPct": 0.0,
-            "fbPct": 66.67,
-            "gbPct": 33.33,
-            "babip": 0,
-            "hbp": 0,
-            "sf": 0
-          },
-          "pitching": {
-            "gp": 0,
-            "ipOuts": 0,
-            "bf": 0,
-            "strikePct": 0,
-            "pitches": 0,
-            "firstPitchStrikePct": 0,
-            "hAllowed": 0,
-            "r": 0,
-            "er": 0,
-            "bb": 0,
-            "so": 0,
-            "kLooking": 0,
-            "wins": 0,
-            "losses": 0,
-            "abAgainst": 0
-          },
-          "fielding": {
-            "tc": 1,
-            "a": 0,
-            "po": 1,
-            "e": 0,
-            "dp": 0
-          }
-        }
-      }
+const fs = require('fs/promises');
+const path = require('path');
+
+const { put, list } = require('@vercel/blob');
+const BLOB_TOKEN = process.env.BLOB_READ_WRITE_TOKEN;
+const BLOB_KEY = 'little-league/data.json';
+const IS_VERCEL = Boolean(process.env.VERCEL);
+
+const lakeMonstersRosterIds = [
+  'kellen-marshall',
+  'william-tong',
+  'maverick-mclear',
+  'jack-stangel',
+  'isaiah-kirtman',
+  'tyler-wu',
+  'charlie-gregory',
+  'jasper-crosby',
+  'holden-norman',
+  'jordan-banchero',
+  'skye-martin',
+  'tristan-hoefer'
+];
+
+const selectTeamDefinitions = [
+  {
+    id: 'mi-11u-maroon',
+    name: 'MI 11U Maroon',
+    rosterIds: [
+      'kellen-marshall',
+      'ymir-skulason',
+      'william-tong',
+      'maverick-mclear',
+      'jack-stangel',
+      'isaiah-kirtman',
+      'tyler-wu',
+      'charlie-gregory',
+      'jasper-crosby',
+      'holden-norman',
+      'eli-stangel',
+      'tanner-bloom',
+      'jordan-banchero'
     ]
+  },
+  { id: 'lake-monsters', name: 'Lake Monsters', rosterIds: lakeMonstersRosterIds },
+  { id: '11u-all-stars', name: '11U All Stars', rosterIds: lakeMonstersRosterIds }
+];
+
+const selectRosterNames = {
+  'kellen-marshall': 'Kellen Marshall',
+  'william-tong': 'William Tong',
+  'maverick-mclear': 'Maverick McLear',
+  'jack-stangel': 'Jack Stangel',
+  'isaiah-kirtman': 'Isaiah Kirtman',
+  'tyler-wu': 'Tyler Wu',
+  'charlie-gregory': 'Charlie Gregory',
+  'jasper-crosby': 'Jasper Crosby',
+  'holden-norman': 'Holden Norman',
+  'jordan-banchero': 'Jordan Banchero',
+  'skye-martin': 'Skye Martin',
+  'tristan-hoefer': 'Tristan Hoefer',
+  'ymir-skulason': 'Ymir Skulason',
+  'eli-stangel': 'Eli Stangel',
+  'tanner-bloom': 'Tanner Bloom'
+};
+
+function slugify(value) {
+  return String(value || '')
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
+function blankHitting() {
+  return { gp: 0, pa: 0, ab: 0, h: 0, singles: 0, doubles: 0, triples: 0, hr: 0, rbi: 0, runs: 0, bb: 0, hbp: 0, sf: 0, so: 0, sb: 0, qab: 0, qabPct: 0, ldPct: 0, fbPct: 0, gbPct: 0, babip: 0 };
+}
+
+function blankPitching() {
+  return { gp: 0, ipOuts: 0, pitches: 0, bf: 0, strikePct: 0, firstPitchStrikePct: 0, hAllowed: 0, r: 0, er: 0, bb: 0, so: 0, kLooking: 0, wins: 0, losses: 0, abAgainst: 0 };
+}
+
+function blankFielding() {
+  return { tc: 0, a: 0, po: 0, e: 0, dp: 0 };
+}
+
+function blankSelectStats() {
+  return { hitting: blankHitting(), pitching: blankPitching(), fielding: blankFielding() };
+}
+
+function deepClone(value) {
+  return JSON.parse(JSON.stringify(value));
+}
+
+function sumStats(base, incoming) {
+  const next = { ...base };
+  for (const [key, value] of Object.entries(incoming || {})) {
+    next[key] = (Number(next[key]) || 0) + (Number(value) || 0);
+  }
+  return next;
+}
+
+function estimateBallsInPlay(stats) {
+  const ab = Number(stats?.ab) || 0;
+  const so = Number(stats?.so) || 0;
+  const hr = Number(stats?.hr) || 0;
+  const sf = Number(stats?.sf) || 0;
+  return Math.max(ab - so - hr + sf, 0);
+}
+
+function mergeHittingStats(base, incoming) {
+  const next = sumStats(base, incoming);
+  const basePa = Number(base?.pa) || 0;
+  const incomingPa = Number(incoming?.pa) || 0;
+  const totalPa = basePa + incomingPa;
+  const baseQabPct = Number(base?.qabPct);
+  const incomingQabPct = Number(incoming?.qabPct);
+  const baseBip = estimateBallsInPlay(base);
+  const incomingBip = estimateBallsInPlay(incoming);
+  const totalBip = baseBip + incomingBip;
+
+  if (totalPa > 0) {
+    next.qabPct = (
+      ((Number.isFinite(baseQabPct) ? baseQabPct : 0) * basePa) +
+      ((Number.isFinite(incomingQabPct) ? incomingQabPct : 0) * incomingPa)
+    ) / totalPa;
+  } else {
+    next.qabPct = Number.isFinite(incomingQabPct) ? incomingQabPct : (Number.isFinite(baseQabPct) ? baseQabPct : 0);
+  }
+
+  for (const key of ['ldPct', 'fbPct', 'gbPct']) {
+    const baseValue = Number(base?.[key]);
+    const incomingValue = Number(incoming?.[key]);
+    if (totalBip > 0) {
+      next[key] = (
+        ((Number.isFinite(baseValue) ? baseValue : 0) * baseBip) +
+        ((Number.isFinite(incomingValue) ? incomingValue : 0) * incomingBip)
+      ) / totalBip;
+    } else {
+      next[key] = Number.isFinite(incomingValue) ? incomingValue : (Number.isFinite(baseValue) ? baseValue : 0);
+    }
+  }
+
+  return next;
+}
+
+function mergePitchingStats(base, incoming) {
+  const next = sumStats(base, incoming);
+  const baseBf = Number(base?.bf) || 0;
+  const incomingBf = Number(incoming?.bf) || 0;
+  const totalBf = baseBf + incomingBf;
+  const baseFps = Number(base?.firstPitchStrikePct);
+  const incomingFps = Number(incoming?.firstPitchStrikePct);
+  const baseStrikePct = Number(base?.strikePct);
+  const incomingStrikePct = Number(incoming?.strikePct);
+
+  if (totalBf > 0) {
+    next.firstPitchStrikePct = (
+      ((Number.isFinite(baseFps) ? baseFps : 0) * baseBf) +
+      ((Number.isFinite(incomingFps) ? incomingFps : 0) * incomingBf)
+    ) / totalBf;
+    next.strikePct = (
+      ((Number.isFinite(baseStrikePct) ? baseStrikePct : 0) * baseBf) +
+      ((Number.isFinite(incomingStrikePct) ? incomingStrikePct : 0) * incomingBf)
+    ) / totalBf;
+  } else {
+    next.firstPitchStrikePct = Number.isFinite(incomingFps) ? incomingFps : (Number.isFinite(baseFps) ? baseFps : 0);
+    next.strikePct = Number.isFinite(incomingStrikePct) ? incomingStrikePct : (Number.isFinite(baseStrikePct) ? baseStrikePct : 0);
+  }
+
+  return next;
+}
+
+function ensureSelectRosterPlayers(data) {
+  const players = data.selectTeam.players;
+  const existingIds = new Set(players.map(player => player.playerId || slugify(player.name)));
+  for (const team of selectTeamDefinitions) {
+    for (const playerId of team.rosterIds || []) {
+      if (existingIds.has(playerId)) continue;
+      players.push({
+        playerId,
+        name: selectRosterNames[playerId] || playerId,
+        littleLeagueTeamId: null,
+        select: blankSelectStats(),
+        selectTeams: {}
+      });
+      existingIds.add(playerId);
+    }
+  }
+}
+
+function normalizeSelectBucket(bucket) {
+  return {
+    hitting: mergeHittingStats(blankHitting(), bucket?.hitting || {}),
+    pitching: mergePitchingStats(blankPitching(), bucket?.pitching || {}),
+    fielding: sumStats(blankFielding(), bucket?.fielding || {})
+  };
+}
+
+function normalizeData(raw) {
+  const data = raw && typeof raw === 'object' ? deepClone(raw) : {};
+  data.meta = data.meta || {};
+  data.teams = Array.isArray(data.teams) ? data.teams : [];
+  data.littleLeaguePlayers = Array.isArray(data.littleLeaguePlayers) ? data.littleLeaguePlayers : [];
+  data.selectTeam = data.selectTeam || { name: 'MI 11U Maroon', players: [] };
+  data.selectTeam.players = Array.isArray(data.selectTeam.players) ? data.selectTeam.players : [];
+  ensureSelectRosterPlayers(data);
+
+  for (const player of data.littleLeaguePlayers) {
+    player.playerId = player.playerId || slugify(player.name);
+    player.hitting = mergeHittingStats(blankHitting(), player.hitting || {});
+    player.pitching = mergePitchingStats(blankPitching(), player.pitching || {});
+    player.fielding = sumStats(blankFielding(), player.fielding || {});
+  }
+
+  for (const player of data.selectTeam.players) {
+    player.playerId = player.playerId || slugify(player.name);
+    player.selectTeams = player.selectTeams || {};
+    player.selectTeams['mi-11u-maroon'] = normalizeSelectBucket(player.selectTeams['mi-11u-maroon'] || player.select || {});
+    for (const team of selectTeamDefinitions) {
+      player.selectTeams[team.id] = normalizeSelectBucket(player.selectTeams[team.id] || {});
+    }
+    player.select = player.selectTeams['mi-11u-maroon'];
+  }
+
+  return data;
+}
+
+async function blobList() {
+  const result = await list({
+    prefix: BLOB_KEY,
+    limit: 20,
+    token: BLOB_TOKEN
+  });
+  if (!result || !result.blobs || result.blobs.length === 0) {
+    return [];
+  }
+  return result.blobs.sort((a, b) => new Date(b.uploadedAt) - new Date(a.uploadedAt));
+}
+
+async function blobGet() {
+  const versions = await blobList();
+  if (!versions.length) return null;
+  const latest = versions[0];
+  const response = await fetch(latest.url);
+  if (!response.ok) return null;
+  return await response.json();
+}
+
+async function blobSet(value) {
+  await put(BLOB_KEY, JSON.stringify(value), {
+    access: 'public',
+    contentType: 'application/json',
+    token: BLOB_TOKEN,
+    addRandomSuffix: false,
+    allowOverwrite: true
+  });
+}
+
+async function fileGet() {
+  const filePath = path.join(process.cwd(), 'little-league-data.json');
+  const text = await fs.readFile(filePath, 'utf-8');
+  return JSON.parse(text);
+}
+
+async function fileSet(value) {
+  const filePath = path.join(process.cwd(), 'little-league-data.json');
+  await fs.writeFile(filePath, `${JSON.stringify(value, null, 2)}\n`);
+}
+
+async function getStoredData() {
+  if (IS_VERCEL && !BLOB_TOKEN) {
+    throw new Error('Storage not configured');
+  }
+  if (BLOB_TOKEN) {
+    let data = await blobGet();
+    if (!data) {
+      data = await fileGet();
+      await blobSet(data);
+    }
+    return data;
+  }
+  return await fileGet();
+}
+
+function ensureTeam(data, teamName, forcedId) {
+  const teamId = forcedId || slugify(teamName);
+  const existing = data.teams.find(team => team.id === teamId);
+  if (existing) {
+    existing.name = teamName || existing.name;
+  } else {
+    data.teams.push({ id: teamId, name: teamName });
+  }
+  return teamId;
+}
+
+function aggregateLittleLeagueRows(rows) {
+  const playerMap = new Map();
+  let teamId = null;
+  let teamName = null;
+
+  for (const raw of rows) {
+    const row = {
+      playerId: raw.playerId || slugify(raw.name),
+      name: raw.name,
+      teamId: raw.teamId || slugify(raw.teamName),
+      teamName: raw.teamName,
+      hitting: mergeHittingStats(blankHitting(), raw.hitting || {}),
+      pitching: mergePitchingStats(blankPitching(), raw.pitching || {}),
+      fielding: sumStats(blankFielding(), raw.fielding || {})
+    };
+
+    teamId = row.teamId;
+    teamName = row.teamName;
+    const existing = playerMap.get(row.playerId) || {
+      playerId: row.playerId,
+      name: row.name,
+      teamId: row.teamId,
+      hitting: blankHitting(),
+      pitching: blankPitching(),
+      fielding: blankFielding()
+    };
+    existing.name = row.name;
+    existing.teamId = row.teamId;
+    existing.hitting = mergeHittingStats(existing.hitting, row.hitting);
+    existing.pitching = mergePitchingStats(existing.pitching, row.pitching);
+    existing.fielding = sumStats(existing.fielding, row.fielding);
+    playerMap.set(row.playerId, existing);
+  }
+
+  return { teamId, teamName, players: Array.from(playerMap.values()) };
+}
+
+function aggregateSelectRows(rows, existingData, teamId = 'mi-11u-maroon') {
+  const littleLookup = new Map((existingData.littleLeaguePlayers || []).map(player => [player.playerId, player]));
+  const existingSelectLookup = new Map((existingData.selectTeam.players || []).map(player => [player.playerId, player]));
+  const playerMap = new Map((existingData.selectTeam.players || []).map(player => [player.playerId, {
+    ...player,
+    selectTeams: { ...(player.selectTeams || {}) }
+  }]));
+
+  for (const player of playerMap.values()) {
+    player.selectTeams = player.selectTeams || {};
+    player.selectTeams[teamId] = blankSelectStats();
+    if (teamId === 'mi-11u-maroon') player.select = player.selectTeams[teamId];
+  }
+
+  for (const raw of rows) {
+    const row = {
+      playerId: raw.playerId || slugify(raw.name),
+      name: raw.name,
+      stats: {
+        hitting: mergeHittingStats(blankHitting(), raw.hitting || {}),
+        pitching: mergePitchingStats(blankPitching(), raw.pitching || {}),
+        fielding: sumStats(blankFielding(), raw.fielding || {})
+      }
+    };
+
+    const little = littleLookup.get(row.playerId);
+    const existing = existingSelectLookup.get(row.playerId);
+    const current = playerMap.get(row.playerId) || {
+      playerId: row.playerId,
+      name: row.name,
+      littleLeagueTeamId: existing?.littleLeagueTeamId || little?.teamId || null,
+      select: blankSelectStats(),
+      selectTeams: {}
+    };
+    current.name = row.name;
+    current.littleLeagueTeamId = current.littleLeagueTeamId || little?.teamId || null;
+    current.selectTeams = current.selectTeams || {};
+    current.selectTeams[teamId] = current.selectTeams[teamId] || blankSelectStats();
+    current.selectTeams[teamId].hitting = mergeHittingStats(current.selectTeams[teamId].hitting, row.stats.hitting);
+    current.selectTeams[teamId].pitching = mergePitchingStats(current.selectTeams[teamId].pitching, row.stats.pitching);
+    current.selectTeams[teamId].fielding = sumStats(current.selectTeams[teamId].fielding, row.stats.fielding);
+    if (teamId === 'mi-11u-maroon') current.select = current.selectTeams[teamId];
+    playerMap.set(row.playerId, current);
+  }
+
+  return Array.from(playerMap.values());
+}
+
+function applyImports(existing, imports) {
+  const next = normalizeData(existing);
+  const summaries = [];
+
+  for (const importFile of imports || []) {
+    const rows = Array.isArray(importFile.rows) ? importFile.rows : [];
+    if (!rows.length) continue;
+
+    const first = rows[0];
+    if (first.sourceType === 'select') {
+      const teamId = first.selectTeamId || 'mi-11u-maroon';
+      const teamName = first.selectTeamName || selectTeamDefinitions.find(team => team.id === teamId)?.name || 'select stats';
+      next.selectTeam.players = aggregateSelectRows(rows, next, teamId);
+      summaries.push(`replaced ${teamName} with ${rows.length} row${rows.length === 1 ? '' : 's'}`);
+      continue;
+    }
+
+    const { teamId, teamName, players } = aggregateLittleLeagueRows(rows);
+    if (!teamId || !teamName) continue;
+    ensureTeam(next, teamName, teamId);
+    next.littleLeaguePlayers = next.littleLeaguePlayers.filter(player => player.teamId !== teamId);
+    next.littleLeaguePlayers.push(...players);
+    summaries.push(`replaced ${teamName} with ${players.length} player${players.length === 1 ? '' : 's'}`);
+  }
+
+  next.meta.updatedAt = new Date().toISOString();
+  return { data: normalizeData(next), summaries };
+}
+
+module.exports = async function handler(req, res) {
+  try {
+    if (req.method === 'GET') {
+      const data = await getStoredData();
+      return res.status(200).json(normalizeData(data));
+    }
+
+    if (req.method === 'POST') {
+      const payload = req.body;
+      if (payload && payload.action === 'restoreSeed') {
+        const seed = normalizeData(await fileGet());
+        if (BLOB_TOKEN) await blobSet(seed);
+        else await fileSet(seed);
+        return res.status(200).json({ ok: true, data: seed, summaries: ['restored seed data'] });
+      }
+
+      if (!payload || payload.action !== 'replaceUploads' || !Array.isArray(payload.imports)) {
+        return res.status(400).json({ error: 'Invalid payload' });
+      }
+
+      const existing = await getStoredData();
+      const result = applyImports(existing, payload.imports);
+      if (BLOB_TOKEN) await blobSet(result.data);
+      else await fileSet(result.data);
+      return res.status(200).json({ ok: true, data: result.data, summaries: result.summaries });
+    }
+
+    return res.status(405).json({ error: 'Method not allowed' });
+  } catch (error) {
+    if (String(error && error.message).includes('Storage not configured')) {
+      return res.status(503).json({ error: 'Storage not configured', code: 'STORAGE_UNCONFIGURED' });
+    }
+    return res.status(500).json({ error: 'Server error' });
   }
 };
