@@ -663,6 +663,10 @@ function renderTeamFilter() {
 
 function renderScopeBar() {
   if (!scopeBar) return;
+  if (state.page === 'select') {
+    scopeBar.innerHTML = '';
+    return;
+  }
   const scopes = [
     { key: 'combined', label: 'Combined' },
     { key: 'littleLeague', label: 'Little League' },
@@ -677,11 +681,17 @@ function renderScopeBar() {
 
 function renderSelectTeamBar() {
   if (!selectTeamBar) return;
-  selectTeamBar.innerHTML = selectTeamDefinitions.map(team => `
-    <button class="stat-tab ${team.id === state.selectTeamId ? 'is-active' : ''}" type="button" data-select-team="${team.id}">
+  const buttons = [
+    `<button class="stat-tab ${state.selectScope === 'combined' ? 'is-active' : ''}" type="button" data-select-view="combined">
+      Combined Stats
+    </button>`,
+    ...selectTeamDefinitions.map(team => `
+    <button class="stat-tab ${state.selectScope === 'select' && team.id === state.selectTeamId ? 'is-active' : ''}" type="button" data-select-team="${team.id}">
       ${team.name}
     </button>
-  `).join('');
+  `)
+  ];
+  selectTeamBar.innerHTML = buttons.join('');
 }
 
 function renderTabBars() {
@@ -748,9 +758,13 @@ function renderTable(rows) {
 function renderPage() {
   const rows = getRows();
   if (pageTitle) {
-    pageTitle.textContent = state.page === 'select'
-      ? `${selectTeamDefinition().name} Statistics`
-      : 'MILL Majors Statistics';
+    if (state.page === 'select') {
+      pageTitle.textContent = state.selectScope === 'combined'
+        ? 'Combined 11U Statistics'
+        : `${selectTeamDefinition().name} Statistics`;
+    } else {
+      pageTitle.textContent = 'MILL Majors Statistics';
+    }
   }
   updatedAtEl.textContent = `Updated: ${formatDate(state.data.meta.updatedAt)}`;
   renderImportedFiles();
@@ -1295,9 +1309,18 @@ function wireEvents() {
       return;
     }
 
+    const selectViewButton = event.target.closest('[data-select-view]');
+    if (selectViewButton) {
+      state.selectScope = 'combined';
+      state.selectTeamId = 'mi-11u-maroon';
+      renderPage();
+      return;
+    }
+
     const selectTeamButton = event.target.closest('[data-select-team]');
     if (selectTeamButton) {
       state.selectTeamId = selectTeamButton.dataset.selectTeam;
+      state.selectScope = 'select';
       renderPage();
       return;
     }
