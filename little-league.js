@@ -121,6 +121,63 @@ const selectGuestPlayerIds = new Set([
   'jordan-banchero'
 ]);
 
+const lakeMonstersRosterIds = [
+  'kellen-marshall',
+  'william-tong',
+  'maverick-mclear',
+  'jack-stangel',
+  'isaiah-kirtman',
+  'tyler-wu',
+  'charlie-gregory',
+  'jasper-crosby',
+  'holden-norman',
+  'jordan-banchero',
+  'skye-martin',
+  'tristan-hoefer'
+];
+
+const selectTeamDefinitions = [
+  {
+    id: 'mi-11u-maroon',
+    name: 'MI 11U Maroon',
+    rosterIds: [
+      'kellen-marshall',
+      'ymir-skulason',
+      'william-tong',
+      'maverick-mclear',
+      'jack-stangel',
+      'isaiah-kirtman',
+      'tyler-wu',
+      'charlie-gregory',
+      'jasper-crosby',
+      'holden-norman',
+      'eli-stangel',
+      'tanner-bloom',
+      'jordan-banchero'
+    ]
+  },
+  { id: 'lake-monsters', name: 'Lake Monsters', rosterIds: lakeMonstersRosterIds },
+  { id: '11u-all-stars', name: '11U All Stars', rosterIds: lakeMonstersRosterIds }
+];
+
+const selectRosterNames = {
+  'kellen-marshall': 'Kellen Marshall',
+  'william-tong': 'William Tong',
+  'maverick-mclear': 'Maverick McLear',
+  'jack-stangel': 'Jack Stangel',
+  'isaiah-kirtman': 'Isaiah Kirtman',
+  'tyler-wu': 'Tyler Wu',
+  'charlie-gregory': 'Charlie Gregory',
+  'jasper-crosby': 'Jasper Crosby',
+  'holden-norman': 'Holden Norman',
+  'jordan-banchero': 'Jordan Banchero',
+  'skye-martin': 'Skye Martin',
+  'tristan-hoefer': 'Tristan Hoefer',
+  'ymir-skulason': 'Ymir Skulason',
+  'eli-stangel': 'Eli Stangel',
+  'tanner-bloom': 'Tanner Bloom'
+};
+
 const DATA_API_URL = '/api/little-league-data';
 
 const state = {
@@ -133,6 +190,7 @@ const state = {
   family: 'batting',
   search: '',
   teamFilter: 'all',
+  selectTeamId: 'mi-11u-maroon',
   selectScope: 'combined',
   sortKey: 'ab',
   sortDirection: 'desc'
@@ -149,6 +207,7 @@ const teamFilter = document.getElementById('teamFilter');
 const playerSearch = document.getElementById('playerSearch');
 const statsTable = document.getElementById('statsTable');
 const statsEmpty = document.getElementById('statsEmpty');
+const selectTeamBar = document.getElementById('selectTeamBar');
 const scopeBar = document.getElementById('scopeBar');
 
 function previewFallbackAllowed() {
@@ -161,6 +220,14 @@ function blankHitting() {
 
 function blankPitching() {
   return { gp: 0, ipOuts: 0, pitches: 0, bf: 0, strikePct: 0, firstPitchStrikePct: 0, hAllowed: 0, r: 0, er: 0, bb: 0, so: 0, kLooking: 0, wins: 0, losses: 0, abAgainst: 0 };
+}
+
+function blankFielding() {
+  return { tc: 0, a: 0, po: 0, e: 0, dp: 0 };
+}
+
+function blankSelectStats() {
+  return { hitting: blankHitting(), pitching: blankPitching(), fielding: blankFielding() };
 }
 
 function deepClone(value) {
@@ -305,6 +372,36 @@ function mergePitchingStats(base, incoming) {
   return next;
 }
 
+function selectTeamDefinition(teamId = state.selectTeamId) {
+  return selectTeamDefinitions.find(team => team.id === teamId) || selectTeamDefinitions[0];
+}
+
+function ensureSelectRosterPlayers(data) {
+  const players = data.selectTeam.players;
+  const existingIds = new Set(players.map(player => player.playerId || slugify(player.name)));
+  for (const team of selectTeamDefinitions) {
+    for (const playerId of team.rosterIds || []) {
+      if (existingIds.has(playerId)) continue;
+      players.push({
+        playerId,
+        name: selectRosterNames[playerId] || playerId,
+        littleLeagueTeamId: null,
+        select: blankSelectStats(),
+        selectTeams: {}
+      });
+      existingIds.add(playerId);
+    }
+  }
+}
+
+function normalizeSelectBucket(bucket) {
+  return {
+    hitting: mergeHittingStats(blankHitting(), bucket?.hitting || {}),
+    pitching: mergePitchingStats(blankPitching(), bucket?.pitching || {}),
+    fielding: sumStats(blankFielding(), bucket?.fielding || {})
+  };
+}
+
 function normalizeData(raw) {
   const data = raw && typeof raw === 'object' ? deepClone(raw) : {};
   data.meta = data.meta || {};
@@ -312,6 +409,7 @@ function normalizeData(raw) {
   data.littleLeaguePlayers = Array.isArray(data.littleLeaguePlayers) ? data.littleLeaguePlayers : [];
   data.selectTeam = data.selectTeam || { name: 'Select Team', players: [] };
   data.selectTeam.players = Array.isArray(data.selectTeam.players) ? data.selectTeam.players : [];
+  ensureSelectRosterPlayers(data);
 
   for (const player of data.littleLeaguePlayers) {
     player.playerId = player.playerId || slugify(player.name);
@@ -322,10 +420,12 @@ function normalizeData(raw) {
 
   for (const player of data.selectTeam.players) {
     player.playerId = player.playerId || slugify(player.name);
-    player.select = player.select || {};
-    player.select.hitting = mergeHittingStats(blankHitting(), player.select.hitting || {});
-    player.select.pitching = mergePitchingStats(blankPitching(), player.select.pitching || {});
-    player.select.fielding = sumStats({ tc: 0, a: 0, po: 0, e: 0, dp: 0 }, player.select.fielding || {});
+    player.selectTeams = player.selectTeams || {};
+    player.selectTeams['mi-11u-maroon'] = normalizeSelectBucket(player.selectTeams['mi-11u-maroon'] || player.select || {});
+    for (const team of selectTeamDefinitions) {
+      player.selectTeams[team.id] = normalizeSelectBucket(player.selectTeams[team.id] || {});
+    }
+    player.select = player.selectTeams['mi-11u-maroon'];
   }
 
   return data;
@@ -439,15 +539,20 @@ function littleLeagueRows(data) {
 function selectRows(data, scope) {
   const teams = teamNameMap(data);
   const littleLookup = new Map(data.littleLeaguePlayers.map(player => [player.playerId, player]));
+  const selectedTeam = selectTeamDefinition();
+  const rosterIds = new Set(selectedTeam.rosterIds || []);
 
-  return data.selectTeam.players.map(player => {
+  return data.selectTeam.players
+  .filter(player => !rosterIds.size || rosterIds.has(player.playerId))
+  .map(player => {
     const little = littleLookup.get(player.playerId);
     const littleHitting = little ? little.hitting : blankHitting();
     const littlePitching = little ? little.pitching : blankPitching();
-    const littleFielding = little ? little.fielding : { tc: 0, a: 0, po: 0, e: 0, dp: 0 };
-    const selectHitting = player.select?.hitting || blankHitting();
-    const selectPitching = player.select?.pitching || blankPitching();
-    const selectFielding = player.select?.fielding || { tc: 0, a: 0, po: 0, e: 0, dp: 0 };
+    const littleFielding = little ? little.fielding : blankFielding();
+    const selectStats = player.selectTeams?.[selectedTeam.id] || blankSelectStats();
+    const selectHitting = selectStats.hitting || blankHitting();
+    const selectPitching = selectStats.pitching || blankPitching();
+    const selectFielding = selectStats.fielding || blankFielding();
     const hitting = scope === 'combined' ? mergeHittingStats(littleHitting, selectHitting) : scope === 'littleLeague' ? littleHitting : selectHitting;
     const pitching = scope === 'combined' ? mergePitchingStats(littlePitching, selectPitching) : scope === 'littleLeague' ? littlePitching : selectPitching;
     const fielding = scope === 'combined' ? sumStats(littleFielding, selectFielding) : scope === 'littleLeague' ? littleFielding : selectFielding;
@@ -455,9 +560,11 @@ function selectRows(data, scope) {
     return {
       playerId: player.playerId,
       name: player.name,
-      isGuest: selectGuestPlayerIds.has(player.playerId),
+      isGuest: selectedTeam.id === 'mi-11u-maroon' && selectGuestPlayerIds.has(player.playerId),
       teamId: player.littleLeagueTeamId || little?.teamId || 'unassigned',
-      teamName: teams.get(player.littleLeagueTeamId || little?.teamId) || 'Independent',
+      teamName: scope === 'littleLeague'
+        ? (teams.get(player.littleLeagueTeamId || little?.teamId) || 'Independent')
+        : selectedTeam.name,
       hitting,
       pitching,
       fielding
@@ -568,6 +675,15 @@ function renderScopeBar() {
   `).join('');
 }
 
+function renderSelectTeamBar() {
+  if (!selectTeamBar) return;
+  selectTeamBar.innerHTML = selectTeamDefinitions.map(team => `
+    <button class="stat-tab ${team.id === state.selectTeamId ? 'is-active' : ''}" type="button" data-select-team="${team.id}">
+      ${team.name}
+    </button>
+  `).join('');
+}
+
 function renderTabBars() {
   const familyTabs = document.getElementById('familyTabs');
   if (familyTabs) {
@@ -581,6 +697,7 @@ function renderTabBars() {
       </button>
     `).join('');
   }
+  renderSelectTeamBar();
   renderScopeBar();
 }
 
@@ -632,7 +749,7 @@ function renderPage() {
   const rows = getRows();
   if (pageTitle) {
     pageTitle.textContent = state.page === 'select'
-      ? 'MI 11U Statistics'
+      ? `${selectTeamDefinition().name} Statistics`
       : 'MILL Majors Statistics';
   }
   updatedAtEl.textContent = `Updated: ${formatDate(state.data.meta.updatedAt)}`;
@@ -725,6 +842,8 @@ function overrideImportedRows(rows, target) {
     const next = { ...row };
     if (target.source === 'select') {
       next.sourceType = 'select';
+      next.selectTeamId = target.teamId || 'mi-11u-maroon';
+      next.selectTeamName = target.teamName || selectTeamDefinition(next.selectTeamId).name;
     } else {
       next.sourceType = 'littleLeague';
       next.teamName = target.teamName;
@@ -736,8 +855,14 @@ function overrideImportedRows(rows, target) {
 
 function inferSourceFromFilename(name) {
   const lower = name.toLowerCase();
+  if (lower.includes('lake') || lower.includes('monster')) {
+    return { type: 'select', label: 'Lake Monsters', teamId: 'lake-monsters' };
+  }
+  if (lower.includes('all star') || lower.includes('all-star') || lower.includes('allstars')) {
+    return { type: 'select', label: '11U All Stars', teamId: '11u-all-stars' };
+  }
   if (lower.includes('11u') || lower.includes('maroon') || lower.includes('select')) {
-    return { type: 'select', label: 'MI 11U Maroon' };
+    return { type: 'select', label: 'MI 11U Maroon', teamId: 'mi-11u-maroon' };
   }
   if (lower.includes('dodgers')) return { type: 'littleLeague', label: 'Dodgers' };
   if (lower.includes('padres')) return { type: 'littleLeague', label: 'Padres' };
@@ -786,6 +911,8 @@ function parseGameChangerCsv(text, name) {
         teamId: slugify(source.label),
         teamName: source.label,
         sourceType: source.type,
+        selectTeamId: source.teamId,
+        selectTeamName: source.label,
         hitting: {
           gp: toNumber(entry['Batting:GP']),
           pa: toNumber(entry['Batting:PA']),
@@ -995,19 +1122,28 @@ function aggregateLittleLeagueRowsForPreview(rows) {
   return { teamId, teamName, players: Array.from(playerMap.values()) };
 }
 
-function aggregateSelectRowsForPreview(rows, existingData) {
+function aggregateSelectRowsForPreview(rows, existingData, teamId = 'mi-11u-maroon') {
   const littleLookup = new Map((existingData.littleLeaguePlayers || []).map(player => [player.playerId, player]));
   const existingSelectLookup = new Map((existingData.selectTeam.players || []).map(player => [player.playerId, player]));
-  const playerMap = new Map();
+  const playerMap = new Map((existingData.selectTeam.players || []).map(player => [player.playerId, {
+    ...player,
+    selectTeams: { ...(player.selectTeams || {}) }
+  }]));
+
+  for (const player of playerMap.values()) {
+    player.selectTeams = player.selectTeams || {};
+    player.selectTeams[teamId] = blankSelectStats();
+    if (teamId === 'mi-11u-maroon') player.select = player.selectTeams[teamId];
+  }
 
   for (const raw of rows) {
     const row = {
       playerId: raw.playerId || slugify(raw.name),
       name: raw.name,
-      select: {
+      stats: {
         hitting: mergeHittingStats(blankHitting(), raw.hitting || {}),
         pitching: mergePitchingStats(blankPitching(), raw.pitching || {}),
-        fielding: sumStats({ tc: 0, a: 0, po: 0, e: 0, dp: 0 }, raw.fielding || {})
+        fielding: sumStats(blankFielding(), raw.fielding || {})
       }
     };
 
@@ -1017,13 +1153,17 @@ function aggregateSelectRowsForPreview(rows, existingData) {
       playerId: row.playerId,
       name: row.name,
       littleLeagueTeamId: existing?.littleLeagueTeamId || little?.teamId || null,
-      select: { hitting: blankHitting(), pitching: blankPitching(), fielding: { tc: 0, a: 0, po: 0, e: 0, dp: 0 } }
+      select: blankSelectStats(),
+      selectTeams: {}
     };
     current.name = row.name;
     current.littleLeagueTeamId = current.littleLeagueTeamId || little?.teamId || null;
-    current.select.hitting = mergeHittingStats(current.select.hitting, row.select.hitting);
-    current.select.pitching = mergePitchingStats(current.select.pitching, row.select.pitching);
-    current.select.fielding = sumStats(current.select.fielding, row.select.fielding);
+    current.selectTeams = current.selectTeams || {};
+    current.selectTeams[teamId] = current.selectTeams[teamId] || blankSelectStats();
+    current.selectTeams[teamId].hitting = mergeHittingStats(current.selectTeams[teamId].hitting, row.stats.hitting);
+    current.selectTeams[teamId].pitching = mergePitchingStats(current.selectTeams[teamId].pitching, row.stats.pitching);
+    current.selectTeams[teamId].fielding = sumStats(current.selectTeams[teamId].fielding, row.stats.fielding);
+    if (teamId === 'mi-11u-maroon') current.select = current.selectTeams[teamId];
     playerMap.set(row.playerId, current);
   }
 
@@ -1040,8 +1180,10 @@ function applyImportsLocally(imports) {
 
     const first = rows[0];
     if (first.sourceType === 'select') {
-      next.selectTeam.players = aggregateSelectRowsForPreview(rows, next);
-      summaries.push(`replaced select stats with ${rows.length} row${rows.length === 1 ? '' : 's'}`);
+      const teamId = first.selectTeamId || 'mi-11u-maroon';
+      const teamName = first.selectTeamName || selectTeamDefinition(teamId).name;
+      next.selectTeam.players = aggregateSelectRowsForPreview(rows, next, teamId);
+      summaries.push(`replaced ${teamName} with ${rows.length} row${rows.length === 1 ? '' : 's'}`);
       continue;
     }
 
@@ -1153,11 +1295,19 @@ function wireEvents() {
       return;
     }
 
+    const selectTeamButton = event.target.closest('[data-select-team]');
+    if (selectTeamButton) {
+      state.selectTeamId = selectTeamButton.dataset.selectTeam;
+      renderPage();
+      return;
+    }
+
     const uploadButton = event.target.closest('[data-upload-team]');
     if (uploadButton && teamFiles) {
       state.pendingUploadTarget = {
         source: uploadButton.dataset.uploadSource,
-        teamName: uploadButton.dataset.uploadTeam
+        teamName: uploadButton.dataset.uploadTeam,
+        teamId: uploadButton.dataset.uploadTeamId
       };
       if (importStatus) {
         importStatus.textContent = `Selected ${state.pendingUploadTarget.teamName}. Choose the latest file to replace that team.`;
