@@ -20,7 +20,7 @@
           <p class="hero__kicker">Maverick Baseball</p>
           <h1>MI 11U Statistics</h1>
           <p class="hero__sub">
-            Separate view for the select roster with combined, little league only, and select only splits.
+            Separate view for the 11U roster with combined, Fall League, Spring League, Lake Monsters, and All Stars splits.
           </p>
           <div class="hero__meta" id="leagueUpdatedAt">Updated: --</div>
           <div class="hero__actions">
@@ -41,7 +41,7 @@
           <div class="stats-shell__header">
             <div>
               <h2 id="statsPageTitle">MI 11U Statistics</h2>
-              <p class="panel__hint">Click between combined, little league only, and select only, then sort by any stat.</p>
+              <p class="panel__hint">Click between combined and each season/team split, then sort by any stat.</p>
             </div>
             <div class="stats-filter">
               <label class="form-field">
@@ -68,25 +68,30 @@
       <section class="panel" id="weeklyIntake">
         <div class="panel__header">
           <h2>Live Team Updates</h2>
-          <p class="panel__hint">Use this from your phone or computer when the latest MI 11U select export comes in.</p>
+          <p class="panel__hint">Use this from your phone or computer when a new MI 11U export comes in.</p>
         </div>
         <div class="intake-grid">
           <div>
             <p class="panel__note">
-              This upload replaces the current MI 11U select season totals on the live site. It does not stack on old stats.
+              Each upload replaces that season's current totals on the live site. It does not stack on old stats.
             </p>
             <p class="panel__note">
               Accepted formats: `.csv` or `.json`. Use the button below even if the file name is inconsistent.
             </p>
             <div class="upload-grid upload-grid--single">
               <article class="upload-card">
-                <h3>MI 11U Maroon</h3>
-                <p class="panel__note">Replace select-only season totals.</p>
-                <button class="btn" type="button" data-upload-source="select" data-upload-team="MI 11U Maroon" data-upload-team-id="mi-11u-maroon">Upload Select File</button>
+                <h3>Fall League</h3>
+                <p class="panel__note">Replace Fall League season totals.</p>
+                <button class="btn" type="button" data-upload-source="select" data-upload-team="Fall League" data-upload-team-id="fall-league">Upload Fall File</button>
+              </article>
+              <article class="upload-card">
+                <h3>Spring League</h3>
+                <p class="panel__note">Replace Spring League season totals.</p>
+                <button class="btn" type="button" data-upload-source="select" data-upload-team="Spring League" data-upload-team-id="spring-league">Upload Spring File</button>
               </article>
               <article class="upload-card">
                 <h3>Lake Monsters</h3>
-                <p class="panel__note">Replace Lake Monsters season totals.</p>
+                <p class="panel__note">Replace Lake Monsters pre-All-Star totals.</p>
                 <button class="btn" type="button" data-upload-source="select" data-upload-team="Lake Monsters" data-upload-team-id="lake-monsters">Upload Lake Monsters File</button>
               </article>
               <article class="upload-card">
