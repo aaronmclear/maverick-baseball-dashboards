@@ -1,5 +1,6 @@
 const statSets = {
   batting: [
+    { key: 'gp', label: 'GP', type: 'count', higherIsBetter: true },
     { key: 'ab', label: 'AB', type: 'count', higherIsBetter: true },
     { key: 'avg', label: 'AVG', type: 'rate', higherIsBetter: true },
     { key: 'ops', label: 'OPS', type: 'rate', higherIsBetter: true },
@@ -19,6 +20,7 @@ const statSets = {
     { key: 'babip', label: 'BABIP', type: 'rate', higherIsBetter: true }
   ],
   pitching: [
+    { key: 'gp', label: 'GP', type: 'count', higherIsBetter: true },
     { key: 'innings', label: 'IP', type: 'innings', higherIsBetter: true },
     { key: 'pitches', label: '#P', type: 'count', higherIsBetter: true },
     { key: 'ppo', label: 'PPO', type: 'decimal', higherIsBetter: true },
@@ -460,6 +462,7 @@ function deriveHitting(stats) {
     ? ((stats.h || 0) - (stats.hr || 0)) / babipDenominator
     : (Number.isFinite(stats.babip) ? stats.babip : NaN);
   return {
+    gp: stats.gp || 0,
     ab: stats.ab || 0,
     avg,
     ops,
@@ -493,6 +496,7 @@ function derivePitching(stats) {
     ? normalizePercentValue(stats.strikePct)
     : NaN;
   return {
+    gp: stats.gp || 0,
     innings,
     pitches: stats.pitches || 0,
     ppo,
