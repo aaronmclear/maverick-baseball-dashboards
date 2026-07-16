@@ -131,3 +131,136 @@
     <script src="dashboard-pwa.js"></script>
   </body>
 </html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MI 11U Statistics</title>
+    <link rel="manifest" href="manifest-mi-11u.json" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="little-league.css" />
+    <link rel="icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="MI Select logo.jpg" />
+    <meta name="theme-color" content="#7a0f2b" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  </head>
+  <body data-page="select">
+    <header class="hero hero--league">
+      <div class="hero__content">
+        <div>
+          <p class="hero__kicker">Maverick Baseball</p>
+          <h1>MI 11U Statistics</h1>
+          <p class="hero__sub">
+            Separate view for the 11U roster with combined, Fall League, Spring League, Lake Monsters, and All Stars splits.
+          </p>
+          <div class="hero__meta" id="leagueUpdatedAt">Updated: --</div>
+          <div class="hero__actions">
+            <a class="btn btn--ghost btn--light" href="#selectDashboard">Select Dashboard</a>
+            <a class="btn btn--ghost btn--light" href="#weeklyIntake">Weekly Intake</a>
+            <button class="btn btn--ghost btn--light hidden" type="button" id="installApp">Install App</button>
+            <button class="btn btn--ghost btn--light" type="button" id="shareApp">Share Link</button>
+          </div>
+          <div class="app-actions-status" id="appActionsStatus"></div>
+        </div>
+        <img class="hero__logo" alt="Select team logo" src="https://images.squarespace-cdn.com/content/v1/6486e052559e4238e04c31be/a1452e1f-72ba-4778-a2bb-9d248477b496/Logo%2Bno%2Bbackground.png" />
+      </div>
+    </header>
+
+    <main class="container container--league">
+      <section class="panel" id="selectDashboard">
+        <div class="stats-shell">
+          <div class="stats-shell__header">
+            <div>
+              <h2 id="statsPageTitle">MI 11U Statistics</h2>
+              <p class="panel__hint">Click between combined and each season/team split, then sort by any stat.</p>
+            </div>
+            <div class="stats-filter">
+              <label class="form-field">
+                Search
+                <input type="text" id="playerSearch" placeholder="Select roster player" />
+              </label>
+            </div>
+          </div>
+          <div class="stats-switches">
+            <div class="tab-group" id="familyTabs"></div>
+          </div>
+          <div class="scope-bar" id="selectTeamBar"></div>
+          <div class="scope-bar" id="scopeBar"></div>
+          <div class="table-wrap table-wrap--stats">
+            <table id="statsTable" class="stats-table">
+              <thead></thead>
+              <tbody></tbody>
+            </table>
+            <p class="panel__note hidden" id="statsEmpty">No matching players for the current filters.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="weeklyIntake">
+        <div class="panel__header">
+          <h2>Live Team Updates</h2>
+          <p class="panel__hint">Use this from your phone or computer when a new MI 11U export comes in.</p>
+        </div>
+        <div class="intake-grid">
+          <div>
+            <p class="panel__note">
+              Each upload replaces that season's current totals on the live site. It does not stack on old stats.
+            </p>
+            <p class="panel__note">
+              Accepted formats: `.csv` or `.json`. Use the button below even if the file name is inconsistent.
+            </p>
+            <div class="upload-grid upload-grid--single">
+              <article class="upload-card">
+                <h3>Fall League</h3>
+                <p class="panel__note">Replace Fall League season totals.</p>
+                <button class="btn" type="button" data-upload-source="select" data-upload-team="Fall League" data-upload-team-id="fall-league">Upload Fall File</button>
+              </article>
+              <article class="upload-card">
+                <h3>Spring League</h3>
+                <p class="panel__note">Replace Spring League season totals.</p>
+                <button class="btn" type="button" data-upload-source="select" data-upload-team="Spring League" data-upload-team-id="spring-league">Upload Spring File</button>
+              </article>
+              <article class="upload-card">
+                <h3>Lake Monsters</h3>
+                <p class="panel__note">Replace Lake Monsters pre-All-Star totals.</p>
+                <button class="btn" type="button" data-upload-source="select" data-upload-team="Lake Monsters" data-upload-team-id="lake-monsters">Upload Lake Monsters File</button>
+              </article>
+              <article class="upload-card">
+                <h3>11U All Stars</h3>
+                <p class="panel__note">Replace 11U All Stars season totals.</p>
+                <button class="btn" type="button" data-upload-source="select" data-upload-team="11U All Stars" data-upload-team-id="11u-all-stars">Upload All Stars File</button>
+              </article>
+            </div>
+            <div class="actions actions--wrap">
+              <input class="hidden-file-input" type="file" id="teamFiles" accept=".csv,.json" />
+              <a class="btn btn--ghost" href="templates/little-league-team-template.csv" download>Download CSV Template</a>
+            </div>
+            <div class="actions actions--wrap">
+              <button class="btn" type="button" id="resetImports">Reset To Seed Data</button>
+              <button class="btn btn--ghost" type="button" id="copyLeagueLink">Copy Share Link</button>
+            </div>
+            <div class="status-banner" id="importStatus">Choose the select upload button, then pick the latest file.</div>
+          </div>
+          <div class="intake-card">
+            <h3>Admin Notes</h3>
+            <p class="panel__note">
+              This updates the live shared site. After upload, anyone refreshing the MI 11U page will see the new select totals.
+            </p>
+            <div class="pill-row" id="importedFiles"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Publish this page as a separate open URL for the select coaches and families.</p>
+      <p class="panel__note">This page stands on its own as the select team statistics site.</p>
+    </footer>
+
+    <script src="little-league-data.js"></script>
+    <script src="little-league.js"></script>
+    <script src="dashboard-pwa.js"></script>
+  </body>
+</html>
