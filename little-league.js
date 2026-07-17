@@ -154,6 +154,7 @@ const springRosterIds = [
 ];
 
 const selectTeamDefinitions = [
+  { id: 'majors', name: 'Majors', source: 'littleLeague' },
   {
     id: 'fall-league',
     name: 'Fall League',
@@ -571,28 +572,47 @@ function addSelectBuckets(base, incoming) {
 
 function selectRows(data, scope) {
   const selectedTeam = scope === 'combined' ? null : selectTeamDefinition();
+  const teams = teamNameMap(data);
+  const littleLookup = new Map(data.littleLeaguePlayers.map(player => [player.playerId, player]));
   const rosterIds = new Set(selectedTeam?.rosterIds || []);
   const guestIds = new Set(selectedTeam?.guestIds || []);
+  const selectSeasonDefinitions = selectTeamDefinitions.filter(team => team.source !== 'littleLeague');
 
   return data.selectTeam.players
   .filter(player => {
+    const little = littleLookup.get(player.playerId);
     if (scope !== 'combined' && rosterIds.size && !rosterIds.has(player.playerId)) return false;
     if (scope === 'combined') {
-      return selectTeamDefinitions.some(team => hasStats(player.selectTeams?.[team.id]));
+      return hasStats(little) || selectSeasonDefinitions.some(team => hasStats(player.selectTeams?.[team.id]));
     }
+    if (selectedTeam.source === 'littleLeague') return hasStats(little);
     return hasStats(player.selectTeams?.[selectedTeam.id]);
   })
   .map(player => {
-    const sourceStats = scope === 'combined'
-      ? selectTeamDefinitions.reduce((total, team) => addSelectBuckets(total, player.selectTeams?.[team.id] || blankSelectStats()), blankSelectStats())
-      : (player.selectTeams?.[selectedTeam.id] || blankSelectStats());
+    const little = littleLookup.get(player.playerId);
+    let sourceStats;
+    if (scope === 'combined') {
+      sourceStats = selectSeasonDefinitions.reduce(
+        (total, team) => addSelectBuckets(total, player.selectTeams?.[team.id] || blankSelectStats()),
+        blankSelectStats()
+      );
+      if (little) sourceStats = addSelectBuckets(sourceStats, little);
+    } else if (selectedTeam.source === 'littleLeague') {
+      sourceStats = little || blankSelectStats();
+    } else {
+      sourceStats = player.selectTeams?.[selectedTeam.id] || blankSelectStats();
+    }
+
+    const isMajors = selectedTeam?.source === 'littleLeague';
 
     return {
       playerId: player.playerId,
       name: player.name,
-      isGuest: scope !== 'combined' && guestIds.has(player.playerId),
-      teamId: selectedTeam?.id || 'combined',
-      teamName: selectedTeam?.name || 'All 11U Seasons',
+      isGuest: scope !== 'combined' && !isMajors && guestIds.has(player.playerId),
+      teamId: isMajors ? (little?.teamId || 'majors') : (selectedTeam?.id || 'combined'),
+      teamName: isMajors
+        ? (teams.get(little?.teamId) || 'Majors')
+        : (selectedTeam?.name || 'All Seasons + Majors'),
       hitting: sourceStats.hitting,
       pitching: sourceStats.pitching,
       fielding: sourceStats.fielding
