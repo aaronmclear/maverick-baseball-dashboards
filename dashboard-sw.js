@@ -1,4 +1,4 @@
-const CACHE_NAME = 'mi-baseball-dashboards-v4';
+const CACHE_NAME = 'mi-baseball-dashboards-v5';
 const APP_SHELL = [
   '/',
   '/little-league',
