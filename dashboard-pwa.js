@@ -85,9 +85,19 @@ window.addEventListener('appinstalled', () => {
 });
 
 if ('serviceWorker' in navigator) {
+  let refreshingForUpdate = false;
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (refreshingForUpdate) return;
+    refreshingForUpdate = true;
+    window.location.reload();
+  });
+
   window.addEventListener('load', async () => {
     try {
-      await navigator.serviceWorker.register('/dashboard-sw.js');
+      const registration = await navigator.serviceWorker.register('/dashboard-sw.js', {
+        updateViaCache: 'none'
+      });
+      await registration.update();
     } catch {
       // Ignore service worker registration failures.
     }
